@@ -1,0 +1,54 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "userName",
+            "email": "userEmail@gmail.com",
+            "password": "userPassword"
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "name": "eventName",
+            "date": "eventDate",
+            "location": "eventLocation",
+            "userId": 1
+        }
+    ],
+    "articles": [
+        {
+            "id": 1,
+            "title": "articleTitle",
+            "url": "articleUrl",
+            "synopsis": "articleSynopsis",
+            "time-stamp": "articleTime",
+            "userId": 1
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "task": "taskTitle",
+            "dueDate": "taskDueDate",
+            "completed": false,
+            "userId": 1
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "message": "messageContent",
+            "time": "messageTime",
+            "userId": 1
+        }
+    ],
+    "connections": [
+        {
+            "id": 1,
+            "userId": 1,
+            "otherId": "2"
+        }
+    ]
+
+}
