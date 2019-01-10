@@ -1,5 +1,5 @@
 import taskList from "./tasks"
-
+import taskForm from "/.tasksForm"
 import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
@@ -7,7 +7,8 @@ import newsArticles from "./news"
 import eventsList from "./eventsList"
 
 //NH test call for task function to build DOM elements
-taskList.createTaskList()
+// taskList.createTaskList()
+taskForm.createTasksEditForm()
 
 // // Example with "expand" to get other data
 // fetch("http://localhost:8088/tasks?_expand=user")
