@@ -18,8 +18,8 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 //
 
 // News
-newsArticles.buildArticles();
+// newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-chat.chatPageLoad();
+// chat.chatPageLoad();
 // chat.userMessageHTML();
