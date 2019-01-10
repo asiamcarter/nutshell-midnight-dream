@@ -3,13 +3,19 @@ import data from "./data"
 
 const eventsList = {
     listEvents(){
+        let eventString = "events"
+
+        events.eventPageBuilder();
         // get events from database
-        .then(allEvents => {
+        data.getData(eventString).then(allEvents => {
             let docFrag = document.createDocumentFragment();
-            
-            allEvents.forEach({
-                
+
+            allEvents.forEach(event => {
+                let eventIteration = events.eventBuilder(event.name, event.date, event.location);
+                docFrag.appendChild(eventIteration);
             })
+            let eventSection = document.querySelector(".event--container")
+            eventSection.appendChild(docFrag)
         })
     }
 }
