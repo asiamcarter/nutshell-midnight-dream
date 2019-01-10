@@ -9,17 +9,21 @@ const events = {
         let eventSection = document.createElement("section");
         let eventH1 = document.createElement("h1");
         let eventDiv = document.createElement("div")
+        let eventAddNew = document.createElement("button")
 
         // add text to title
         eventH1.textContent = "Events";
+        eventAddNew.textContent = "Add New Event"
 
         // add class to elements to be able to grab them later and add styling
         eventSection.classList.add("event--container");
         eventDiv.classList.add("posted--container")
+        eventAddNew.classList.add("event--add")
 
         // add title and div to section
         eventSection.appendChild(eventH1);
-        eventSection.appendChild(eventDiv)
+        eventSection.appendChild(eventDiv);
+        eventSection.appendChild(eventAddNew);
 
         container.appendChild(eventSection);
 
