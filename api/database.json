@@ -46,6 +46,18 @@
       "message": "messageContent",
       "time": "messageTime",
       "userId": 1
+    },
+    {
+      "message": {},
+      "time": "",
+      "name": "",
+      "id": 2
+    },
+    {
+      "message": {},
+      "time": "",
+      "name": "",
+      "id": 3
     }
   ],
   "connections": [

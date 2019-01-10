@@ -52,7 +52,10 @@ const chat = {
         data.chatData()
         .then (parsedMessages => {
             let messageDocFrag = document.createDocumentFragment()
-            console.log(parsedMessages)
+            parsedMessages.forEach (message => {
+                let messageHTML = this.userMessageHTML(message);
+                messageDocFrag.appendChild(messageHTML);
+            })
         })
     }
 }

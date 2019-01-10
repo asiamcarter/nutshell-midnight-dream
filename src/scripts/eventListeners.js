@@ -12,7 +12,16 @@ const eventListeners = {
         welcome.postAnEntryFromRegistration();
     },
     chatMessage() {
-        chat.userMessageToDOM();
+        let messageContent = document.querySelector(".messageInput");
+        let messageObject = {
+            message: messageContent,
+            time: "",
+            name: "",
+        }
+        data.postChatData(messageObject)
+        .then (response => {
+            chat.userMessageToDOM();
+        })
     }
 
 }
