@@ -1,3 +1,5 @@
+import eventListeners from "./eventListeners"
+import data from "./data"
 const welcome = {
     // Builds welcome page
     welcomeBuilderAndAppender(){
@@ -106,8 +108,8 @@ const welcome = {
         emailLabel.setAttribute("for", "email");
         emailLabel.innerHTML = "Enter your email address:";
         let emailInput = document.createElement("input");
-        emailInput.setAttribute("id", "email");
-        emailInput.setAttribute("name", "email");
+        emailInput.setAttribute("id", "registrationEmail");
+        emailInput.setAttribute("name", "registrationEmail");
         emailInput.setAttribute("type", "text");
         registrationContainer.appendChild(emailInput);
         //
@@ -116,7 +118,33 @@ const welcome = {
         submitNewUsernameAndEmail.setAttribute("id", "submitNewUserButton");
         submitNewUsernameAndEmail.innerHTML = "Submit";
         registrationContainer.appendChild(submitNewUsernameAndEmail);
-            }
+        //
+        // Targeting the "submit" and giving it an event listener and function found in eventListeners.js (line 9)
+        let submitClick = document.querySelector("#submitNewUserButton")
+        submitClick.addEventListener("click", eventListeners.newUserRegistrationPOST)
+    },
+
+    postAnEntryFromRegistration(){
+        // Gets values that USER inputs in registration page
+        const registrationUsername = document.querySelector("#registrationUsername").value;
+        const registrationEmail = document.querySelector("#registrationEmail").value;
+        // Loging those values in console
+        // console.log(registrationUsername);
+        // console.log(registrationEmail);
+
+        // Creating an object to store the values (above) in
+        const entryToSave ={
+            name: registrationUsername,
+            email: registrationEmail
+        }
+        // Loging those values in console in OBJECT FORM
+        // console.log(entryToSave)
+
+        data.postUsernameAndEmailToJSON(entryToSave)
+        .then(word => {
+        console.log(word)})
+    }
+
 }
 
 export default welcome
