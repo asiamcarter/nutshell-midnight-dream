@@ -2,12 +2,7 @@
 import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
-
-// Example with "expand" to get other data
-fetch("http://localhost:8088/tasks?_expand=user")
-.then(response => response.json())
-.then(userObjects => { console.log(userObjects) })
-
+import events from "./events"
 
 //Welcome Page:
 welcome.welcomeBuilderAndAppender();
