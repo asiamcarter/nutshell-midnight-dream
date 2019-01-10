@@ -9,6 +9,10 @@ const eventListeners = {
 
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
+    },
+
+    saveNewsArticle() {
+        console.log("Clicky click!");
     }
 
 }
