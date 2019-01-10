@@ -1,6 +1,10 @@
 import taskList from "./tasks"
+
+import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
+import newsArticles from "./news"
+import events from "./events"
 
 //NH test call for task function to build DOM elements
 taskList.createTaskList()
@@ -16,3 +20,10 @@ welcome.welcomeBuilderAndAppender();
 let hereHyperlinkClick = document.querySelector(".hereHyperLink")
 hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
 //
+
+// News
+newsArticles.buildArticles();
+
+//Chat Page on click..eventually//
+chat.chatPageLoad();
+// chat.userMessageHTML();
