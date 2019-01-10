@@ -9,21 +9,21 @@ import events from "./events"
 //NH test call for task function to build DOM elements
 taskList.createTaskList()
 
-// Example with "expand" to get other data
-fetch("http://localhost:8088/tasks?_expand=user")
-.then(response => response.json())
-.then(userObjects => { console.log(userObjects) })
+// // Example with "expand" to get other data
+// fetch("http://localhost:8088/tasks?_expand=user")
+// .then(response => response.json())
+// .then(userObjects => { console.log(userObjects) })
 
-//Welcome Page:
-welcome.welcomeBuilderAndAppender();
-// Registration hyperlink ("here") button:
-let hereHyperlinkClick = document.querySelector(".hereHyperLink")
-hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
-//
+// //Welcome Page:
+// welcome.welcomeBuilderAndAppender();
+// // Registration hyperlink ("here") button:
+// let hereHyperlinkClick = document.querySelector(".hereHyperLink")
+// hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
+// //
 
 // News
-newsArticles.buildArticles();
+// newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-chat.chatPageLoad();
+// chat.chatPageLoad();
 // chat.userMessageHTML();
