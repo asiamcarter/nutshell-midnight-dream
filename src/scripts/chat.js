@@ -25,7 +25,7 @@ const chat = {
 
         let userNameSection = document.createElement("section");
         userNameSection.classList.add("usernameSection");
-        userNameSection.textContent = `${message.name}`
+        userNameSection.textContent = `${message.user.name}`
 
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
@@ -33,6 +33,7 @@ const chat = {
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
+        userMessageContent.textContent =`${message.message} ${message.messageTime} `
 
         userMessageDiv.appendChild(userNameSection);
         userMessageDiv.appendChild(userPhotoSection);
