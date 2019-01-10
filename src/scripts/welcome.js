@@ -62,9 +62,10 @@ const welcome = {
         let hereHyperlink = document.createElement("a");
         hereHyperlink.setAttribute("href", "#");
         hereHyperlink.setAttribute("class", "hereHyperLink");
-        hereHyperlink.innerHTML = "here.";
+        hereHyperlink.innerHTML = " here.";
         welcomeContainer.appendChild(hereHyperlink);
         container.appendChild(welcomeContainer);
+        notAMemeber.appendChild(hereHyperlink)
     },
 
     // Builds registration page:
