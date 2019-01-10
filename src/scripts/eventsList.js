@@ -4,8 +4,12 @@ import data from "./data"
 const eventsList = {
     listEvents(){
         // get events from database
-        .then(event => {
-            event.forEach( )
+        .then(allEvents => {
+            let docFrag = document.createDocumentFragment();
+            
+            allEvents.forEach({
+                
+            })
         })
     }
 }

@@ -3,7 +3,7 @@ const events = {
         // to clear the DOM
         document.querySelector(".output").textContent = "";
 
-        let docFrag = document.createDocumentFragment();
+        
 
         // create HTML elements that will be added to the DOM
         let eventSection = document.createElement("section");
