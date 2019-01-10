@@ -6,11 +6,6 @@
       "email": "userEmail@gmail.com",
       "password": "userPassword"
     },
-    {
-      "name": "turtlepower",
-      "email": "turtlesrule@gmail.com",
-      "id": 2
-    }
   ],
   "events": [
     {
