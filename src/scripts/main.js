@@ -21,5 +21,5 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-chat.chatPageLoad();
+// chat.chatPageLoad();
 // chat.userMessageHTML();
