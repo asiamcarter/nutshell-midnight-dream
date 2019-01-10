@@ -5,6 +5,11 @@
       "name": "userName",
       "email": "userEmail@gmail.com",
       "password": "userPassword"
+    },
+    {
+      "name": "aa",
+      "email": "aa@yahoo.com",
+      "id": 2
     }
   ],
   "events": [
