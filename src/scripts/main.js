@@ -2,7 +2,13 @@
 import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
+import newsArticles from "./news"
 import events from "./events"
+
+// Example with "expand" to get other data
+fetch("http://localhost:8088/tasks?_expand=user")
+.then(response => response.json())
+.then(userObjects => { console.log(userObjects) })
 
 //Welcome Page:
 welcome.welcomeBuilderAndAppender();
@@ -11,6 +17,9 @@ let hereHyperlinkClick = document.querySelector(".hereHyperLink")
 hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
 //
 
+// News
+// newsArticles.buildArticles();
+
 //Chat Page on click..eventually//
-chat.chatPageLoad();
+// chat.chatPageLoad();
 // chat.userMessageHTML();
