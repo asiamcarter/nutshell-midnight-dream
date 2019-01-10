@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+}
+.chatroomDiv {
+    display: flex;
+    width: 714px;
+    height: 75vh;
+    border: 1px solid black;
+    margin-left: 25vw;
+}
+
+.messageInput {
+    height: 55px;
+    width: 410px;
+    margin-left: 35vw;
+    margin-top: 20px;
+}
+
+#messageSubmit {
+    margin-left: 20px;
+    padding: 10px;
+}

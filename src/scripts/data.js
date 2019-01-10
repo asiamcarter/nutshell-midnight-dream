@@ -1,0 +1,1 @@
+fetch("http://localhost:8088/events?_expand=user") .then(response => response.json()) .then(userObjects => { console.log(userObjects) })
