@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Coiny');
 *{
     padding: 0;
@@ -44,11 +43,67 @@ color:black
     border-radius: 3px;
     padding: 0 1rem 0 1rem;
 }
-/*  */
-
-
 
 /* News Articles */
 .article_section {
     border: 1px solid #000;
+}
+
+html, body {
+    height: 100%;
+}
+.chatroomDiv {
+    /* display: flex; */
+    width: 80vw;
+    height: 75vh;
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+.messageInput {
+    height: 55px;
+    width: 410px;
+    margin-left: 24%;
+    margin-top: 10px;
+}
+
+#messageSubmit {
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.userMessage {
+    display: flex;
+    border: 1px solid white;
+    width: 85%;
+    height: 10%;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.usernameSection {
+    border: 1px solid red;
+    background-color: red;
+    width: 10%;
+    height: 10px;
+    margin-top: -1%;
+}
+
+.userPhotoSection {
+    border: 1px solid blue;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: blue;
+    margin-left: -20%;
+    margin-top: -1.5%;
+}
+
+.userMessageContent {
+    border: 1px solid green;
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
 }
