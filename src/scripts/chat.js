@@ -38,6 +38,7 @@ const chat = {
         userMessageContent.classList.add("userMessageContent");
         userMessageContent.innerHTML =`${message.message} ${message.messageTime} `
 
+
         userMessageDiv.appendChild(userNameSection);
         userMessageDiv.appendChild(userPhotoSection);
         userMessageDiv.appendChild(userMessageContent);
@@ -49,7 +50,10 @@ const chat = {
 
     userMessageToDOM() {
         data.chatData()
-        .then
+        .then (parsedMessages => {
+            let messageDocFrag = document.createDocumentFragment()
+            console.log(parsedMessages)
+        })
     }
 }
 

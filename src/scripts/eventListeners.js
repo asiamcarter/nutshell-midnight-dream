@@ -1,5 +1,6 @@
 import welcome from "./welcome"
 import data from "./data"
+import chat from "./chat"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -11,8 +12,7 @@ const eventListeners = {
         welcome.postAnEntryFromRegistration();
     },
     chatMessage() {
-        let messageInput = document.querySelector(".messageInput").value;
-        console.log(messageInput);
+        chat.userMessageToDOM();
     }
 
 }
