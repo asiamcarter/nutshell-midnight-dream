@@ -1,9 +1,9 @@
-import taskForm from "./tasks"
+import taskList from "./tasks"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
 
 //NH test call for task function to build DOM elements
-taskForm.createAndAppendTaskForm()
+taskList.createTaskList()
 
 // Example with "expand" to get other data
 fetch("http://localhost:8088/tasks?_expand=user")
