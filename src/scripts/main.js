@@ -24,5 +24,3 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 // chat.chatPageLoad();
 // chat.userMessageHTML();
 
-eventsList.listEvents()
-
