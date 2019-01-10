@@ -20,6 +20,11 @@ const data = {
     newsData() {
         return fetch("http://localhost:8088/articles?userId=1") // pass through userID and change to ${userID}
         .then(response => response.json())
+    },
+
+    chatData() {
+        return fetch("http://localhost:8088/messages?_expand=user")
+        .then(response => response.json())
     }
 };
 

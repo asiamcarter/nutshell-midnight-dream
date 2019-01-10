@@ -21,5 +21,7 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 // newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-// chat.chatPageLoad();
+chat.chatPageLoad();
+let submitButton = document.querySelector("#messageSubmit");
+submitButton.addEventListener("click", eventListeners.chatMessage)
 // chat.userMessageHTML();

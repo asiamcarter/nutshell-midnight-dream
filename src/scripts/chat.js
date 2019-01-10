@@ -1,4 +1,3 @@
-import welcome from "./welcome"
 import data from "./data"
 
 const chat = {
@@ -21,7 +20,7 @@ const chat = {
         messageSubmitButton.setAttribute("id", "messageSubmit");
         outPutArticle.appendChild(messageSubmitButton);
     },
-
+    //method takes an object as an argument and creates an HTML template
     userMessageHTML(message) {
 
         let userMessageDiv = document.createElement("div");
@@ -46,6 +45,11 @@ const chat = {
         let chatroomDiv = document.querySelector(".chatroomDiv");
         chatroomDiv.appendChild(userMessageDiv);
         return chatroomDiv;
+    },
+
+    userMessageToDOM() {
+        data.chatData()
+        .then
     }
 }
 

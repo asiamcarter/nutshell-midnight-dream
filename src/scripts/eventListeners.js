@@ -9,6 +9,10 @@ const eventListeners = {
 
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
+    },
+    chatMessage() {
+        let messageInput = document.querySelector(".messageInput").value;
+        console.log(messageInput);
     }
 
 }
