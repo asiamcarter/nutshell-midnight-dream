@@ -1,5 +1,6 @@
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
+import newsArticles from "./news"
 
 // Example with "expand" to get other data
 fetch("http://localhost:8088/tasks?_expand=user")
@@ -13,3 +14,6 @@ welcome.welcomeBuilderAndAppender();
 let hereHyperlinkClick = document.querySelector(".hereHyperLink")
 hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
 //
+
+// News
+newsArticles.buildArticles();
