@@ -1,3 +1,4 @@
+
 // object that contains all fetch calls for the database JSON file
 const data = {
     getData(data) {
@@ -7,3 +8,4 @@ const data = {
 };
 
 export default data
+
