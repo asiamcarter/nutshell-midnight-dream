@@ -1,1 +1,11 @@
-fetch("http://localhost:8088/events?_expand=user") .then(response => response.json()) .then(userObjects => { console.log(userObjects) })
+
+// object that contains all fetch calls for the database JSON file
+const data = {
+    getData(data) {
+        return fetch(`http://localhost:8088/${data}`)
+        .then(response => response.json())
+    }
+};
+
+export default data
+
