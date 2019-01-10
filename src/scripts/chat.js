@@ -1,5 +1,5 @@
-import welcome from "./welcome"
-import data from "./data"
+// import welcome from "./welcome"
+// import data from "./data"
 
 const chat = {
     //method creates chatroom div, message input field and message submit button

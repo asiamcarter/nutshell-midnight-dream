@@ -18,7 +18,7 @@ const taskList = {
         //create header
         let taskListHeader = document.createElement("h1");
         taskListHeader.innerHTML = "Turtle Tasks";
-        taskListHeader.setAttribute ("id", "taskForm_header");
+        taskListHeader.setAttribute ("id", "taskList_header");
         taskListContainer.appendChild(taskListHeader);
 
         //task entry div for all saved tasks to be placed
@@ -29,8 +29,8 @@ const taskList = {
         //new task button
         let newTaskButton = document.createElement("button");
         newTaskButton.textContent = "Add New Task";
-        newTaskButton.setAttribute = ("class", "form_button");
-        newTaskButton.setAttribute = ("id", "form_button_new_task");
+        newTaskButton.setAttribute = ("class", "task_button");
+        newTaskButton.setAttribute = ("id", "new_task_button");
         taskListContainer.appendChild(newTaskButton);
 
         //Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
