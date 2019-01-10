@@ -2,6 +2,7 @@
 // Author: Megan Cruzen
 
 import data from "./data"
+import newsForm from "./newsForm"
 
 const newsArticles = {
 
@@ -24,8 +25,8 @@ const newsArticles = {
         newsAddButton.textContent = "Add New Article";
         newsAddButton.setAttribute("class", "add_new_article");
 
-        // NEED TO DO: Attach event listener to button in form
-        // submitButton.addEventListener("click", this.handleAddNewFood)
+        // Attach event listener to button in form
+        newsAddButton.addEventListener("click", newsForm.displayForm);
 
         newsContainer.appendChild(newsContainerTitle);
         newsContainer.appendChild(newsAddButton);
