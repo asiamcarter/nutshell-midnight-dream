@@ -2,7 +2,7 @@ const chat = {
     //method creates chatroom div, message input field and message submit button
     chatPageLoad() {
         let outPutArticle = document.querySelector(".output");
-        outPutArticle.innerHTML+="CHAT";
+    outPutArticle.innerHTML+=`${<h1>CHAT</h1>}`;
         let chatroomDiv = document.createElement("div");
         chatroomDiv.classList.add("chatroomDiv");
         outPutArticle.appendChild(chatroomDiv);
@@ -10,12 +10,12 @@ const chat = {
         let messageInputField = document.createElement("input");
         messageInputField.classList.add("messageInput");
         messageInputField.setAttribute("type", "text");
-        outPutArticle.appendChild(messageInputField);
+        chatroomDiv.appendChild(messageInputField);
 
         let messageSubmitButton = document.createElement("button");
         messageSubmitButton.innerHTML+= "Submit";
         messageSubmitButton.setAttribute("id", "messageSubmit");
-        outPutArticle.appendChild(messageSubmitButton);
+        chatroomDiv.appendChild(messageSubmitButton);
     },
 
     userMessageHTML(message) {
@@ -25,9 +25,11 @@ const chat = {
 
         let userNameSection = document.createElement("section");
         userNameSection.classList.add("usernameSection");
+        userNameSection.textContent = `${message.name}`
 
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
+        // userPhotoSection.textContent=`${message.photo}`
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
