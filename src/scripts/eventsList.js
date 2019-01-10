@@ -3,7 +3,7 @@ import data from "./data"
 
 const eventsList = {
     listEvents(){
-        let eventString = "events"
+        let eventString = "events?_expand=user"
 
         // create container for events heading and all events
         events.eventPageBuilder();
@@ -15,13 +15,13 @@ const eventsList = {
 
             // add HTML for each event in the database and add to document fragment
             allEvents.forEach(event => {
-                let eventIteration = events.eventBuilder(event.name, event.date, event.location);
+                let eventIteration = events.eventBuilder(event.name, event.date, event.location, event.user.name);
                 docFrag.appendChild(eventIteration);
             })
 
             // add document fragment to the container
-            let eventSection = document.querySelector(".event--container")
-            eventSection.appendChild(docFrag)
+            let eventDiv = document.querySelector(".posted--container")
+            eventDiv.appendChild(docFrag)
         })
     }
 }
