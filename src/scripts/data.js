@@ -22,13 +22,13 @@ const data = {
         .then(response => response.json())
     },
 
-    chatData() {
+    getChatData() {
         return fetch("http://localhost:8088/messages?_expand=user")
         .then(response => response.json())
     },
 
     postChatData(savedMessage) {
-        return fetch("http://localhost:8088/messages?_expand=user",{
+        return fetch("http://localhost:8088/messages",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

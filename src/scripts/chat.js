@@ -28,7 +28,7 @@ const chat = {
 
         let userNameSection = document.createElement("section");
         userNameSection.classList.add("usernameSection");
-        userNameSection.innerHTML = `${message.user.name}`
+        userNameSection.textContent = `${message.user.name}`
 
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
@@ -36,7 +36,7 @@ const chat = {
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
-        userMessageContent.innerHTML =`${message.message} ${message.messageTime} `
+        userMessageContent.textContent =`${message.message} ${message.messageTime} `
 
 
         userMessageDiv.appendChild(userNameSection);
@@ -44,16 +44,18 @@ const chat = {
         userMessageDiv.appendChild(userMessageContent);
 
         let chatroomDiv = document.querySelector(".chatroomDiv");
-        chatroomDiv.appendChild(userMessageDiv);
-        return chatroomDiv;
+        return userMessageDiv;
     },
 
     userMessageToDOM() {
-        data.chatData()
+        data.getChatData()
         .then (parsedMessages => {
+
             let messageDocFrag = document.createDocumentFragment()
+            let chatroomDiv = document.querySelector(".chatroomDiv");
+            chatroomDiv.appendChild(messageDocFrag);
             parsedMessages.forEach (message => {
-                let messageHTML = this.userMessageHTML(message);
+                let messageHTML = chat.userMessageHTML(message);
                 messageDocFrag.appendChild(messageHTML);
             })
         })

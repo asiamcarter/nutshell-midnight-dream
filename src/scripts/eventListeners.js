@@ -11,19 +11,28 @@ const eventListeners = {
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
     },
-    chatMessage() {
-        let messageContent = document.querySelector(".messageInput");
-        let messageObject = {
-            message: messageContent,
-            time: "",
-            name: "",
-        }
-        data.postChatData(messageObject)
-        .then (response => {
-            chat.userMessageToDOM();
-        })
-    }
 
+    chatMessage() {
+
+        let messageContent = document.querySelector(".messageInput").value;
+        let date = new Date();
+        // let userId = userId
+
+        let messageObject =
+        {
+            message: messageContent,
+            time: date,
+            userId: "2"
+        }
+        console.log(messageObject)
+        data.postChatData(messageObject)
+            .then(response=> {
+                chat.userMessageToDOM();
+        })
+
+    }
 }
 
-export default eventListeners
+
+
+export default eventListeners;
