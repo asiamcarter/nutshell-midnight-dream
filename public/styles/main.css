@@ -58,6 +58,18 @@ color:black
     justify-content: flex-between;
 }
 
+#form_container fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+
+#form_container label {
+    float: left;
+    width: 80px;
+}
+
+/* */
+
 html, body {
     height: 100%;
 }

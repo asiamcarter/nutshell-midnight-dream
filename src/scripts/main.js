@@ -23,7 +23,7 @@ taskForm.createTasksEditForm()
 // //
 
 // News
-// newsArticles.buildArticles();
+newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
 // chat.chatPageLoad();
