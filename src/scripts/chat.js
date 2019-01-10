@@ -45,6 +45,7 @@ const chat = {
 
         let chatroomDiv = document.querySelector(".chatroomDiv");
         chatroomDiv.appendChild(userMessageDiv);
+        return chatroomDiv;
     }
 }
 
