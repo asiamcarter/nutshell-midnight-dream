@@ -9,6 +9,7 @@ const welcome = {
         welcomeContainer.setAttribute("class", "welcome_container")
         let theTurtleTub = document.createElement("h1");
         theTurtleTub.innerHTML = "THE TURTLE TUB";
+        container.appendChild(welcomeContainer)
         welcomeContainer.appendChild(theTurtleTub);
         container.appendChild(welcomeContainer);
 
@@ -78,7 +79,7 @@ const welcome = {
         let resetHTML = document.querySelector(".welcome_container")
         registrationContainer.setAttribute("class", "registration_container")
         clearAndRepopulateDom.appendChild(registrationContainer)
-        resetHTML.innerHTML = " ";
+        resetHTMLclear.innerHTML = " ";
         //
         // Creating "The Turtle Tub" header and appending it to .welcome_container
         let theTurtleTubHeader = document.createElement("h1");
