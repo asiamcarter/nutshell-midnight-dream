@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Welcome and registration CSS */
+/* .welcome_container_background{
+    width: 100%;
+} */
+
+.welcome_container{
+    font-family: 'Coiny', cursive;
+}
+
+.welcome_container h1{
+    font-size: 3rem;
+}
+
+.registration_container{
+    font-family: 'Coiny', cursive;
+}
+
+.registration_container h1{
+    font-size: 3rem;
+}
+
+.hereHyperLink{
+text-decoration: none;
+color:black
+}
+
+#loginButton{
+    font-family: 'Coiny';
+    font-size: 1.25rem;
+    border-radius: 3px;
+    padding: 0 1rem 0 1rem;
+}
+
+#submitNewUserButton{
+    font-family: 'Coiny';
+    font-size: 1.25rem;
+    border-radius: 3px;
+    padding: 0 1rem 0 1rem;
+}
+/*  */
