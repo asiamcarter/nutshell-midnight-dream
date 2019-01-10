@@ -2,7 +2,7 @@ html, body {
     height: 100%;
 }
 .chatroomDiv {
-    display: flex;
+    /* display: flex; */
     width: 80vw;
     height: 75vh;
     border: 1px solid black;
@@ -13,7 +13,7 @@ html, body {
     height: 55px;
     width: 410px;
     margin-left: 24%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #messageSubmit {
@@ -24,7 +24,7 @@ html, body {
 .userMessage {
     display: flex;
     border: 1px solid white;
-    width: 90%;
+    width: 85%;
     height: 10%;
     margin-left: 10%;
     margin-top: 20px;
