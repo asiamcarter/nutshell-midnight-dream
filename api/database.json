@@ -6,11 +6,6 @@
       "email": "userEmail@gmail.com",
       "password": "userPassword"
     },
-    {
-      "name": "aa",
-      "email": "aa@yahoo.com",
-      "id": 2
-    }
   ],
   "events": [
     {
@@ -19,6 +14,13 @@
       "date": "eventDate",
       "location": "eventLocation",
       "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "eventName",
+      "date": "eventDate",
+      "location": "eventLocation",
+      "userId": 2
     }
   ],
   "articles": [

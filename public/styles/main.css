@@ -49,6 +49,13 @@ color:black
 /* News Articles */
 .article_section {
     border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.news_etc {
+    background-color: #eee;
+    display: flex;
+    justify-content: flex-between;
 }
 
 html, body {

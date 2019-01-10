@@ -4,7 +4,7 @@ import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
 import newsArticles from "./news"
-import events from "./events"
+import eventsList from "./eventsList"
 
 //NH test call for task function to build DOM elements
 taskList.createTaskList()
@@ -27,3 +27,4 @@ taskList.createTaskList()
 //Chat Page on click..eventually//
 // chat.chatPageLoad();
 // chat.userMessageHTML();
+
