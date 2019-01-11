@@ -11,12 +11,11 @@ const eventListeners = {
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
     },
-
+//creates a message object and posts to the database.json. Clears textarea on submit click
     chatMessage() {
         let messageContent = document.querySelector(".messageInput").value;
         let date = new Date();
         // let userId = userId
-
         let messageObject =
         {
             message: messageContent,
@@ -31,6 +30,7 @@ const eventListeners = {
                 messageInput.value="";
         })
     },
+    //submits message and clears textarea on enter keyup
     chatClickOnEnter() {
         if (event.keyCode === 13) {
             document.querySelector("#messageSubmit").click();

@@ -46,7 +46,7 @@ const chat = {
 
         return userMessageDiv;
     },
-
+//appends messages to the DOM along with scrollbar that stays anchored to the bottom of the div so that the most recent message is always visible.
     userMessageToDOM() {
         data.getChatData()
         .then (parsedMessages => {
@@ -59,6 +59,7 @@ const chat = {
                 console.log(messageHTML)
                 messageDocFrag.appendChild(messageHTML);
             })
+            //clears DOM so that messages aren't repeated when submit is pressed
               while (chatroomDiv.firstChild) {
                   chatroomDiv.removeChild(chatroomDiv.firstChild);
               }
