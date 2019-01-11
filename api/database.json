@@ -11,6 +11,41 @@
       "name": "userName2",
       "email": "userEmail2@gmail.com",
       "password": "userPassword2"
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 3
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 4
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 5
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 6
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 7
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 8
+    },
+    {
+      "name": "meg",
+      "email": "meg@meg.com",
+      "id": 9
     }
   ],
   "events": [
