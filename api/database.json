@@ -119,8 +119,8 @@
   ],
   "messages": [
     {
-      "message": "yay",
-      "time": "2019-01-11T20:49:42.507Z",
+      "message": "YAY",
+      "time": "2019-01-11T21:51:52.555Z",
       "userId": "2",
       "id": 1
     },
@@ -147,6 +147,12 @@
       "time": "2019-01-11T21:02:07.352Z",
       "userId": "2",
       "id": 5
+    },
+    {
+      "message": "dsfkjbnsdkjfbsd\n",
+      "time": "2019-01-11T21:52:54.903Z",
+      "userId": "2",
+      "id": 6
     }
   ],
   "connections": [
