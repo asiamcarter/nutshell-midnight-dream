@@ -11,14 +11,12 @@ const eventListeners = {
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
     },
-<<<<<<< HEAD
 
     // this function will cause the "add new event button" to appear
     newEventButtonClick(){
         document.querySelector(".event--add").addEventListener("click", console.log("New Event Form will appear!"))
     },
 
-=======
 //creates a message object and posts to the database.json. Clears textarea on submit click
     chatMessage() {
         let messageContent = document.querySelector(".messageInput").value;
@@ -46,7 +44,6 @@ const eventListeners = {
                 messageInput.value="";
         }
     }
->>>>>>> master
 }
 
 

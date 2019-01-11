@@ -4,13 +4,8 @@ import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
 import newsArticles from "./news"
-<<<<<<< HEAD
-import eventsList from "./eventsList"
-import eventsForm from "./eventsForm";
-=======
 import events from "./events"
 import data from "./data";
->>>>>>> master
 
 // Example with "expand" to get other data
 // fetch("http://localhost:8088/tasks?_expand=user")
