@@ -63,6 +63,13 @@ color:black
 /*  */
 /* form CSS */
 
+#goBackButton{
+    font-family: 'Coiny';
+    font-size: 1.25rem;
+    border-radius: 3px;
+    padding: 0 1rem 0 1rem;
+}
+
 /* News Articles */
 
 #article_container {
