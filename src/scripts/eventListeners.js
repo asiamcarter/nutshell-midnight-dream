@@ -56,7 +56,6 @@ const eventListeners = {
                 messageInput.value="";
         }
     },
-<<<<<<< HEAD
     // ****************************EVENTS*******************************
      // this function will cause the "add new event button" to appear
     newEventButtonClick(){
@@ -89,8 +88,7 @@ const eventListeners = {
     },
     editEventButtonClick(){
             console.log("someday this button will edit things")
-        }
-=======
+        },
     saveNewsArticle() {
         console.log("Clicky click");
         // Display error if fields not filled in
@@ -98,7 +96,6 @@ const eventListeners = {
         // data.postNewsData();
         // Rerun GET to update event list on DOM
     }
->>>>>>> master
 }
 
 
