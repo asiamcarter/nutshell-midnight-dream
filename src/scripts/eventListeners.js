@@ -1,6 +1,7 @@
 import welcome from "./welcome"
 import data from "./data"
 import chat from "./chat"
+import eventsForm from "./eventsForm";
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -10,11 +11,6 @@ const eventListeners = {
 
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
-    },
-
-    // this function will cause the "add new event button" to appear
-    newEventButtonClick(){
-        document.querySelector(".event--add").addEventListener("click", console.log("New Event Form will appear!"))
     },
 
 //creates a message object and posts to the database.json. Clears textarea on submit click
@@ -43,6 +39,24 @@ const eventListeners = {
             let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";
         }
+    },
+    // ****************************EVENTS*******************************
+     // this function will cause the "add new event button" to appear
+    newEventButtonClick(){
+        document.querySelector(".event--add").addEventListener("click", function(){
+            eventsForm.createEventForm()
+            eventListeners.saveEventButtonClick()
+        })
+    },
+    saveEventButtonClick(){
+        document.querySelector(".event--save--button").addEventListener("click", function(){
+            document.querySelector(".add--event--form").textContent = "";
+        })
+    },
+    editEventButtonClick(){
+        document.querySelector(".event--edit--button").addEventListener("click", function(){
+            console.log("someday this button will edit things")
+        })
     }
 }
 

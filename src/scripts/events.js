@@ -39,14 +39,15 @@ const events = {
         let eventH2 = document.createElement("h2");
         let eventDateP = document.createElement("p");
         let eventLocP = document.createElement("p");
-        let eventUserDiv = document.createElement("div")
+        let eventUserDiv = document.createElement("div");
         let eventEdit = document.createElement("button");
-        let eventPosterName = document.createElement("h4")
+        let eventPosterName = document.createElement("h4");
 
         // add class to small containers and large container in order to use flex-box
-        eventDivContainer.classList.add("event--outer--container")
-        eventDetailsDiv.classList.add("event--inner--container")
-        eventPosterName.classList.add("event--inner--container")
+        eventDivContainer.classList.add("event--outer--container");
+        eventDetailsDiv.classList.add("event--inner--container");
+        eventPosterName.classList.add("event--inner--container");
+        eventEdit.classList.add("event--edit--button");
 
         // add text to elements that will be displaying the event information
         eventH2.textContent = name;
