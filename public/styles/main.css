@@ -43,6 +43,8 @@ color:black
     border-radius: 3px;
     padding: 0 1rem 0 1rem;
 }
+/*  */
+/* form CSS */
 
 /* News Articles */
 .article_section {
@@ -56,15 +58,28 @@ color:black
     justify-content: flex-between;
 }
 
+#form_container fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+
+#form_container label {
+    float: left;
+    width: 80px;
+}
+
+/* */
+
 html, body {
     height: 100%;
 }
+
 .chatroomDiv {
-    /* display: flex; */
     width: 80vw;
     height: 75vh;
     border: 1px solid black;
     margin-left: 20px;
+    overflow-y:auto;
 }
 
 .messageInput {
@@ -114,6 +129,7 @@ html, body {
     height: 100%;
     margin-left: 2%;
 }
+<<<<<<< HEAD
 
 /* *****************************EVENT CSS***************************** */
 
@@ -132,3 +148,5 @@ html, body {
     display: flex;
     flex-wrap: wrap;
 }
+=======
+>>>>>>> master

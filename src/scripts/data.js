@@ -20,6 +20,26 @@ const data = {
     newsData() {
         return fetch("http://localhost:8088/articles?userId=1") // pass through userID and change to ${userID}
         .then(response => response.json())
+    },
+
+    getChatData() {
+        return fetch("http://localhost:8088/messages?_expand=user")
+        .then(response => response.json())
+    },
+
+    postChatData(savedMessage) {
+        return fetch("http://localhost:8088/messages",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(savedMessage)
+        });
+    },
+
+    taskListData() {
+        return fetch("http://localhost:8088/tasks?userId=1")
+        .then(response => response.json())
     }
 };
 
