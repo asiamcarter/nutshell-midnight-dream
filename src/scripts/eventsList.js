@@ -31,6 +31,7 @@ const eventsList = {
                 let editButton = document.querySelectorAll(".event--edit--button")
                 for(let i = 0; i < editButton.length; i++){
                     editButton[i].addEventListener("click", eventListeners.editEventButtonClick);
+                    editButton[i].setAttribute("id", `editButton${i}`)
                 }
         })
     }

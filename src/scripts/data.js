@@ -67,8 +67,16 @@ const data = {
             body: JSON.stringify(newEvent)
         })
     },
-    editEvents(eventId, name, date, location) {
-        return fetch(`http://localhost8088/events?=${eventId}`)
+    editEvents(eventId, editId) {
+        return fetch(`http://localhost:8088/events?id=${eventId}`)
+        .then(response => response.json())
+        .then(event => {
+            let buttonLocation = document.querySelector(`#${editId}`);
+            let oldElement = buttonLocation.parentElement.firstChild;
+            let newElement = document.createElement("p");
+            newElement.textContent = event.name;
+            buttonLocation.parentElement.parentElement.replaceChild(newElement,oldElement);
+        })
     }
 };
 

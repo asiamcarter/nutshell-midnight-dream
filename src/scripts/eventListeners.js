@@ -86,7 +86,9 @@ const eventListeners = {
         })
     },
     editEventButtonClick(){
-            console.log("someday this button will edit things")
+        let editId = event.target.id;
+        console.log(editId)
+        data.editEvents(2, editId)
         }
 }
 
