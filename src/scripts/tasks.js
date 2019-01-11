@@ -36,7 +36,7 @@ const taskList = {
 
         //TO DO Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
         newTaskButton.addEventListener("click", () => {
-            // console.log("click") works!
+            // console.log("click")
             tasksForm.createTasksEditForm()
         });
 
