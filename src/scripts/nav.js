@@ -1,3 +1,6 @@
+// Creates and displays navigation bar
+// Author: Megan Cruzen
+
 import news from "./news"
 import eventsList from "./eventsList"
 import taskList from "./tasks"
