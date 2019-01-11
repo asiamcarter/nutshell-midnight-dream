@@ -79,6 +79,14 @@ const newsArticles = {
                 deleteArticleBtn.setAttribute("class", "article_delete_btn");
                 deleteArticleBtn.textContent = "Delete";
 
+                deleteArticleBtn.addEventListener("click", () => {
+                    let articleId = article.id;
+                    data.deleteNewsData(articleId)
+                    .then(response => {
+                        newsArticles.buildArticles()
+                    })
+                })
+
                 // Add title, synopsis, and URL to article info
                 articleInfo.appendChild(newsTitle);
                 articleInfo.appendChild(newsSynopsis);

@@ -17,19 +17,6 @@ const data = {
                 })
                 .then(response => response.json())
       },
-    newsData() {
-        return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
-        .then(response => response.json())
-    },
-    postNewsData(articleToSave) {
-        return fetch("http://localhost:8088/articles",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(articleToSave)
-        });
-    },
 
     getChatData() {
         return fetch("http://localhost:8088/messages?_expand=user")
@@ -78,6 +65,28 @@ const data = {
     },
     editEvents(eventId, name, date, location) {
         return fetch(`http://localhost8088/events?=${eventId}`)
+    },
+
+    newsData() {
+        return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
+        .then(response => response.json())
+    },
+    postNewsData(articleToSave) {
+        return fetch("http://localhost:8088/articles",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(articleToSave)
+        });
+    },
+    deleteNewsData(articleId) {
+        return fetch(`http://localhost:8088/articles/${articleId}`, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json"
+          }
+        })
     }
 };
 
