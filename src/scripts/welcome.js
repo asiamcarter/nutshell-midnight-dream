@@ -210,21 +210,21 @@ const welcome = {
                 welcome.incorrectUsernameOrEmailBuilderAndAppend();
             } else {
             allEntries.forEach(entry => {
-                let loggedIn = false
+                // let loggedIn = false
                 // console.log(entry.name);
                 // console.log(entry.email);
                 // console.log(entry.id);
                 sessionStorage.setItem("User", entry.id)
                let sessionUser = sessionStorage.getItem("User")
                 console.log(sessionUser);
-                if(userLogin === entry.name && userEmail === entry.email){
-                    loggedIn = true;
-                }
-                if(loggedIn === true){
+                // if(userLogin === entry.name && userEmail === entry.email){
+                //     loggedIn = true;
+                // }
+                // if(loggedIn === true){
                     newsArticles.buildArticles();
-                } else if (loggedIn === false){
+                // } else if (loggedIn === false){
 
-                }
+
             })};
         })
     }
