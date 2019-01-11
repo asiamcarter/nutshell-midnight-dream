@@ -2,6 +2,44 @@ import data from "./data"
 import eventListeners from "./eventListeners"
 
 const chat = {
+
+    chatFoodEditForm () {
+        let editMessageField = document.createElement("input");
+        editMessageField.setAttribute("type", "text");
+        let saveButton = document.createElement("button");
+        saveButton.textContent = "Save";
+        let messageDivId = event.target.id;
+        let messageId = messageDivId.split("--")[1]
+        data.getChatData2(messageId)
+        .then(response => {
+            console.log("RESPONSE:", response)
+
+        saveButton.addEventListener("click", () => {
+            let date = new Date();
+            let editedMessage = {
+                message: editMessageField.value,
+                time: date,
+                userId: "2"
+            }
+
+            data.putChatEdit(response.id, editedMessage)
+            .then(response => {
+                chat.userMessageToDOM()
+            })
+        })
+
+
+
+        })
+
+        let messageDiv = document.querySelector(".chatroomDiv");
+
+        while (messageDiv.firstChild) {
+            messageDiv.removeChild(messageDiv.firstChild);
+        }
+        messageDiv.appendChild(editMessageField);
+        messageDiv.appendChild(saveButton);
+    },
     //method takes an object as an argument and creates an HTML template
     userMessageHTML(message) {
 
@@ -19,12 +57,23 @@ const chat = {
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
+        userMessageContent.classList.add(`chatroomDiv--${message.id}`);
         userMessageContent.textContent =`${message.message} ${message.time} `
+
+        let messageEditButton = document.createElement("button");
+        messageEditButton.textContent="edit";
+        messageEditButton.setAttribute("id", `messageEditButton--${message.id}`)
+
 
 
         userMessageDiv.appendChild(userNameSection);
         userMessageDiv.appendChild(userPhotoSection);
         userMessageDiv.appendChild(userMessageContent);
+        userMessageContent.appendChild(messageEditButton);
+
+
+        messageEditButton.addEventListener("click", chat.chatFoodEditForm)
+
 
         return userMessageDiv;
     },
@@ -74,8 +123,8 @@ const chat = {
         let submitButton = document.querySelector("#messageSubmit");
         submitButton.addEventListener("click", eventListeners.chatMessage)
         let messageInput = document.querySelector(".messageInput");
-        messageInput.addEventListener("keyup", eventListeners.chatClickOnEnter)
-    },
+        messageInput.addEventListener("keyup", eventListeners.chatClickOnEnter);
+    }
 }
 
 export default chat;

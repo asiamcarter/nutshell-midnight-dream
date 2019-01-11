@@ -46,12 +46,21 @@ const data = {
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
         .then(response => response.json())
-    }
-    // putChatEdit(id, description) {
-    //     PATCH (`/http://localhost:8088/messages/${id}`)
-    //     "Content-Type: application/example"
-    //     [JSON.stringify(description)]
-    // }
+    },
+    putChatEdit(id, description) {
+       return fetch(`http://localhost:8088/messages/${id}`, {
+           method: "PUT",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify(description)
+       })
+    },
+
+    getChatData2(id) {
+        return fetch(`http://localhost:8088/messages/${id}`)
+        .then(response => response.json())
+    },
 };
 
 export default data

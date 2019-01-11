@@ -110,6 +110,18 @@
       "message": "New message here?",
       "time": "messageTime",
       "userId": 1
+    },
+    {
+      "message": "Nevermind",
+      "time": "2019-01-11T19:08:54.367Z",
+      "userId": "2",
+      "id": 2
+    },
+    {
+      "message": "UPDATE",
+      "time": "2019-01-11T19:06:49.922Z",
+      "userId": "2",
+      "id": 3
     }
   ],
   "connections": [
