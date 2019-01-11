@@ -52,11 +52,11 @@ const taskList = {
             taskListEntry.setAttribute ("id", "taskList_entry");
             taskListDiv.appendChild(taskListEntry);
 
-            let taskItem = document.createElement("p");
+            let taskItem = document.createElement("h2");
             taskItem.textContent = toDo.task;
 
             let taskDate = document.createElement("p");
-            taskDate.textContent = toDo.dueDate;
+            taskDate.textContent = `Due Date: ${toDo.dueDate}`;
 
             //create checkbox for each tasklist item
             var taskCheckbox = document.createElement("input");
