@@ -1,5 +1,9 @@
-// import welcome from "./welcome"
-// import data from "./data"
+
+import welcome from "./welcome"
+import data from "./data"
+import newsArticles from "./news"
+import chat from "./chat"
+import newsForm from "./newsForm"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -49,6 +53,13 @@ const eventListeners = {
             let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";
         }
+    },
+    saveNewsArticle() {
+        console.log("Clicky click");
+        // Display error if fields not filled in
+        newsForm.postArticle();
+        // data.postNewsData();
+        // Rerun GET to update event list on DOM
     }
 }
 
