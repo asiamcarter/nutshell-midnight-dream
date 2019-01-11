@@ -5,6 +5,7 @@
       "name": "userName",
       "email": "userEmail@gmail.com",
       "password": "userPassword"
+<<<<<<< HEAD
     },
     {
 <<<<<<< HEAD
@@ -22,6 +23,8 @@
       "email": "turtlesrule@gmail.com",
       "id": 2
 >>>>>>> ebbc9d2c62a6aba3b4321f27811991cbc9b1f5d4
+=======
+>>>>>>> 618e189baea819fde117e008f4a82884db1a5d53
     }
   ],
   "events": [
