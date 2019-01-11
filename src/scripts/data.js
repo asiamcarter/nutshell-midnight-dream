@@ -60,17 +60,12 @@ const data = {
             body: JSON.stringify(taskObject)
                 });
             },
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
         .then(response => response.json())
     },
-<<<<<<< HEAD
+
     putChatEdit(id, description) {
        return fetch(`http://localhost:8088/messages/${id}`, {
            method: "PUT",
@@ -85,9 +80,7 @@ const data = {
         return fetch(`http://localhost:8088/messages/${id}`)
         .then(response => response.json())
     },
-=======
->>>>>>> master
-=======
+
 
     postEventData(newEvent) {
         return fetch("http://localhost:8088/events", {
@@ -101,7 +94,7 @@ const data = {
     editEvents(eventId, name, date, location) {
         return fetch(`http://localhost8088/events?=${eventId}`)
     }
->>>>>>> master
+
 };
 
 export default data
