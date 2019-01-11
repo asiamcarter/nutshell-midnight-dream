@@ -19,7 +19,7 @@ const eventsList = {
 
                 // add HTML for each event in the database and add to document fragment
                 allEvents.forEach(event => {
-                    let eventIteration = events.eventBuilder(event.name, event.date, event.location, event.user.name);
+                    let eventIteration = events.eventBuilder(event.id, event.name, event.date, event.location, event.user.name);
                     docFrag.appendChild(eventIteration);
                 })
 
