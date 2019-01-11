@@ -18,7 +18,7 @@ const data = {
                 .then(response => response.json())
       },
     newsData() {
-        return fetch("http://localhost:8088/articles?userId=1") // pass through userID and change to ${userID}
+        return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
         .then(response => response.json())
     },
 
