@@ -1,26 +1,6 @@
 import data from "./data"
 
 const chat = {
-    //method creates chatroom div, message input field and message submit button
-    chatPageLoad() {
-
-        let outPutArticle = document.querySelector(".output");
-        outPutArticle.textContent= " ";
-        outPutArticle.innerHTML+="<h1>CHAT</h1>";
-        let chatroomDiv = document.createElement("div");
-        chatroomDiv.classList.add("chatroomDiv");
-        outPutArticle.appendChild(chatroomDiv);
-
-        let messageInputField = document.createElement("textarea");
-        messageInputField.classList.add("messageInput");
-        messageInputField.setAttribute("type", "text");
-        outPutArticle.appendChild(messageInputField);
-
-        let messageSubmitButton = document.createElement("button");
-        messageSubmitButton.innerHTML+= "Submit";
-        messageSubmitButton.setAttribute("id", "messageSubmit");
-        outPutArticle.appendChild(messageSubmitButton);
-    },
     //method takes an object as an argument and creates an HTML template
     userMessageHTML(message) {
 
@@ -30,6 +10,7 @@ const chat = {
         let userNameSection = document.createElement("section");
         userNameSection.classList.add("usernameSection");
         userNameSection.textContent = `${message.user.name}`
+        console.log(message.user)
 
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
@@ -69,7 +50,27 @@ const chat = {
                   chatroomDiv.scrollTop = chatroomDiv.scrollHeight - chatroomDiv.clientHeight
               }
         })
-    }
+    },
+    //method creates chatroom div, message input field and message submit button
+    chatPageLoad() {
+        chat.userMessageToDOM();
+        let outPutArticle = document.querySelector(".output");
+        outPutArticle.textContent= " ";
+        outPutArticle.innerHTML+="<h1>CHAT</h1>";
+        let chatroomDiv = document.createElement("div");
+        chatroomDiv.classList.add("chatroomDiv");
+        outPutArticle.appendChild(chatroomDiv);
+
+        let messageInputField = document.createElement("textarea");
+        messageInputField.classList.add("messageInput");
+        messageInputField.setAttribute("type", "text");
+        outPutArticle.appendChild(messageInputField);
+
+        let messageSubmitButton = document.createElement("button");
+        messageSubmitButton.innerHTML+= "Submit";
+        messageSubmitButton.setAttribute("id", "messageSubmit");
+        outPutArticle.appendChild(messageSubmitButton);
+    },
 }
 
 export default chat;
