@@ -206,14 +206,28 @@
       "dueDate": "taskDueDate",
       "completed": false,
       "userId": 1
+    },
+    {
+      "task": "jskbf",
+      "dueDate": "dsfsdf",
+      "completed": false,
+      "userId": "",
+      "id": 2
+    },
+    {
+      "task": "yay",
+      "dueDate": "yay",
+      "completed": false,
+      "userId": "",
+      "id": 3
     }
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "New message here?",
-      "time": "messageTime",
-      "userId": 1
+      "message": "yay",
+      "time": "2019-01-11T20:49:42.507Z",
+      "userId": "2",
+      "id": 1
     },
     {
       "message": "WAH",
@@ -222,10 +236,16 @@
       "id": 2
     },
     {
-      "message": "UPDATE",
-      "time": "2019-01-11T19:06:49.922Z",
+      "message": "yay it works!",
+      "time": "2019-01-11T19:35:36.166Z",
       "userId": "2",
       "id": 3
+    },
+    {
+      "message": "let's do this\n",
+      "time": "2019-01-11T19:35:40.418Z",
+      "userId": "2",
+      "id": 4
     }
   ],
   "connections": [

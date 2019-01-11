@@ -173,7 +173,6 @@ html, body {
     margin-left: 2%;
 }
 
-<<<<<<< HEAD
 .messageEditButton {
     border: 1px solid white;
     width: 10%;
@@ -183,7 +182,6 @@ html, body {
     margin-left: 60%;
 
 }
-=======
 /* *****************************EVENT CSS***************************** */
 
 .posted--container {
@@ -201,4 +199,3 @@ html, body {
     display: flex;
     flex-wrap: wrap;
 }
->>>>>>> master
