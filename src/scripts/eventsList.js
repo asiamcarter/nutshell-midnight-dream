@@ -9,19 +9,20 @@ const eventsList = {
         events.eventPageBuilder();
 
         // get events from database
-        data.getData(eventString).then(allEvents => {
-            // declare document fragment that will grab all events as they are built into HTML elements
-            let docFrag = document.createDocumentFragment();
+        data.getData(eventString)
+            .then(allEvents => {
+                // declare document fragment that will grab all events as they are built into HTML elements
+                let docFrag = document.createDocumentFragment();
 
-            // add HTML for each event in the database and add to document fragment
-            allEvents.forEach(event => {
-                let eventIteration = events.eventBuilder(event.name, event.date, event.location, event.user.name);
-                docFrag.appendChild(eventIteration);
-            })
+                // add HTML for each event in the database and add to document fragment
+                allEvents.forEach(event => {
+                    let eventIteration = events.eventBuilder(event.name, event.date, event.location, event.user.name);
+                    docFrag.appendChild(eventIteration);
+                })
 
-            // add document fragment to the container
-            let eventDiv = document.querySelector(".posted--container")
-            eventDiv.appendChild(docFrag)
+                // add document fragment to the container
+                let eventDiv = document.querySelector(".posted--container");
+                eventDiv.appendChild(docFrag);
         })
     }
 }

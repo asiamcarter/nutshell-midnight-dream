@@ -4,6 +4,7 @@ import welcome from "./welcome"
 import eventListeners from "./eventListeners"
 import newsArticles from "./news"
 import eventsList from "./eventsList"
+import eventsForm from "./eventsForm";
 
 // Example with "expand" to get other data
 fetch("http://localhost:8088/tasks?_expand=user")
@@ -25,3 +26,4 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 // chat.userMessageHTML();
 
 eventsList.listEvents()
+eventsForm.createEventForm()

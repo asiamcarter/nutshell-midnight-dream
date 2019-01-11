@@ -127,3 +127,8 @@ html, body {
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
+
+.add--event--form {
+    display: flex;
+    flex-wrap: wrap;
+}

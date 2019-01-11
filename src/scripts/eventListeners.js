@@ -9,6 +9,10 @@ const eventListeners = {
 
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
+    },
+
+    newEventButtonClick(){
+        document.querySelector(".event--add").addEventListener("click", console.log("New Event Form will appear!"))
     }
 
 }
