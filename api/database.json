@@ -5,10 +5,8 @@
       "name": "userName",
       "email": "userEmail@gmail.com",
       "password": "userPassword"
-<<<<<<< HEAD
     },
     {
-<<<<<<< HEAD
       "id": 2,
       "name": "userName2",
       "email": "userEmail2@gmail.com",
@@ -18,13 +16,6 @@
       "name": "meg",
       "email": "meg@meg.com",
       "id": 3
-=======
-      "name": "turtlepower",
-      "email": "turtlesrule@gmail.com",
-      "id": 2
->>>>>>> ebbc9d2c62a6aba3b4321f27811991cbc9b1f5d4
-=======
->>>>>>> 618e189baea819fde117e008f4a82884db1a5d53
     }
   ],
   "events": [
@@ -133,6 +124,30 @@
       "timestamp": "12:36",
       "userId": 1,
       "id": 14
+    },
+    {
+      "title": "1",
+      "synopsis": "2",
+      "url": "3",
+      "timestamp": "12:43",
+      "userId": 1,
+      "id": 15
+    },
+    {
+      "title": "1",
+      "synopsis": "2",
+      "url": "4456",
+      "timestamp": "12:50",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "title": "meg1",
+      "synopsis": "1234562",
+      "url": "34",
+      "timestamp": "12:50",
+      "userId": 1,
+      "id": 17
     }
   ],
   "tasks": [
@@ -142,69 +157,6 @@
       "dueDate": "taskDueDate",
       "completed": false,
       "userId": 1
-    },
-    {
-      "task": "eat cake",
-      "dueDate": "never",
-      "completed": false,
-      "userId": "",
-      "id": 2
-    },
-    {
-      "task": "eat cake",
-      "dueDate": "never",
-      "completed": false,
-      "userId": "",
-      "id": 3
-    },
-    {
-      "task": "1",
-      "dueDate": "never",
-      "completed": false,
-      "userId": "",
-      "id": 4
-    },
-    {
-      "task": "aa",
-      "dueDate": "aaaaa",
-      "completed": false,
-      "userId": "",
-      "id": 5
-    },
-    {
-      "task": "b",
-      "dueDate": "1",
-      "completed": false,
-      "userId": "",
-      "id": 6
-    },
-    {
-      "task": "eat",
-      "dueDate": "1/11",
-      "completed": false,
-      "userId": "",
-      "id": 7
-    },
-    {
-      "task": "a",
-      "dueDate": "aaa",
-      "completed": false,
-      "userId": "",
-      "id": 8
-    },
-    {
-      "task": "a",
-      "dueDate": "aa",
-      "completed": false,
-      "userId": "",
-      "id": 9
-    },
-    {
-      "task": "",
-      "dueDate": "",
-      "completed": false,
-      "userId": "",
-      "id": 10
     }
   ],
   "messages": [
