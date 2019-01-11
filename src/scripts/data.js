@@ -38,12 +38,12 @@ const data = {
     },
 
     taskListData() {
-        return fetch("http://localhost:8088/tasks?userId=1")
+        return fetch("http://localhost:8088/tasks")
         .then(response => response.json())
     },
     postNewTask(taskObject){
     //POST Fetch for the task edit form which will move the new task object information on save to the JSON
-        return fetch("http://localhost:8088/users", {
+        return fetch("http://localhost:8088/tasks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

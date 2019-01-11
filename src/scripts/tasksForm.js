@@ -41,20 +41,22 @@ const tasksForm = {
         taskSaveButton.setAttribute = ("class", "task_button");
         taskSaveButton.setAttribute = ("id", "task_save_button");
         taskEditFormContainer.appendChild(taskSaveButton);
+
         //save button event listener
         taskSaveButton.addEventListener("click", () => {
-            //object which will add the new task and due date for a user, but will also add their background information of user id and completed bolean
+            //object which be saved in JSON
             let taskObject = {
                 "task": taskFormInputName.value,
                 "dueDate": taskFormInputDate.value,
-                //how do I add these two silently without puthing them on the field?
+                //how do I add the session data in the userID?
                 "completed": false,
-                "userId":"",
+                "userId":""
             };
             data.postNewTask(taskObject)
-            // .then(response => {
-            //     taskList.createTaskList()
-            // });
+            .then(response => {
+                //TO DO: do I need to go a GET here to use the object to populate the Tasks List? Or would it go in tasks.js?
+                taskList.createTaskList()
+            });
         });
     }
 }

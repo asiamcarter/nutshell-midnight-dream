@@ -1,10 +1,5 @@
-import welcome from "./welcome"
-<<<<<<< HEAD
+// import welcome from "./welcome"
 // import data from "./data"
-=======
-import data from "./data"
-import chat from "./chat"
->>>>>>> master
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)

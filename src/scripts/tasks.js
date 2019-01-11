@@ -42,7 +42,7 @@ const taskList = {
         const taskFragment = document.createDocumentFragment();
         data.taskListData()
         .then(allTasks => {
-            // console.log(allTasks); worked!
+            console.log(allTasks);
             allTasks.forEach(toDo => {
             //create html elements for each task list object and append to the task container on the DOM
             let taskListEntry = document.createElement("div");
