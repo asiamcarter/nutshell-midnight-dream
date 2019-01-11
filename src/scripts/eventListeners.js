@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import welcome from "./welcome"
 import data from "./data"
 import newsArticles from "./news"
 import chat from "./chat"
 import newsForm from "./newsForm"
+=======
+// import welcome from "./welcome"
+// import data from "./data"
+>>>>>>> ebbc9d2c62a6aba3b4321f27811991cbc9b1f5d4
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
