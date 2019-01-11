@@ -29,8 +29,8 @@ const newsForm = {
         titleLabel.setAttribute("for", "article_name");
 
         let titleInput = document.createElement("input");
-        title.setAttribute("id", "article_name");
-        title.setAttribute("name", "article_name");
+        titleInput.setAttribute("id", "article_name");
+        titleInput.setAttribute("name", "article_name");
 
         title.appendChild(titleLabel);
         title.appendChild(titleInput);
