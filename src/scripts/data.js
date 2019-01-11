@@ -40,6 +40,12 @@ const data = {
     taskListData() {
         return fetch("http://localhost:8088/tasks?userId=1")
         .then(response => response.json())
+    },
+
+    // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
+    getUserDataForLogin(username, email){
+        return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
+        .then(response => response.json())
     }
 };
 
