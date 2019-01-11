@@ -86,6 +86,21 @@ const newsForm = {
 
     },
 
+    checkFields() {
+
+        // Get user input
+        let inputArticleName = document.querySelector("#article_name").value;
+        let inputSynopsis = document.querySelector("#article_synopsis").value;
+        let inputURL = document.querySelector("#article_url").value;
+
+        if (inputArticleName.length === 0 || inputSynopsis.length === 0 || inputURL.length === 0) {
+            alert("Please fill out all fields.");
+        }
+        else {
+            newsForm.postArticle();
+        }
+    },
+
     postArticle() {
 
         // Get user input
