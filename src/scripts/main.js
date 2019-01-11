@@ -7,13 +7,25 @@ import newsArticles from "./news"
 import eventsList from "./eventsList"
 
 
+//Welcome Page:
+welcome.welcomeBuilderAndAppender();
+// Registration hyperlink ("here") button:
+let hereHyperlinkClick = document.querySelector(".hereHyperLink")
+hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
+
+let loginButton = document.querySelector("#loginButton");
+loginButton.addEventListener("click", eventListeners.checkUserInputForm, eventListeners.userLogin)
+
+
+
+//
 // Example with "expand" to get other data
 // fetch("http://localhost:8088/tasks?_expand=user")
 // .then(response => response.json())
 // .then(userObjects => { console.log(userObjects) })
 
 //NH test call for task function to build DOM elements
-taskList.createTaskList()
+// taskList.createTaskList()
 
 // // Example with "expand" to get other data
 // fetch("http://localhost:8088/tasks?_expand=user")
@@ -28,10 +40,10 @@ taskList.createTaskList()
 // //
 
 // News
-newsArticles.buildArticles();
+// newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-chat.chatPageLoad();
+// chat.chatPageLoad();
 let submitButton = document.querySelector("#messageSubmit");
 submitButton.addEventListener("click", eventListeners.chatMessage)
 let messageInput = document.querySelector(".messageInput");
