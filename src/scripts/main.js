@@ -1,29 +1,15 @@
-import taskList from "./tasks"
-import tasksForm from "./tasksForm"
-// import chat from "./chat"
-// import welcome from "./welcome"
-// import eventListeners from "./eventListeners"
-// import newsArticles from "./news"
-// import eventsList from "./eventsList"
-
-//NH test call for task function to build DOM elements
-taskList.createTaskList()
-tasksForm.createTasksEditForm()
+import nav from "./nav"
+import welcome from "./welcome"
+import eventListeners from "./eventListeners"
 
 nav.buildNav();
 
 //Welcome Page:
 welcome.welcomeBuilderAndAppender();
 
-// News
-// newsArticles.buildArticles();
+// Registration hyperlink ("here") button:
+let hereHyperlinkClick = document.querySelector(".hereHyperLink")
+hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
 
-//Chat Page on click..eventually//
-// chat.chatPageLoad();
-// let submitButton = document.querySelector("#messageSubmit");
-// submitButton.addEventListener("click", eventListeners.chatMessage)
-// let messageInput = document.querySelector(".messageInput");
-// messageInput.addEventListener("keyup", eventListeners.chatClickOnEnter)
-// chat.chatPageLoad();
-// chat.userMessageHTML();
-
+let loginButton = document.querySelector("#loginButton");
+loginButton.addEventListener("click", eventListeners.checkUserInputForm, eventListeners.userLogin)

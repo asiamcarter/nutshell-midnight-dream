@@ -1,4 +1,5 @@
 import data from "./data";
+import tasksForm from "./tasksForm";
 
 //This JS file will contain a function which
 //create an article which can be appended to to the output container in the index.HTML
@@ -35,7 +36,8 @@ const taskList = {
 
         //TO DO Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
         newTaskButton.addEventListener("click", () => {
-            console.log("click")
+            // console.log("click") works!
+            tasksForm.createTasksEditForm()
         });
 
         //doc fragment for each task which returns from the JSON
