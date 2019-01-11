@@ -1,4 +1,5 @@
 import data from "./data"
+import eventListeners from "./eventListeners"
 
 const chat = {
     //method takes an object as an argument and creates an HTML template
@@ -70,6 +71,10 @@ const chat = {
         messageSubmitButton.innerHTML+= "Submit";
         messageSubmitButton.setAttribute("id", "messageSubmit");
         outPutArticle.appendChild(messageSubmitButton);
+        let submitButton = document.querySelector("#messageSubmit");
+        submitButton.addEventListener("click", eventListeners.chatMessage)
+        let messageInput = document.querySelector(".messageInput");
+        messageInput.addEventListener("keyup", eventListeners.chatClickOnEnter)
     },
 }
 
