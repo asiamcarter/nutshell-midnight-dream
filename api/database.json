@@ -10,11 +10,6 @@
       "name": "turtlepower",
       "email": "turtlesrule@gmail.com",
       "id": 2
-    },
-    {
-      "name": "rrr",
-      "email": "rrr",
-      "id": 3
     }
   ],
   "events": [
@@ -24,16 +19,39 @@
       "date": "eventDate",
       "location": "eventLocation",
       "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "eventName",
+      "date": "eventDate",
+      "location": "eventLocation",
+      "userId": 2
     }
   ],
   "articles": [
     {
       "id": 1,
-      "title": "articleTitle",
-      "url": "articleUrl",
-      "synopsis": "articleSynopsis",
-      "time-stamp": "articleTime",
+      "title": "Suspendisse fermentum metus et quam imperdiet pulvinar",
+      "url": "http://google.com",
+      "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus efficitur purus eget est rutrum tincidunt. Vestibulum a velit accumsan quam scelerisque efficitur. Proin tincidunt magna id orci ultricies vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis laoreet lacus nibh, id tincidunt enim euismod in. Sed egestas sapien orci, in vestibulum ipsum tempor id. Aenean eleifend mi dui, in consequat lacus laoreet quis.",
+      "time-stamp": "",
       "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Cras lobortis tincidunt ipsum",
+      "url": "http://google.com",
+      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
+      "time-stamp": "",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "User 2 Test",
+      "url": "http://google.com",
+      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
+      "time-stamp": "",
+      "userId": 2
     }
   ],
   "tasks": [
