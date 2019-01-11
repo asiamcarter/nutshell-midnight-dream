@@ -67,7 +67,7 @@
   "messages": [
     {
       "id": 1,
-      "message": "messageContent",
+      "message": "New message here?",
       "time": "messageTime",
       "userId": 1
     }

@@ -41,6 +41,11 @@ const data = {
         return fetch("http://localhost:8088/tasks?userId=1")
         .then(response => response.json())
     }
+    // putChatEdit(id, description) {
+    //     PATCH (`/http://localhost:8088/messages/${id}`)
+    //     "Content-Type: application/example"
+    //     [JSON.stringify(description)]
+    // }
 };
 
 export default data
