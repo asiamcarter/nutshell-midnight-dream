@@ -26,6 +26,17 @@ const data = {
         return fetch("http://localhost:8088/tasks?userId=1")
         .then(response => response.json())
     },
+    postNewTask(taskObject){
+    //POST Fetch for the task edit form which will move the new task object information on save to the JSON
+        return fetch("http://localhost:8088/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(taskObject)
+                });
+            },
+
 };
 
 export default data

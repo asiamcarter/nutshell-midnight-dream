@@ -33,7 +33,7 @@ const taskList = {
         newTaskButton.setAttribute = ("id", "new_task_button");
         taskListContainer.appendChild(newTaskButton);
 
-        //Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
+        //TO DO Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
         newTaskButton.addEventListener("click", () => {
             console.log("click")
         });

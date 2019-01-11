@@ -1,3 +1,5 @@
+import data from "./data"
+import taskList from "./tasks";
 // when "new task" button is clicked, a form pops up which will allow a person to create a new task to track on their page.
 
 //form is not displaying
@@ -15,7 +17,7 @@ const tasksForm = {
 
         //New Task Header
         let newTaskHeader = document.createElement("h1");
-        newTaskHeader.innerHTML = "Turtle Things";
+        newTaskHeader.innerHTML = "Turtle Things To Tackle";
         newTaskHeader.setAttribute ("id", "taskList_header");
         taskEditFormContainer.appendChild(newTaskHeader);
 
@@ -41,16 +43,19 @@ const tasksForm = {
         taskEditFormContainer.appendChild(taskSaveButton);
         //save button event listener
         taskSaveButton.addEventListener("click", () => {
-            console.log("click")
+            //object which will add the new task and due date for a user, but will also add their background information of user id and completed bolean
+            let taskObject = {
+                "task": taskFormInputName.value,
+                "dueDate": taskFormInputDate.value,
+                //how do I add these two silently without puthing them on the field?
+                "completed": false,
+                "userId":"",
+            };
+            data.postNewTask(taskObject)
+            // .then(response => {
+            //     taskList.createTaskList()
+            // });
         });
-
-        //build object upson save, and PUT to the JSON.
-
-        let taskObject = {
-            "task": taskFormInputName.value,
-            "dueDate": taskFormInputDate.value
-        };
-        console.log ("input task object", taskObject);
     }
 }
 
