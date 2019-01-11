@@ -93,44 +93,12 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "title": "Cras lobortis tincidunt ipsum",
-      "url": "http://google.com",
-      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
-      "userId": 1
-    },
-    {
       "id": 3,
       "title": "User 2 Test",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
       "timestamp": "",
       "userId": 2
-    },
-    {
-      "title": "",
-      "synopsis": "",
-      "url": "",
-      "timestamp": "13:27",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "title": "meg",
-      "synopsis": "meg",
-      "url": "meg.com",
-      "timestamp": "13:35",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "title": "meg2",
-      "synopsis": "meg2",
-      "url": "meg.com",
-      "timestamp": "13:35",
-      "userId": 1,
-      "id": 6
     }
   ],
   "tasks": [
