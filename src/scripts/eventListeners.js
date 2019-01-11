@@ -92,7 +92,6 @@ const eventListeners = {
     saveNewsArticle() {
         newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
     }
-
 }
 
 
