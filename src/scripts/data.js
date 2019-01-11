@@ -56,6 +56,9 @@ const data = {
             },
             body: JSON.stringify(newEvent)
         })
+    },
+    editEvents(eventId, name, date, location) {
+        return fetch(`http://localhost8088/events?=${eventId}`)
     }
 };
 

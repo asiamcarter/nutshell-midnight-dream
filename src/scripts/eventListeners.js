@@ -3,6 +3,7 @@ import data from "./data"
 import newsArticles from "./news"
 import chat from "./chat"
 import eventsForm from "./eventsForm";
+import eventsList from "./eventsList"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -75,14 +76,18 @@ const eventListeners = {
                 userId: user
             }
             console.log(newEventInfo);
+
+            data.postEventData(newEventInfo)
+            .then(response => {
+                eventsList.listEvents()
+            })
+
             document.querySelector(".add--event--form").textContent = "";
         })
     },
     editEventButtonClick(){
-        document.querySelector(".event--edit--button").addEventListener("click", function(){
             console.log("someday this button will edit things")
-        })
-    }
+        }
 }
 
 

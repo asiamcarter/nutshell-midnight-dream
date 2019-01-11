@@ -28,7 +28,10 @@ const eventsList = {
                 eventDiv.appendChild(docFrag);
 
                 // event listener that adds edit functionality
-                eventListeners.editEventButtonClick();
+                let editButton = document.querySelectorAll(".event--edit--button")
+                for(let i = 0; i < editButton.length; i++){
+                    editButton[i].addEventListener("click", eventListeners.editEventButtonClick);
+                }
         })
     }
 }
