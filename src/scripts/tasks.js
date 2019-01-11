@@ -34,7 +34,7 @@ const taskList = {
         newTaskButton.setAttribute = ("id", "new_task_button");
         taskListContainer.appendChild(newTaskButton);
 
-        //TO DO Event listener for the "new task" button and will eventually create a form which will POST to the JSON and populate the users task list
+        //button event listener to open new task form
         newTaskButton.addEventListener("click", () => {
             // console.log("click")
             tasksForm.createTasksEditForm()
@@ -42,6 +42,7 @@ const taskList = {
 
         //doc fragment for each task which returns from the JSON
         const taskFragment = document.createDocumentFragment();
+
         data.taskListData()
         .then(allTasks => {
             console.log(allTasks);
@@ -57,13 +58,30 @@ const taskList = {
             let taskDate = document.createElement("p");
             taskDate.textContent = toDo.dueDate;
 
+            //create checkbox for each tasklist item
+            var taskCheckbox = document.createElement("input");
+            taskCheckbox.setAttribute ("type","checkbox");
+            taskCheckbox.setAttribute ("id", "tasklist_checkbox");
+
+            //checkbox event listener to remove the task from the page when completed (GET/PATCH)
+
+            //create edit button for each entry
+            let editTaskButton = document.createElement("button");
+            editTaskButton.textContent = "Edit Task";
+            editTaskButton.setAttribute ("class", "task_button");
+            editTaskButton.setAttribute ("id", "edit_task_button");
+
+            //edit button event listener to edit the existing entry (GET/EDIT)
+
+            //append forEach elements
             taskListEntry.appendChild(taskItem);
             taskListEntry.appendChild(taskDate);
+            taskListEntry.appendChild(taskCheckbox);
+            taskListEntry.appendChild(editTaskButton);
 
             taskFragment.appendChild(taskListEntry);
 
             taskListDiv.appendChild(taskFragment);
-
             });
         });
     }
