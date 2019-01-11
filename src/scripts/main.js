@@ -13,4 +13,3 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 
 let loginButton = document.querySelector("#loginButton");
 loginButton.addEventListener("click", eventListeners.checkUserInputForm, eventListeners.userLogin)
-
