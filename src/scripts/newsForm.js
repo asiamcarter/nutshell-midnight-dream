@@ -1,4 +1,6 @@
 import eventListeners from "./eventListeners"
+import data from "./data"
+import newsArticles from "./news"
 
 const newsForm = {
 
@@ -81,6 +83,36 @@ const newsForm = {
 
         // Add form to output container
         outputContainer.appendChild(formContainer);
+
+    },
+
+    postArticle() {
+
+        // Get user input
+        let inputArticleName = document.querySelector("#article_name").value;
+        let inputSynopsis = document.querySelector("#article_synopsis").value;
+        let inputURL = document.querySelector("#article_url").value;
+
+        let d = new Date();
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+        let timestamp = `${hours}:${minutes}`;
+
+        let userID = 1;        //  CHANGE TO VARIABLE
+
+        // Create new object with correct DB structure to represent a single news article:
+        let articleToSave = {
+          title: inputArticleName,
+          synopsis: inputSynopsis,
+          url: inputURL,
+          timestamp: timestamp,
+          userId: userID
+        }
+
+        data.postNewsData(articleToSave)
+        .then(response => {
+            newsArticles.buildArticles()
+        })
 
     }
 
