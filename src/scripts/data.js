@@ -21,6 +21,15 @@ const data = {
         return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
         .then(response => response.json())
     },
+    postNewsData(articleToSave) {
+        return fetch("http://localhost:8088/articles",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(articleToSave)
+        });
+    },
 
     getChatData() {
         return fetch("http://localhost:8088/messages?_expand=user")
@@ -38,10 +47,21 @@ const data = {
     },
 
     taskListData() {
-        return fetch("http://localhost:8088/tasks?userId=1")
+        return fetch("http://localhost:8088/tasks")
         .then(response => response.json())
     },
+    postNewTask(taskObject){
+    //POST Fetch for the task edit form which will move the new task object information on save to the JSON
+        return fetch("http://localhost:8088/tasks", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(taskObject)
+                });
+            },
 
+<<<<<<< HEAD
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
@@ -61,6 +81,8 @@ const data = {
         return fetch(`http://localhost:8088/messages/${id}`)
         .then(response => response.json())
     },
+=======
+>>>>>>> master
 };
 
 export default data
