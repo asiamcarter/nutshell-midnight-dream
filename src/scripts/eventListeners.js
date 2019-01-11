@@ -4,6 +4,7 @@ import newsArticles from "./news"
 import chat from "./chat"
 import eventsForm from "./eventsForm";
 import eventsList from "./eventsList"
+import newsForm from "./newsForm"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -85,11 +86,10 @@ const eventListeners = {
             document.querySelector(".add--event--form").textContent = "";
         })
     },
-    editEventButtonClick(){
-        let editId = event.target.id;
-        console.log(editId)
-        data.editEvents(2, editId)
-        }
+    saveNewsArticle() {
+        newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
+    }
+
 }
 
 

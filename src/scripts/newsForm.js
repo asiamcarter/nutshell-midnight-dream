@@ -1,10 +1,13 @@
+// Creates and displays News Form and saves new articles entered via form.
+// Author: Megan Cruzen
+
 import eventListeners from "./eventListeners"
+import data from "./data"
+import newsArticles from "./news"
 
 const newsForm = {
 
     displayForm() {
-
-        console.log("Button clicked!");
 
         // Clear output container on DOM
         let outputContainer = document.querySelector(".output");
@@ -21,47 +24,36 @@ const newsForm = {
 
         // Create "Title" field
         let title = document.createElement("fieldset");
-
         let titleLabel = document.createElement("label");
         titleLabel.textContent = "Title";
         titleLabel.setAttribute("for", "article_name");
-
         let titleInput = document.createElement("input");
-        title.setAttribute("id", "article_name");
-        title.setAttribute("name", "article_name");
-
+        titleInput.setAttribute("id", "article_name");
+        titleInput.setAttribute("name", "article_name");
         title.appendChild(titleLabel);
         title.appendChild(titleInput);
 
         // Create "Synopsis" textarea
-
         let synopsis = document.createElement("fieldset");
-
         let synopsisLabel = document.createElement("label");
         synopsisLabel.textContent = "Synopsis";
         synopsisLabel.setAttribute("for", "article_name");
-
         let synopsisBox = document.createElement("textarea");
         synopsisBox.setAttribute("id", "article_synopsis");
         synopsisBox.setAttribute("name", "article_synopsis");
         synopsisBox.setAttribute("rows", "4");
         synopsisBox.setAttribute("cols", "50");
-
         synopsis.appendChild(synopsisLabel);
         synopsis.appendChild(synopsisBox);
 
         // Create "URL" field
-
         let url = document.createElement("fieldset");
-
         let urlLabel = document.createElement("label");
         urlLabel.textContent = "URL";
         urlLabel.setAttribute("for", "article_url");
-
         let urlInput = document.createElement("input");
         urlInput.setAttribute("id", "article_url");
         urlInput.setAttribute("name", "article_url");
-
         url.appendChild(urlLabel);
         url.appendChild(urlInput);
 
@@ -81,6 +73,58 @@ const newsForm = {
 
         // Add form to output container
         outputContainer.appendChild(formContainer);
+
+    },
+
+    checkFields() {
+
+        // Get user input
+        let inputArticleName = document.querySelector("#article_name").value;
+        let inputSynopsis = document.querySelector("#article_synopsis").value;
+        let inputURL = document.querySelector("#article_url").value;
+
+        // If forms are not filled out, display error message.
+        // Otherwise, continue on to POST entry to database.
+
+        if (inputArticleName.length === 0 || inputSynopsis.length === 0 || inputURL.length === 0) {
+            alert("Please fill out all fields.");
+        }
+        else {
+            newsForm.postArticle();
+        }
+    },
+
+    postArticle() {
+
+        // Get user input
+        let inputArticleName = document.querySelector("#article_name").value;
+        let inputSynopsis = document.querySelector("#article_synopsis").value;
+        let inputURL = document.querySelector("#article_url").value;
+
+        // Get current time
+        let d = new Date();
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+        let timestamp = `${hours}:${minutes}`;
+
+        // Get current userId
+        let userID = 1;        //  CHANGE TO VARIABLE
+
+        // Create new object with correct DB structure to represent a single news article:
+        let articleToSave = {
+          title: inputArticleName,
+          synopsis: inputSynopsis,
+          url: inputURL,
+          timestamp: timestamp,
+          userId: userID
+        }
+
+        // Save article to database
+        // Then rebuild the article list on DOM
+        data.postNewsData(articleToSave)
+        .then(response => {
+            newsArticles.buildArticles()
+        })
 
     }
 
