@@ -11,9 +11,10 @@ const eventListeners = {
         welcome.postAnEntryFromRegistration();
     },
 
+    // this function will cause the "add new event button" to appear
     newEventButtonClick(){
         document.querySelector(".event--add").addEventListener("click", console.log("New Event Form will appear!"))
-    }
+    },
 
 }
 
