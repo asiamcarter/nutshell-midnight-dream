@@ -1,5 +1,6 @@
 import welcome from "./welcome"
 import data from "./data"
+import newsArticles from "./news"
 import chat from "./chat"
 
 const eventListeners = {
@@ -10,6 +11,19 @@ const eventListeners = {
 
     newUserRegistrationPOST(){
         welcome.postAnEntryFromRegistration();
+        newsArticles.buildArticles()
+    },
+
+    userLogin(){
+        welcome.userChecker();
+    },
+
+    goBack(){
+        welcome.goBackToWelcome();
+    },
+
+    checkUserInputForm(){
+        welcome.userCheckInputBoxes();
     },
 //creates a message object and posts to the database.json. Clears textarea on submit click
     chatMessage() {

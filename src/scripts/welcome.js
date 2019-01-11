@@ -1,12 +1,14 @@
 import eventListeners from "./eventListeners"
 import data from "./data"
+import newsArticles from "./news"
 const welcome = {
     // Builds welcome page
     welcomeBuilderAndAppender(){
         // creating "the turtle tub" and appending it
         let container = document.querySelector(".output");
-        let welcomeContainer = document.createElement("article")
-        welcomeContainer.setAttribute("class", "welcome_container")
+        container.innerHTML = " ";
+        let welcomeContainer = document.createElement("article");
+        welcomeContainer.setAttribute("class", "welcome_container");
         let theTurtleTub = document.createElement("h1");
         theTurtleTub.innerHTML = "THE TURTLE TUB";
         container.appendChild(welcomeContainer)
@@ -121,10 +123,11 @@ const welcome = {
         registrationContainer.appendChild(submitNewUsernameAndEmail);
         //
         // Targeting the "submit" and giving it an event listener and function found in eventListeners.js (line 9)
-        let submitClick = document.querySelector("#submitNewUserButton")
-        submitClick.addEventListener("click", eventListeners.newUserRegistrationPOST)
+        let submitClick = document.querySelector("#submitNewUserButton");
+        submitClick.addEventListener("click", eventListeners.newUserRegistrationPOST);
     },
 
+    // Posts an entry to JSON if "register" if pressed
     postAnEntryFromRegistration(){
         // Gets values that USER inputs in registration page
         const registrationUsername = document.querySelector("#registrationUsername").value;
@@ -137,15 +140,89 @@ const welcome = {
         const entryToSave ={
             name: registrationUsername,
             email: registrationEmail
-        }
+        };
         // Loging those values in console in OBJECT FORM
         // console.log(entryToSave)
 
         data.postUsernameAndEmailToJSON(entryToSave)
         .then(word => {
-        console.log(word)})
+        console.log(word)});
+    },
+
+    incorrectUsernameOrEmailBuilderAndAppend(){
+        let container = document.querySelector(".output");
+        container.innerHTML = " ";
+        let incorrectContainer = document.createElement("article")
+        incorrectContainer.setAttribute("class", "incorrect_container")
+        let wereSorry = document.createElement("h1");
+        wereSorry.innerHTML = "Hmm we don't seem to recongnize your name or email";
+        container.appendChild(incorrectContainer)
+        incorrectContainer.appendChild(wereSorry);
+        let backButton = document.createElement("button")
+        backButton.setAttribute("id", "goBackButton");
+        backButton.innerHTML = "Go Back";
+        incorrectContainer.appendChild(backButton);
+        let goBackButton = document.querySelector("#goBackButton");
+        goBackButton.addEventListener("click", eventListeners.goBack)
+    },
+
+    youreIn(){
+        let container = document.querySelector(".output");
+        container.innerHTML = " ";
+        let welcomeHomeContainer = document.createElement("article")
+        welcomeHomeContainer.setAttribute("class", "welcome_home_container")
+        let welcome = document.createElement("h1");
+        welcome.innerHTML = "Welcome";
+        container.appendChild(welcomeHomeContainer)
+        welcomeHomeContainer.appendChild(welcome);
+    },
+
+    goBackToWelcome(){
+        let incorrectContainer = document.querySelector(".incorrect_container")
+        incorrectContainer.innerHTML = " "
+        welcome.welcomeBuilderAndAppender();
+        window.location.reload(true)
+    },
+
+    userCheckInputBoxes(){
+        const userLogin = document.querySelector("#username").value;
+        const userEmail = document.querySelector("#email").value;
+        if (userLogin.length === 0 || userEmail.length === 0){
+            alert("Whoops! Please fill out all your info.")
+            window.location.reload
+        } else {
+            welcome.userChecker();
+        }
+    },
+
+
+    userChecker(){
+        const userLogin = document.querySelector("#username").value;
+        const userEmail = document.querySelector("#email").value;
+        // if (userLogin.length === 0 || userEmail.length === 0){
+        //     alert("Whoops! Please fill out all your info.")
+        //     welcome.welcomeBuilderAndAppender();
+        // }
+        data.getUserDataForLogin(userLogin, userEmail)
+        .then (allEntries => {
+            console.log(allEntries)
+            if (allEntries.length < 1) {
+                welcome.incorrectUsernameOrEmailBuilderAndAppend();
+            } else {
+            allEntries.forEach(entry => {
+                let loggedIn = false
+                console.log(entry.name);
+                console.log(entry.email);
+                if(userLogin === entry.name && userEmail === entry.email){
+                    loggedIn = true;
+                }
+                if(loggedIn === true){
+                    newsArticles.buildArticles();
+                } else if (loggedIn === false){
+
+                }
+            })};
+        })
     }
-
 }
-
 export default welcome

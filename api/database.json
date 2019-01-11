@@ -7,10 +7,9 @@
       "password": "userPassword"
     },
     {
-      "id": 2,
-      "name": "userName2",
-      "email": "userEmail2@gmail.com",
-      "password": "userPassword2"
+      "name": "turtlepower",
+      "email": "turtlesrule@gmail.com",
+      "id": 2
     }
   ],
   "events": [
