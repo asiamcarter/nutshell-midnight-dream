@@ -30,7 +30,6 @@ const eventListeners = {
                 let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";
         })
-
     },
     chatClickOnEnter() {
         if (event.keyCode === 13) {

@@ -35,6 +35,11 @@ const data = {
             },
             body: JSON.stringify(savedMessage)
         });
+    },
+
+    taskListData() {
+        return fetch("http://localhost:8088/tasks?userId=1")
+        .then(response => response.json())
     }
 };
 

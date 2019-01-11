@@ -47,11 +47,6 @@ const chat = {
         return userMessageDiv;
     },
 
-    // testScroll() {
-
-
-    // },
-
     userMessageToDOM() {
         data.getChatData()
         .then (parsedMessages => {
@@ -61,6 +56,7 @@ const chat = {
             const isScrolledToBottom = chatroomDiv.scrollHeight - chatroomDiv.clientHeight <= chatroomDiv.scrollTop +1;
             parsedMessages.forEach (message => {
                 let messageHTML = chat.userMessageHTML(message);
+                console.log(messageHTML)
                 messageDocFrag.appendChild(messageHTML);
             })
               while (chatroomDiv.firstChild) {
