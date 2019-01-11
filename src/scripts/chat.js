@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import data from "./data"
 import eventListeners from "./eventListeners"
-=======
 // import welcome from "./welcome"
 // import data from "./data"
->>>>>>> master
 
 const chat = {
 
