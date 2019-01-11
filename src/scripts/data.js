@@ -17,19 +17,6 @@ const data = {
                 })
                 .then(response => response.json())
       },
-    newsData() {
-        return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
-        .then(response => response.json())
-    },
-    postNewsData(articleToSave) {
-        return fetch("http://localhost:8088/articles",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(articleToSave)
-        });
-    },
 
     getChatData() {
         return fetch("http://localhost:8088/messages?_expand=user")
@@ -47,6 +34,7 @@ const data = {
     },
 
     taskListData() {
+    //GET full task list
         return fetch("http://localhost:8088/tasks")
         .then(response => response.json())
     },
@@ -60,16 +48,16 @@ const data = {
             body: JSON.stringify(taskObject)
                 });
             },
-    putExistingTast(taskId, taskToEdit) {
+    putExistingTask(task, taskToEdit) {
         //TO DO: make put work for task edit. have not tested yet (friday 3:30pm)
-        return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        return fetch(`http://localhost:8088/tasks/${task}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(taskToEdit)
         })
-        }
+        },
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
@@ -87,6 +75,28 @@ const data = {
     },
     editEvents(eventId, name, date, location) {
         return fetch(`http://localhost8088/events?=${eventId}`)
+    },
+
+    newsData() {
+        return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
+        .then(response => response.json())
+    },
+    postNewsData(articleToSave) {
+        return fetch("http://localhost:8088/articles",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(articleToSave)
+        });
+    },
+    deleteNewsData(articleId) {
+        return fetch(`http://localhost:8088/articles/${articleId}`, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json"
+          }
+        })
     }
 };
 
