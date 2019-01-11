@@ -108,7 +108,8 @@ const newsForm = {
         let timestamp = `${hours}:${minutes}`;
 
         // Get current userId
-        let userID = 1;        //  CHANGE TO VARIABLE
+        let sessionUser = sessionStorage.getItem("User")
+        let userID = sessionUser;       //  CHANGE TO VARIABLE
 
         // Create new object with correct DB structure to represent a single news article:
         let articleToSave = {
