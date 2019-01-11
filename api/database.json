@@ -93,119 +93,28 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "title": "Cras lobortis tincidunt ipsum",
-      "url": "http://google.com",
-      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
-      "userId": 1
-    },
-    {
       "id": 3,
       "title": "User 2 Test",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
       "timestamp": "",
       "userId": 2
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "expiration": "test",
-      "type": "test",
-      "timestamp": "11:21",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "synopsis": "test",
-      "url": "test",
-      "timestamp": "11:22",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "synopsis": "test 3",
-      "url": "123",
-      "timestamp": "11:27",
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "synopsis": "4",
-      "url": "4",
-      "timestamp": "11:28",
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "synopsis": "5",
-      "url": "5",
-      "timestamp": "11:28",
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "synopsis": "erty",
-      "url": "erty",
-      "timestamp": "11:39",
-      "userId": 1,
-      "id": 12
-    },
-    {
-      "synopsis": "tt",
-      "url": "tt",
-      "timestamp": "12:33",
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "title": "meg",
-      "synopsis": "neg",
-      "url": "deg",
-      "timestamp": "12:36",
-      "userId": 1,
-      "id": 14
-    },
-    {
-      "title": "1",
-      "synopsis": "2",
-      "url": "3",
-      "timestamp": "12:43",
-      "userId": 1,
-      "id": 15
-    },
-    {
-      "title": "1",
-      "synopsis": "2",
-      "url": "4456",
-      "timestamp": "12:50",
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "title": "meg1",
-      "synopsis": "1234562",
-      "url": "34",
-      "timestamp": "12:50",
-      "userId": 1,
-      "id": 17
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "task": "taskTitle",
-      "dueDate": "taskDueDate",
+      "task": "aa",
+      "dueDate": "1811-12-11",
       "completed": false,
-      "userId": 1
+      "userId": "",
+      "id": 11
+    },
+    {
+      "task": "aa",
+      "dueDate": "1111-01-11",
+      "completed": false,
+      "userId": "",
+      "id": 12
     }
   ],
   "messages": [

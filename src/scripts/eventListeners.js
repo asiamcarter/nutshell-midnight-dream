@@ -90,11 +90,7 @@ const eventListeners = {
             console.log("someday this button will edit things")
         },
     saveNewsArticle() {
-        console.log("Clicky click");
-        // Display error if fields not filled in
-        newsForm.postArticle();
-        // data.postNewsData();
-        // Rerun GET to update event list on DOM
+        newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
     }
 }
 
