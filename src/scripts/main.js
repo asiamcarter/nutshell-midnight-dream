@@ -44,7 +44,7 @@ import eventsList from "./eventsList"
 // newsArticles.buildArticles();
 
 //Chat Page on click..eventually//
-// chat.chatPageLoad();
+chat.chatPageLoad();
 let submitButton = document.querySelector("#messageSubmit");
 submitButton.addEventListener("click", eventListeners.chatMessage)
 let messageInput = document.querySelector(".messageInput");
