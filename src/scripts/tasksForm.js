@@ -29,11 +29,13 @@ const tasksForm = {
         let taskFormInputName = document.createElement("input");
         taskEditFormContainer.appendChild(taskFormInputName);
 
+
         let taskFormDateLabel = document.createElement("lebel");
         taskFormDateLabel.textContent = "I will be done by:";
         taskEditFormContainer.appendChild(taskFormDateLabel);
 
         let taskFormInputDate = document.createElement("input");
+        taskFormInputDate.setAttribute("type", "date");
         taskEditFormContainer.appendChild(taskFormInputDate);
         //create save button
         let taskSaveButton = document.createElement("button");
