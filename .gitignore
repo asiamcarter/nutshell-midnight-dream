@@ -10,3 +10,4 @@ obj
 .vscode
 dist
 database.json
+bundle.js
