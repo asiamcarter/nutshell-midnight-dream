@@ -46,6 +46,16 @@ const data = {
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
         .then(response => response.json())
+    },
+
+    postEventData(newEvent) {
+        return fetch("http://localhost:8088/events", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newEvent)
+        })
     }
 };
 

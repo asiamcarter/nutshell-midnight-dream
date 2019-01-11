@@ -11,7 +11,10 @@ const eventsForm = {
 
         // add class to form container
         newEventDiv.classList.add("add--event--form");
-        saveEventFormButton.classList.add("event--save--button")
+        saveEventFormButton.classList.add("event--save--button");
+        newEventName.classList.add("new--event--name");
+        newEventDate.classList.add("new--event--date");
+        newEventLocation.classList.add("new--event--location");
 
         // add text to button
         saveEventFormButton.textContent = "Save Event"

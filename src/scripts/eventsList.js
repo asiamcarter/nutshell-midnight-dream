@@ -1,3 +1,4 @@
+import eventListeners from "./eventListeners"
 import events from "./events"
 import data from "./data"
 
@@ -7,6 +8,8 @@ const eventsList = {
 
         // create container for events heading and all events
         events.eventPageBuilder();
+        eventListeners.newEventButtonClick();
+
 
         // get events from database
         data.getData(eventString)
@@ -23,6 +26,9 @@ const eventsList = {
                 // add document fragment to the container
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
+
+                // event listener that adds edit functionality
+                eventListeners.editEventButtonClick();
         })
     }
 }

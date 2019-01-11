@@ -64,6 +64,17 @@ const eventListeners = {
     },
     saveEventButtonClick(){
         document.querySelector(".event--save--button").addEventListener("click", function(){
+            let eventName = document.querySelector(".new--event--name").value;
+            let eventDate = document.querySelector(".new--event--date").value;
+            let eventLocation = document.querySelector(".new--event--location").value;
+            let user = "2";
+            let newEventInfo = {
+                name: eventName,
+                date: eventDate,
+                location: eventLocation,
+                userId: user
+            }
+            console.log(newEventInfo);
             document.querySelector(".add--event--form").textContent = "";
         })
     },
