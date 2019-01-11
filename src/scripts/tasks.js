@@ -72,6 +72,8 @@ const taskList = {
             editTaskButton.setAttribute ("id", "edit_task_button");
 
             //edit button event listener to edit the existing entry (GET/EDIT)
+            editTaskButton.addEventListener("click", () => {
+                console.log("fix yo stuff here soon");
 
             //append forEach elements
             taskListEntry.appendChild(taskItem);
