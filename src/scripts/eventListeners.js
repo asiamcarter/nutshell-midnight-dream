@@ -13,7 +13,6 @@ const eventListeners = {
     },
 
     chatMessage() {
-
         let messageContent = document.querySelector(".messageInput").value;
         let date = new Date();
         // let userId = userId
@@ -28,8 +27,17 @@ const eventListeners = {
         data.postChatData(messageObject)
             .then(response=> {
                 chat.userMessageToDOM();
+                let messageInput = document.querySelector(".messageInput");
+                messageInput.value="";
         })
 
+    },
+    chatClickOnEnter() {
+        if (event.keyCode === 13) {
+            document.querySelector("#messageSubmit").click();
+            let messageInput = document.querySelector(".messageInput");
+                messageInput.value="";
+        }
     }
 }
 

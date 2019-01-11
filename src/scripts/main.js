@@ -25,5 +25,5 @@ hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormCl
 chat.chatPageLoad();
 let submitButton = document.querySelector("#messageSubmit");
 submitButton.addEventListener("click", eventListeners.chatMessage)
-// submitButton.addEventListener("click", chat.userMessageToDOM)
-// chat.userMessageHTML();
+let messageInput = document.querySelector(".messageInput");
+messageInput.addEventListener("keyup", eventListeners.chatClickOnEnter)

@@ -3,6 +3,7 @@ import data from "./data"
 const chat = {
     //method creates chatroom div, message input field and message submit button
     chatPageLoad() {
+
         let outPutArticle = document.querySelector(".output");
         outPutArticle.textContent= " ";
         outPutArticle.innerHTML+="<h1>CHAT</h1>";
@@ -36,28 +37,40 @@ const chat = {
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
-        userMessageContent.textContent =`${message.message} ${message.messageTime} `
+        userMessageContent.textContent =`${message.message} ${message.time} `
 
 
         userMessageDiv.appendChild(userNameSection);
         userMessageDiv.appendChild(userPhotoSection);
         userMessageDiv.appendChild(userMessageContent);
 
-        let chatroomDiv = document.querySelector(".chatroomDiv");
         return userMessageDiv;
     },
+
+    // testScroll() {
+
+
+    // },
 
     userMessageToDOM() {
         data.getChatData()
         .then (parsedMessages => {
-
             let messageDocFrag = document.createDocumentFragment()
             let chatroomDiv = document.querySelector(".chatroomDiv");
-            chatroomDiv.appendChild(messageDocFrag);
+            let c = 0;
+            const isScrolledToBottom = chatroomDiv.scrollHeight - chatroomDiv.clientHeight <= chatroomDiv.scrollTop +1;
             parsedMessages.forEach (message => {
                 let messageHTML = chat.userMessageHTML(message);
                 messageDocFrag.appendChild(messageHTML);
             })
+              while (chatroomDiv.firstChild) {
+                  chatroomDiv.removeChild(chatroomDiv.firstChild);
+              }
+              chatroomDiv.appendChild(messageDocFrag);
+
+              if (isScrolledToBottom) {
+                  chatroomDiv.scrollTop = chatroomDiv.scrollHeight - chatroomDiv.clientHeight
+              }
         })
     }
 }
