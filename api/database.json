@@ -46,18 +46,6 @@
       "message": "messageContent",
       "time": "messageTime",
       "userId": 1
-    },
-    {
-      "message": "",
-      "time": "2019-01-11T04:08:47.662Z",
-      "userId": "2",
-      "id": 2
-    },
-    {
-      "message": "",
-      "time": "2019-01-11T04:08:48.892Z",
-      "userId": "2",
-      "id": 3
     }
   ],
   "connections": [
