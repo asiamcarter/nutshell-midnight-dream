@@ -4,6 +4,7 @@ import newsArticles from "./news"
 import chat from "./chat"
 import eventsForm from "./eventsForm";
 import eventsList from "./eventsList"
+import newsForm from "./newsForm"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -55,6 +56,7 @@ const eventListeners = {
                 messageInput.value="";
         }
     },
+<<<<<<< HEAD
     // ****************************EVENTS*******************************
      // this function will cause the "add new event button" to appear
     newEventButtonClick(){
@@ -88,6 +90,15 @@ const eventListeners = {
     editEventButtonClick(){
             console.log("someday this button will edit things")
         }
+=======
+    saveNewsArticle() {
+        console.log("Clicky click");
+        // Display error if fields not filled in
+        newsForm.postArticle();
+        // data.postNewsData();
+        // Rerun GET to update event list on DOM
+    }
+>>>>>>> master
 }
 
 
