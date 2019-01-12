@@ -63,10 +63,22 @@ const data = {
             body: JSON.stringify(newEvent)
         })
     },
-    editEvents(eventId) {
+    getEvent(eventId) {
         return fetch(`http://localhost:8088/events?id=${eventId}`)
         .then(response => response.json())
     },
+
+    addEventEdit(eventId, eventObject){
+        return fetch(`http://localhost:8088/events/${eventId}`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(eventObject)
+        })
+    },
+
     newsData() {
         return fetch("http://localhost:8088/articles?userId=1&_expand=user") // pass through userID and change to ${userID}
         .then(response => response.json())

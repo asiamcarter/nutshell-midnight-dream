@@ -19,20 +19,13 @@ const eventsList = {
 
                 // add HTML for each event in the database and add to document fragment
                 allEvents.forEach(event => {
-                    let eventIteration = events.eventBuilder(event.id, event.name, event.date, event.location, event.user.name);
+                    let eventIteration = events.eventBuilder(event.id, event);
                     docFrag.appendChild(eventIteration);
                 })
 
                 // add document fragment to the container
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
-
-                // event listener that adds edit functionality
-                let editButton = document.querySelectorAll(".event--edit--button")
-                for(let i = 0; i < editButton.length; i++){
-                    editButton[i].addEventListener("click", eventListeners.editEventButtonClick);
-                    editButton[i].setAttribute("id", `editButton${i}`)
-                }
         })
     }
 }
