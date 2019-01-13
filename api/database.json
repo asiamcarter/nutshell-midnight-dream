@@ -91,34 +91,34 @@
   "articles": [
     {
       "id": 1,
-      "title": "User 1 Article",
+      "title": "User 1 Article (fourth)",
       "url": "http://google.com",
       "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus efficitur purus eget est rutrum tincidunt. Vestibulum a velit accumsan quam scelerisque efficitur. Proin tincidunt magna id orci ultricies vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis laoreet lacus nibh, id tincidunt enim euismod in. Sed egestas sapien orci, in vestibulum ipsum tempor id. Aenean eleifend mi dui, in consequat lacus laoreet quis.",
-      "timestamp": "",
+      "timestamp": "1457395221082",
       "userId": 1
     },
     {
       "id": 2,
-      "title": "User 2 Article",
+      "title": "User 2 Article (second)",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
+      "timestamp": "1247395221082",
       "userId": 2
     },
     {
       "id": 3,
-      "title": "User 2 Article2",
+      "title": "User 2 Article2 (third)",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
+      "timestamp": "1447395221082",
       "userId": 2
     },
     {
       "id": 4,
-      "title": "User 3 Article",
+      "title": "User 3 Article (first)",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
+      "timestamp": "1047395221082",
       "userId": 3
     },
     {
@@ -126,26 +126,47 @@
       "title": "User 4 Article",
       "url": "http://google.com",
       "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "timestamp": "",
+      "timestamp": "1647495221082",
       "userId": 4
-    }
-  ],
-  "tasks": [
-    {
-      "task": "aa",
-      "dueDate": "1811-12-11",
-      "completed": false,
-      "userId": "",
-      "id": 11
     },
     {
-      "task": "aa",
-      "dueDate": "1111-01-11",
-      "completed": false,
-      "userId": "",
-      "id": 12
+      "title": "timestamp test (fifth)",
+      "synopsis": "time!",
+      "url": "meg.com",
+      "timestamp": 1547395221082,
+      "date": "01/13/2019 at 10:0",
+      "userId": "2",
+      "id": 6
+    },
+    {
+      "title": "another timestamp (sixth)",
+      "synopsis": "time time time",
+      "url": "meg.com",
+      "timestamp": 1547395320738,
+      "date": "01/13/2019 at 10:2",
+      "userId": "2",
+      "id": 7
+    },
+    {
+      "title": "sec test",
+      "synopsis": "aex",
+      "url": "sec",
+      "timestamp": 1547396521910,
+      "date": "01/13/2019 at 10:22:01",
+      "userId": "2",
+      "id": 8
+    },
+    {
+      "title": "wer",
+      "synopsis": "ert",
+      "url": "we",
+      "timestamp": 1547396527813,
+      "date": "01/13/2019 at 10:22:07",
+      "userId": "2",
+      "id": 9
     }
   ],
+  "tasks": [],
   "messages": [
     {
       "id": 1,
