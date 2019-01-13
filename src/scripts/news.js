@@ -55,96 +55,90 @@ const newsArticles = {
                 let friendID = friend.otherId;
                 data.newsDataFriends(friendID)
                 .then(allFriendArticles => {
-                    allFriendArticles.forEach(friendArticle => {
+                    allFriendArticles.forEach(article => {
                         // console.log("Friend ID:", friendID, "Article Title:", friendArticle.title);
-                        articleArray.push(friendArticle);
+                        articleArray.push(article);
                     })
                 })
             })
         })
-
-        data.newsData()
+        .then(function(){
+            data.newsData()
         .then(allUserArticles => {
             allUserArticles.forEach(article => {
                 // console.log("Session User's Article Title:", articleObj.title);
                 articleArray.push(article);
             })
         })
+        .then(function() {
+            console.log("Final array", articleArray);
 
-        // .then(function(){
-
-            console.log("Final Array before");
-            console.table(articleArray);
-
-            // forEach article inside array, create HTML
+            // stuff goes here
             articleArray.forEach(article => {
-
-                // Loop through items and build each news item
-
                 console.log(article.title);
 
-                // let articleSection = document.createElement("div");
-                // articleSection.setAttribute("class", "article_section");
+                    let articleSection = document.createElement("div");
+                    articleSection.setAttribute("class", "article_section");
 
-                // let articleInfo = document.createElement("div");
-                // articleInfo.setAttribute("class", "news_info");
+                    let articleInfo = document.createElement("div");
+                    articleInfo.setAttribute("class", "news_info");
 
-                // let newsTitle = document.createElement("h3");
-                // newsTitle.textContent = article.title;
+                    let newsTitle = document.createElement("h3");
+                    newsTitle.textContent = article.title;
 
-                // let newsSynopsis = document.createElement("div");
-                // newsSynopsis.setAttribute("class", "news_synopsis");
-                // newsSynopsis.textContent = article.synopsis;
+                    let newsSynopsis = document.createElement("div");
+                    newsSynopsis.setAttribute("class", "news_synopsis");
+                    newsSynopsis.textContent = article.synopsis;
 
-                // let newsURL = document.createElement("div");
-                // newsURL.setAttribute("class", "news_link");
-                // newsURL.innerHTML = `<a href="${article.url}">Read article</a>`;
+                    let newsURL = document.createElement("div");
+                    newsURL.setAttribute("class", "news_link");
+                    newsURL.innerHTML = `<a href="${article.url}">Read article</a>`;
 
-                // let newsEtc = document.createElement("div");
-                // newsEtc.setAttribute("class", "news_etc");
+                    let newsEtc = document.createElement("div");
+                    newsEtc.setAttribute("class", "news_etc");
 
-                // let newsAuthor = document.createElement("div");
-                // newsAuthor.setAttribute("class", "news_author");
-                // newsAuthor.innerHTML = `Posted by ${article.user.name}`; // replace with username
+                    let newsAuthor = document.createElement("div");
+                    newsAuthor.setAttribute("class", "news_author");
+                    newsAuthor.innerHTML = `Posted by ${article.user.name}`; // replace with username
 
-                // // Add conditional
-                // // If userId = current user, show "Delete" button
-                // let deleteArticleBtn = document.createElement("button");
-                // deleteArticleBtn.setAttribute("class", "article_delete_btn");
-                // deleteArticleBtn.textContent = "Delete";
+                    // Add conditional
+                    // If userId = current user, show "Delete" button
+                    let deleteArticleBtn = document.createElement("button");
+                    deleteArticleBtn.setAttribute("class", "article_delete_btn");
+                    deleteArticleBtn.textContent = "Delete";
 
-                // deleteArticleBtn.addEventListener("click", () => {
-                //     let articleId = article.id;
-                //     data.deleteNewsData(articleId)
-                //     .then(response => {
-                //         newsArticles.buildArticles()
-                //     })
-                // })
+                    deleteArticleBtn.addEventListener("click", () => {
+                        let articleId = article.id;
+                        data.deleteNewsData(articleId)
+                        .then(response => {
+                            newsArticles.buildArticles()
+                        })
+                    })
 
-                // // Add title, synopsis, and URL to article info
-                // articleInfo.appendChild(newsTitle);
-                // articleInfo.appendChild(newsSynopsis);
-                // articleInfo.appendChild(newsURL);
+                    // Add title, synopsis, and URL to article info
+                    articleInfo.appendChild(newsTitle);
+                    articleInfo.appendChild(newsSynopsis);
+                    articleInfo.appendChild(newsURL);
 
-                // // Add author & delete button to etc
-                // newsEtc.appendChild(newsAuthor);
-                // newsEtc.appendChild(deleteArticleBtn);
+                    // Add author & delete button to etc
+                    newsEtc.appendChild(newsAuthor);
+                    newsEtc.appendChild(deleteArticleBtn);
 
-                // // Add article info & etc to article section
-                // articleSection.appendChild(articleInfo);
-                // articleSection.appendChild(newsEtc);
+                    // Add article info & etc to article section
+                    articleSection.appendChild(articleInfo);
+                    articleSection.appendChild(newsEtc);
 
-                // // Append each item to doc frag
-                // newsDocFrag.appendChild(articleSection);
-
+                    // Append each item to doc frag
+                    newsDocFrag.appendChild(articleSection);
             })
 
-        // });
+            // Append doc frag to ARTICLE container
+            articleContainer.appendChild(newsDocFrag);
 
-        // Append doc frag to ARTICLE container
-        articleContainer.appendChild(newsDocFrag);
+        })
+        })
 
-        console.log("Final array after", articleArray);
+
 
     }
 
