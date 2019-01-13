@@ -3,23 +3,21 @@
     {
       "id": 1,
       "name": "userName",
-      "email": "userEmail@gmail.com",
-      "password": "userPassword"
+      "email": "userEmail@gmail.com"
     },
     {
       "id": 2,
       "name": "userName2",
-      "email": "userEmail2@gmail.com",
-      "password": "userPassword2"
+      "email": "userEmail2@gmail.com"
     },
     {
-      "name": "meg",
-      "email": "meg@meg.com",
+      "name": "userName3",
+      "email": "userEmail3@gmail.com",
       "id": 3
     },
     {
-      "name": "user4",
-      "email": "meg@meg.com",
+      "name": "userName4",
+      "email": "userEmail4@gmail.com",
       "id": 4
     }
   ],
@@ -135,7 +133,7 @@
       "url": "meg.com",
       "timestamp": 1547395221082,
       "date": "01/13/2019 at 10:0",
-      "userId": "2",
+      "userId": 2,
       "id": 6
     },
     {
@@ -144,26 +142,17 @@
       "url": "meg.com",
       "timestamp": 1547395320738,
       "date": "01/13/2019 at 10:2",
-      "userId": "2",
+      "userId": 2,
       "id": 7
     },
     {
-      "title": "sec test",
-      "synopsis": "aex",
-      "url": "sec",
-      "timestamp": 1547396521910,
-      "date": "01/13/2019 at 10:22:01",
+      "title": "it's a new hour",
+      "synopsis": "woo!",
+      "url": "meg.com",
+      "timestamp": 1547402892179,
+      "date": "01/13/2019 at 12:08",
       "userId": "2",
-      "id": 8
-    },
-    {
-      "title": "wer",
-      "synopsis": "ert",
-      "url": "we",
-      "timestamp": 1547396527813,
-      "date": "01/13/2019 at 10:22:07",
-      "userId": "2",
-      "id": 9
+      "id": 10
     }
   ],
   "tasks": [],

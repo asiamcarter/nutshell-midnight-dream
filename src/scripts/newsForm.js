@@ -102,7 +102,7 @@ const newsForm = {
         let inputURL = document.querySelector("#article_url").value;
 
         // Get current time
-        let months = ["01", "02", "03", "04", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let months = ["1", "2", "3", "4", "May", "June", "July", "August", "September", "October", "November", "December"];
         let d = new Date();
         let month = d.getMonth();
         let date = d.getDate();

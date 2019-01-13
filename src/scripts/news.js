@@ -106,8 +106,29 @@ const newsArticles = {
                         newsAuthor.innerHTML = `Posted by ${article.user.name} on ${article.date}`;
                         // console.log(article.date);
 
+                        // Add author & delete button to etc
+                        newsEtc.appendChild(newsAuthor);
+
                         // Add conditional
                         // If userId = current user, show "Delete" button
+                        // let sessionUser = sessionStorage.getItem("User");
+                        // console.log("Session:", sessionUser, " / Author:", article.userId)
+                        // if (sessionUser === article.userId) {
+                        //     let deleteArticleBtn = document.createElement("button");
+                        //     deleteArticleBtn.setAttribute("class", "article_delete_btn");
+                        //     deleteArticleBtn.textContent = "Delete";
+
+                        //     deleteArticleBtn.addEventListener("click", () => {
+                        //         let articleId = article.id;
+                        //         data.deleteNewsData(articleId)
+                        //         .then(response => {
+                        //             newsArticles.buildArticles()
+                        //         })
+                        //     })
+
+                        //     newsEtc.appendChild(deleteArticleBtn);
+                        // }
+
                         let deleteArticleBtn = document.createElement("button");
                         deleteArticleBtn.setAttribute("class", "article_delete_btn");
                         deleteArticleBtn.textContent = "Delete";
@@ -119,15 +140,22 @@ const newsArticles = {
                                 newsArticles.buildArticles()
                             })
                         })
+                        newsEtc.appendChild(deleteArticleBtn);
+
+                        // let sessionUser = sessionStorage.getItem("User");
+                        // console.log("Session:", sessionUser, " / Author:", article.userId)
+                        // if (article.userId !== sessionUser) {
+                        //     newsEtc.removeChild(deleteArticleBtn);
+                        // }
 
                         // Add title, synopsis, and URL to article info
                         articleInfo.appendChild(newsTitle);
                         articleInfo.appendChild(newsSynopsis);
                         articleInfo.appendChild(newsURL);
 
-                        // Add author & delete button to etc
-                        newsEtc.appendChild(newsAuthor);
-                        newsEtc.appendChild(deleteArticleBtn);
+                        // // Add author & delete button to etc
+                        // newsEtc.appendChild(newsAuthor);
+                        // newsEtc.appendChild(deleteArticleBtn);
 
                         // Add article info & etc to article section
                         articleSection.appendChild(articleInfo);
