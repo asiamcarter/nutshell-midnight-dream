@@ -2,9 +2,9 @@
   "users": [
     {
       "id": 1,
-      "name": "userName",
+      "name": "Britt",
       "email": "userEmail@gmail.com",
-      "password": "userPassword"
+      "password": "Password"
     },
     {
       "id": 2,
@@ -27,60 +27,18 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "name": "eventName",
-      "date": "eventDate",
-      "location": "eventLocation",
-      "userId": 2
+      "name": "New Events",
+      "date": "New Date",
+      "location": "New Location",
+      "userId": 2,
+      "id": 2
     },
     {
-      "name": "Sleep",
-      "date": "2019-01-11",
-      "location": "Home",
-      "userId": "2",
-      "id": 3
-    },
-    {
-      "name": "Eat Ramen",
-      "date": "2019-01-11",
-      "location": "NSS",
-      "userId": "2",
-      "id": 4
-    },
-    {
-      "name": "Play games",
+      "name": "Watch a play",
       "date": "2019-01-12",
-      "location": "IDK",
-      "userId": "2",
-      "id": 5
-    },
-    {
-      "name": "Hang out with Asia",
-      "date": "2019-01-16",
-      "location": "Beer",
-      "userId": "2",
-      "id": 6
-    },
-    {
-      "name": "Present Nutshell",
-      "date": "2019-01-15",
-      "location": "NSS",
-      "userId": "2",
-      "id": 7
-    },
-    {
-      "name": "Make spaghetti",
-      "date": "2019-01-13",
-      "location": "The Park",
-      "userId": "2",
-      "id": 8
-    },
-    {
-      "name": "Practice yodeling",
-      "date": "2019-12-28",
-      "location": "Mountaintop",
-      "userId": "2",
-      "id": 9
+      "location": "Home",
+      "userId": 2,
+      "id": 3
     }
   ],
   "articles": [
