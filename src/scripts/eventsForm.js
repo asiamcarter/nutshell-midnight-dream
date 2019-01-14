@@ -25,7 +25,7 @@ const eventsForm = {
         // define input attributes
         newEventName.setAttribute("type", "text");
         newEventName.setAttribute("value", "Event Name");
-        newEventDate.setAttribute("type", "date");
+        newEventDate.setAttribute("type", "datetime-local");
         newEventDate.setAttribute("value", "Birthday");
         newEventLocation.setAttribute("type", "text");
         newEventLocation.setAttribute("value", "Event Location")
@@ -39,6 +39,7 @@ const eventsForm = {
         // append form container to event container (temporarily)
         container.appendChild(newEventDiv);
     },
+
     // method to create the form that edits existing events
     editForm(eventId, eventToEdit) {
 
@@ -53,11 +54,12 @@ const eventsForm = {
         let eventNameInput = document.createElement("input");
         eventNameInput.value = eventToEdit.name;
         let eventDateLabel = document.createElement("label");
-        eventDateLabel.textContent = "Event Date"
+        eventDateLabel.textContent = "Event Date";
         let eventDateInput = document.createElement("input");
         eventDateInput.value = eventToEdit.date;
+        eventDateInput.setAttribute("type", "datetime-local");
         let eventLocationLabel = document.createElement("label");
-        eventLocationLabel.textContent = "Event Location"
+        eventLocationLabel.textContent = "Event Location";
         let eventLocationInput = document.createElement("input");
         eventLocationInput.value = eventToEdit.location;
 

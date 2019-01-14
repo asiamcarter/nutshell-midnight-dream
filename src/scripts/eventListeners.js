@@ -71,24 +71,33 @@ const eventListeners = {
     },
     saveEventButtonClick(){
         document.querySelector(".event--save--button").addEventListener("click", function(){
+            // retrieve new and old values from the input fields
             let eventName = document.querySelector(".new--event--name").value;
             let eventDate = document.querySelector(".new--event--date").value;
             let eventLocation = document.querySelector(".new--event--location").value;
-            let user = "2";
+            // need to get user from session storage
+            let user = 2;
+
+            // object that will be pushed into database
             let newEventInfo = {
                 name: eventName,
                 date: eventDate,
                 location: eventLocation,
                 userId: user
             }
-            console.log(newEventInfo);
 
+            // create an alert that will not allow information to be added if all fields are not complete
+            if(eventName === "" || eventName === "Event Name"|| eventDate === "" || eventLocation === "" || eventLocation === ""){
+                alert("Please fill in all fields before saving event")
+            } else {
+            // if all fields are complete, post the new object in place of the the old object
             data.postEventData(newEventInfo)
-            .then(response => {
-                eventsList.listEvents()
-            })
+                .then( () => {
+                    eventsList.listEvents()
+                })
 
-            document.querySelector(".add--event--form").textContent = "";
+                document.querySelector(".add--event--form").textContent = "";
+            }
         })
     },
     saveNewsArticle() {

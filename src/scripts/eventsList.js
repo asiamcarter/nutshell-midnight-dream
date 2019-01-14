@@ -14,6 +14,10 @@ const eventsList = {
         // get events from database
         data.getData(eventString)
             .then(allEvents => {
+                allEvents.sort(function(a, b){
+                    return new Date(a.date) - new Date(b.date);
+                });
+
                 // declare document fragment that will grab all events as they are built into HTML elements
                 let docFrag = document.createDocumentFragment();
 
@@ -26,6 +30,7 @@ const eventsList = {
                 // add document fragment to the container
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
+                eventDiv.firstChild.classList.add("first--event");
         })
     }
 }
