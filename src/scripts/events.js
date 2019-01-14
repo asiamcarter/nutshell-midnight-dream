@@ -30,6 +30,8 @@ const events = {
 
         container.appendChild(eventSection);
 
+
+
     },
     // add events to the section container within each section's unique DIV component
     eventBuilder(id, eventObject) {

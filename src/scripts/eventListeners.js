@@ -79,7 +79,7 @@ const eventListeners = {
             console.log(newEventInfo);
 
             data.postEventData(newEventInfo)
-            .then(response => {
+            .then( () => {
                 eventsList.listEvents()
             })
 

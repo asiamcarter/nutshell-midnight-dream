@@ -53,11 +53,11 @@ const eventsForm = {
         let eventNameInput = document.createElement("input");
         eventNameInput.value = eventToEdit.name;
         let eventDateLabel = document.createElement("label");
-        eventDateLabel.textContent = "Event Date"
+        eventDateLabel.textContent = "Event Date";
         let eventDateInput = document.createElement("input");
         eventDateInput.value = eventToEdit.date;
         let eventLocationLabel = document.createElement("label");
-        eventLocationLabel.textContent = "Event Location"
+        eventLocationLabel.textContent = "Event Location";
         let eventLocationInput = document.createElement("input");
         eventLocationInput.value = eventToEdit.location;
 
