@@ -74,21 +74,25 @@ const eventListeners = {
             let eventName = document.querySelector(".new--event--name").value;
             let eventDate = document.querySelector(".new--event--date").value;
             let eventLocation = document.querySelector(".new--event--location").value;
-            let user = "2";
+            // need to get user from session storage
+            let user = 2;
             let newEventInfo = {
                 name: eventName,
                 date: eventDate,
                 location: eventLocation,
                 userId: user
             }
-            console.log(newEventInfo);
 
+            if(eventName === "" || eventName === "Event Name"|| eventDate === "" || eventLocation === "" || eventLocation === "Event Location"){
+                alert("Please fill in all fields before saving event")
+            } else {
             data.postEventData(newEventInfo)
-            .then( () => {
-                eventsList.listEvents()
-            })
+                .then( () => {
+                    eventsList.listEvents()
+                })
 
-            document.querySelector(".add--event--form").textContent = "";
+                document.querySelector(".add--event--form").textContent = "";
+            }
         })
     },
     saveNewsArticle() {

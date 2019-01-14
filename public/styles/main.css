@@ -204,3 +204,9 @@ html, body {
     display: flex;
     flex-wrap: wrap;
 }
+
+.first--event {
+    background-color: cornsilk;
+    font-style: italic;
+    font-weight: bolder;
+}
