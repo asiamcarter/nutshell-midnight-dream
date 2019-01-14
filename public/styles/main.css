@@ -105,6 +105,14 @@ color:black
     padding: 10px;
 }
 
+.friend_article {
+    background-color: cornsilk;
+}
+
+.friend_article h3 {
+    font-style: italic;
+}
+
 #form_container fieldset {
     border: none;
     margin-bottom: 15px;
