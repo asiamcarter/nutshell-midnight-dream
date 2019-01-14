@@ -20,11 +20,11 @@
   ],
   "events": [
     {
-      "id": 1,
-      "name": "eventName",
-      "date": "eventDate",
-      "location": "eventLocation",
-      "userId": 1
+      "name": "Eat Nepalese food",
+      "date": "Yesterday",
+      "location": "Chattanooga",
+      "userId": 1,
+      "id": 1
     },
     {
       "name": "New Events",
