@@ -205,22 +205,26 @@ const welcome = {
         // }
         data.getUserDataForLogin(userLogin, userEmail)
         .then (allEntries => {
-            console.log(allEntries)
+            // console.log(allEntries)
             if (allEntries.length < 1) {
                 welcome.incorrectUsernameOrEmailBuilderAndAppend();
             } else {
             allEntries.forEach(entry => {
-                let loggedIn = false
-                console.log(entry.name);
-                console.log(entry.email);
-                if(userLogin === entry.name && userEmail === entry.email){
-                    loggedIn = true;
-                }
-                if(loggedIn === true){
+                // let loggedIn = false
+                // console.log(entry.name);
+                // console.log(entry.email);
+                // console.log(entry.id);
+                sessionStorage.setItem("User", entry.id)
+               let sessionUser = sessionStorage.getItem("User")
+                console.log(sessionUser);
+                // if(userLogin === entry.name && userEmail === entry.email){
+                //     loggedIn = true;
+                // }
+                // if(loggedIn === true){
                     newsArticles.buildArticles();
-                } else if (loggedIn === false){
+                // } else if (loggedIn === false){
 
-                }
+
             })};
         })
     }

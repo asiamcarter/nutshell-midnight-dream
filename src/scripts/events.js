@@ -1,3 +1,6 @@
+import data from "./data";
+import eventsForm from "./eventsForm";
+
 const events = {
     eventPageBuilder(){
         let container = document.querySelector(".output");
@@ -29,7 +32,7 @@ const events = {
 
     },
     // add events to the section container within each section's unique DIV component
-    eventBuilder(name, date, location, user) {
+    eventBuilder(id, eventObject) {
         // grab events container
         let eventSection = document.createDocumentFragment();
 
@@ -43,6 +46,20 @@ const events = {
         let eventEdit = document.createElement("button");
         let eventPosterName = document.createElement("h4");
 
+        // set unique id for each event container
+        eventDivContainer.setAttribute("id", `event--${id}`);
+        eventEdit.setAttribute("id", `event--button-${id}`);
+
+        eventEdit.addEventListener("click", () => {
+            let eventContainerId = event.target.parentNode.parentNode.id;
+            let eventId =eventContainerId.split("--")[1];
+            data.getEvent(eventId)
+            .then(response => {
+                console.log(response);
+                eventsForm.editForm(id, eventObject);
+            })
+        });
+
         // add class to small containers and large container in order to use flex-box
         eventDivContainer.classList.add("event--outer--container");
         eventDetailsDiv.classList.add("event--inner--container");
@@ -50,11 +67,11 @@ const events = {
         eventEdit.classList.add("event--edit--button");
 
         // add text to elements that will be displaying the event information
-        eventH2.textContent = name;
-        eventDateP.textContent = date;
-        eventLocP.textContent = location;
+        eventH2.textContent = eventObject.name;
+        eventDateP.textContent = eventObject.date;
+        eventLocP.textContent = eventObject.location;
         eventEdit.textContent = "EDIT";
-        eventPosterName.textContent = user;
+        eventPosterName.textContent = eventObject.user.name;
 
         // append specific event information to their respective containers
         eventDetailsDiv.appendChild(eventH2);
