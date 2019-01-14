@@ -39,6 +39,13 @@
       "location": "Home",
       "userId": 2,
       "id": 3
+    },
+    {
+      "name": "Event Name",
+      "date": "",
+      "location": "Event Location",
+      "userId": "2",
+      "id": 4
     }
   ],
   "articles": [
@@ -84,10 +91,28 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "messageContent",
-      "time": "messageTime",
-      "userId": 1
+      "message": "",
+      "time": "21:54",
+      "userId": "2",
+      "id": 1
+    },
+    {
+      "message": "yay",
+      "time": "22:12",
+      "userId": "2",
+      "id": 2
+    },
+    {
+      "message": "yesss",
+      "time": "22:12",
+      "userId": "2",
+      "id": 3
+    },
+    {
+      "message": "",
+      "time": "21:23",
+      "userId": "2",
+      "id": 4
     }
   ],
   "connections": [

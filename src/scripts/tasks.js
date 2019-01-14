@@ -65,15 +65,23 @@ const taskList = {
 
             //checkbox event listener to remove the task from the page when completed (GET/PATCH)
 
-            //create edit button for each entry
-            let editTaskButton = document.createElement("button");
-            editTaskButton.textContent = "Edit Task";
-            editTaskButton.setAttribute ("class", "task_button");
-            editTaskButton.setAttribute ("id", "edit_task_button");
+            //edit button for each entry
+            let modifyTaskButton = document.createElement("button");
+            modifyTaskButton.textContent = "Edit Task";
+            modifyTaskButton.setAttribute ("class", "task_button");
+            modifyTaskButton.setAttribute ("id", "edit_task_button");
 
             //edit button event listener to edit the existing entry (GET/EDIT)
-            editTaskButton.addEventListener("click", () => {
-                console.log("fix yo stuff here soon")
+            modifyTaskButton.addEventListener("click", () => {
+                // console.log("fix yo stuff here soon")
+                    let editedTask = {
+                      name: taskItem.value,
+                    }
+                    //is this right? how does this work?
+                    data.putExistingTask(taskToEdit.id, editedTask)
+                    .then(() => {
+                         taskList.createTaskList()
+                    });
             });
 
             //append forEach elements

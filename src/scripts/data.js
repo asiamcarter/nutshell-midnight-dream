@@ -78,6 +78,22 @@ const data = {
         .then(response => response.json())
     },
 
+    putChatEdit(id, description) {
+       return fetch(`http://localhost:8088/messages/${id}`, {
+           method: "PUT",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify(description)
+       })
+    },
+
+    getChatData2(id) {
+        return fetch(`http://localhost:8088/messages/${id}`)
+        .then(response => response.json())
+    },
+
+
     postEventData(newEvent) {
         return fetch("http://localhost:8088/events", {
             method: "POST",
@@ -111,6 +127,7 @@ const data = {
           }
         })
     }
+
 };
 
 export default data
