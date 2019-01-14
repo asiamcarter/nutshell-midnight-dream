@@ -7,6 +7,7 @@ import taskList from "./tasks"
 import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
+import friends from "./friends"
 
 const nav = {
     buildNav() {
@@ -50,7 +51,12 @@ const nav = {
 
 
         let item5 = document.createElement("li");
-        item5.textContent = "Friends";
+        let link5 = document.createElement("a");
+        link5.setAttribute("href", "#");
+        link5.textContent = "Friends";
+        item5.appendChild(link5);
+        item5.addEventListener("click", friends.friendPageBuilder)
+
 
         let item6 = document.createElement("li");
         let link6 = document.createElement("a");
