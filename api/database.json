@@ -20,25 +20,18 @@
   ],
   "events": [
     {
-      "name": "Eat Nepalese food",
-      "date": "Yesterday",
-      "location": "Chattanooga",
-      "userId": 1,
+      "name": "Present Nutshell",
+      "date": "2019-01-18",
+      "location": "NSS",
+      "userId": 2,
       "id": 1
     },
     {
-      "name": "New Events",
-      "date": "New Date",
-      "location": "New Location",
+      "name": "Work on Nutshell",
+      "date": "2019-01-20",
+      "location": "NSS",
       "userId": 2,
       "id": 2
-    },
-    {
-      "name": "Watch a play",
-      "date": "2019-01-12",
-      "location": "Home",
-      "userId": 2,
-      "id": 3
     }
   ],
   "articles": [
