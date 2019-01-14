@@ -19,7 +19,7 @@ const data = {
       },
     newsData() {
         let sessionUser = sessionStorage.getItem("User")
-        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`) // pass through userID and change to ${userID}
+        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`)
         .then(response => response.json())
     },
     postNewsData(articleToSave) {
@@ -115,8 +115,17 @@ const data = {
               "Content-Type": "application/json"
           }
         })
-    }
+    },
 
+    getFriends() {
+        let sessionUser = sessionStorage.getItem("User")
+        return fetch(`http://localhost:8088/connections?userId=${sessionUser}`)
+        .then(response => response.json())
+    },
+    newsDataFriends(friendID) {
+        return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
+        .then(response => response.json())
+    },
 };
 
 export default data
