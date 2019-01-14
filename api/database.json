@@ -119,40 +119,28 @@
   ],
   "messages": [
     {
-      "message": "YAY",
-      "time": "2019-01-11T21:51:52.555Z",
+      "message": "YAY22",
+      "time": "17:30",
       "userId": "2",
       "id": 1
     },
     {
-      "message": "WAH",
-      "time": "2019-01-11T19:30:33.937Z",
+      "message": "hi\n",
+      "time": "17:50",
       "userId": "2",
       "id": 2
     },
     {
-      "message": "sdfsdf",
-      "time": "2019-01-11T21:02:04.695Z",
-      "userId": "2",
+      "message": "hi hi\n",
+      "time": "17:51",
+      "userId": "1",
       "id": 3
     },
     {
-      "message": "let's do this\n",
-      "time": "2019-01-11T19:35:40.418Z",
+      "message": "hi ther\n",
+      "time": "17:52",
       "userId": "2",
       "id": 4
-    },
-    {
-      "message": "yay\n",
-      "time": "2019-01-11T21:02:07.352Z",
-      "userId": "2",
-      "id": 5
-    },
-    {
-      "message": "dsfkjbnsdkjfbsd\n",
-      "time": "2019-01-11T21:52:54.903Z",
-      "userId": "2",
-      "id": 6
     }
   ],
   "connections": [
