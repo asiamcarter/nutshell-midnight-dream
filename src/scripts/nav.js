@@ -5,6 +5,8 @@ import news from "./news"
 import eventsList from "./eventsList"
 import taskList from "./tasks"
 import chat from "./chat"
+import welcome from "./welcome"
+import eventListeners from "./eventListeners"
 
 const nav = {
     buildNav() {
@@ -51,7 +53,21 @@ const nav = {
         item5.textContent = "Friends";
 
         let item6 = document.createElement("li");
-        item6.textContent = "Logout";
+        let link6 = document.createElement("a");
+        link6.setAttribute("href", "#");
+        link6.textContent = "Logout";
+        item6.appendChild(link6);
+        item6.addEventListener("click", clearSession);
+        function clearSession() {
+            sessionStorage.clear();
+            welcome.welcomeBuilderAndAppender();
+
+            let hereHyperlinkClick = document.querySelector(".hereHyperLink")
+            hereHyperlinkClick.addEventListener("click", eventListeners.onRegistrationFormClick)
+
+            let loginButton = document.querySelector("#loginButton");
+            loginButton.addEventListener("click", eventListeners.checkUserInputForm, eventListeners.userLogin)
+        }
 
         navUL.appendChild(item1);
         navUL.appendChild(item2);
