@@ -102,14 +102,20 @@ const newsForm = {
         let inputURL = document.querySelector("#article_url").value;
 
         // Get current time
+        let months = ["1", "2", "3", "4", "May", "June", "July", "August", "September", "October", "November", "December"];
         let d = new Date();
+        let month = d.getMonth();
+        let date = d.getDate();
+        let year = d.getFullYear();
         let hours = d.getHours();
-        let minutes = d.getMinutes();
-        let timestamp = `${hours}:${minutes}`;
+        let minutes = ("0" + d.getMinutes()).slice(-2);
+        // let secs = ("0" + d.getSeconds()).slice(-2);
+        let dateDisplay = months[month] + "/" + date + "/" + year + " at " + hours + ":" + minutes;
+        let timestamp = d.getTime();
 
         // Get current userId
         let sessionUser = sessionStorage.getItem("User")
-        let userID = sessionUser;       //  CHANGE TO VARIABLE
+        let userID = sessionUser;
 
         // Create new object with correct DB structure to represent a single news article:
         let articleToSave = {
@@ -117,6 +123,7 @@ const newsForm = {
           synopsis: inputSynopsis,
           url: inputURL,
           timestamp: timestamp,
+          date: dateDisplay,
           userId: userID
         }
 

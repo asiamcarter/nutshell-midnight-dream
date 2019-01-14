@@ -19,7 +19,7 @@ const data = {
       },
     newsData() {
         let sessionUser = sessionStorage.getItem("User")
-        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`) // pass through userID and change to ${userID}
+        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`)
         .then(response => response.json())
     },
     postNewsData(articleToSave) {
@@ -61,12 +61,27 @@ const data = {
             body: JSON.stringify(taskObject)
                 });
             },
-
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
         .then(response => response.json())
     },
+
+    putChatEdit(id, description) {
+       return fetch(`http://localhost:8088/messages/${id}`, {
+           method: "PUT",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify(description)
+       })
+    },
+
+    getChatData2(id) {
+        return fetch(`http://localhost:8088/messages/${id}`)
+        .then(response => response.json())
+    },
+
 
     postEventData(newEvent) {
         return fetch("http://localhost:8088/events", {
@@ -100,7 +115,17 @@ const data = {
               "Content-Type": "application/json"
           }
         })
-    }
+    },
+
+    getFriends() {
+        let sessionUser = sessionStorage.getItem("User")
+        return fetch(`http://localhost:8088/connections?userId=${sessionUser}`)
+        .then(response => response.json())
+    },
+    newsDataFriends(friendID) {
+        return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
+        .then(response => response.json())
+    },
 };
 
 export default data
