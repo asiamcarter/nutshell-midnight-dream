@@ -9,7 +9,7 @@ friendPageBuilder(){
         allFriends.forEach(friend => {
         let container = document.querySelector(".yourFriends")
         let friendHeader = document.createElement("h3");
-        friendHeader.textContent=friend.otherId;
+        friendHeader.textContent=friend.username;
         container.appendChild(friendHeader)
         // console.log(friendHeader)
             console.log("friend", friend)
