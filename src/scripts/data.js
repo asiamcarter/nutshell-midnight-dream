@@ -77,8 +77,20 @@ const data = {
             body: JSON.stringify(newEvent)
         })
     },
-    editEvents(eventId, name, date, location) {
-        return fetch(`http://localhost8088/events?=${eventId}`)
+    getEvent(eventId) {
+        return fetch(`http://localhost:8088/events?id=${eventId}`)
+        .then(response => response.json())
+    },
+
+    addEventEdit(eventId, eventObject){
+        return fetch(`http://localhost:8088/events/${eventId}`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(eventObject)
+        })
     },
 
     deleteNewsData(articleId) {

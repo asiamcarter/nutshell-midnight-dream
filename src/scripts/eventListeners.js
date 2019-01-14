@@ -86,9 +86,6 @@ const eventListeners = {
             document.querySelector(".add--event--form").textContent = "";
         })
     },
-    editEventButtonClick(){
-            console.log("someday this button will edit things")
-        },
     saveNewsArticle() {
         newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
     }
