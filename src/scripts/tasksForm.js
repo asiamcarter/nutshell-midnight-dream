@@ -55,33 +55,12 @@ const tasksForm = {
                 "userId":""
             };
             data.postNewTask(taskObject)
-            .then(response => {
+            .then( () => {
                 //TO DO: do I need to go a GET here to use the object to populate the Tasks List? Or would it go in tasks.js?
                 taskList.createTaskList()
             });
         });
     },
-    createTasksModifyForm (taskID, taskObjectToEdit) {
-        //create html for the edit form
-
-            //clear DOM
-            let clearOutputContainer = document.querySelector(".output");
-            clearOutputContainer.innerHTML = " ";
-
-            //Task Edit Header
-            let newTaskHeader = document.createElement("h1");
-            newTaskHeader.innerHTML = "Task Edit";
-            newTaskHeader.setAttribute ("id", "task_Edit_List_header");
-            taskEditFormContainer.appendChild(newTaskHeader);
-            //create fields to capture data which align to data structure
-
-            //create save button
-            let modifyListSaveButton = document.createElement("button");
-            modifyListSaveButton.textContent = "Save Changes";
-            modifyListSaveButton.setAttribute = ("class", "task_button");
-            modifyListSaveButton.setAttribute = ("id", "task_list_save_button");
-            taskEditFormContainer.appendChild(modifyListSaveButton);
-        }
     }
 
 
