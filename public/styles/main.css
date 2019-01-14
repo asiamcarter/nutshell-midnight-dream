@@ -206,7 +206,7 @@ html, body {
 }
 
 .first--event {
-    background-color: cornsilk;
-    font-style: italic;
     font-weight: bolder;
+    font-size: 1.5em;
+    background-color: burlywood;
 }
