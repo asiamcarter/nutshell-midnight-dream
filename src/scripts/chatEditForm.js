@@ -12,6 +12,7 @@ const chatEditForm = {
         //HTTP GET request gets message array, pass in the message id
         data.getChatData2(messageId)
         .then(response => {
+            console.log(response)
             //add event listener to save button. Event listener creates object to PUT in database.json
             saveButton.addEventListener("click", () => {
                 let date = new Date();
@@ -31,7 +32,9 @@ const chatEditForm = {
             })
         })
     //Empties the chatroomdiv and replaces it with the edit message form and save button
-    let messageDiv = document.querySelector(".chatroomDiv");
+
+    let messageDiv = document.querySelector(".userMessageContent");
+
     while (messageDiv.firstChild) {
         messageDiv.removeChild(messageDiv.firstChild);
     }
