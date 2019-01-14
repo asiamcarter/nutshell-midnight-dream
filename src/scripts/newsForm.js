@@ -110,11 +110,14 @@ const newsForm = {
         let hours = d.getHours();
         let minutes = ("0" + d.getMinutes()).slice(-2);
         let suffix = "AM";
-	        if (hours >= 12) {
+	    if (hours > 12) {
 		    suffix = "PM";
 		    hours = hours - 12;
-	    };
-        let dateDisplay = months[month] + "/" + date + "/" + year + " at " + hours + ":" + minutes + suffix;
+        }
+        else if (hours = 12) {
+		    suffix = "PM";
+        }
+        let dateDisplay = months[month] + "/" + date + "/" + year + " at " + hours + ":" + minutes + " " + suffix;
         let timestamp = d.getTime();
 
         // Get current userId
