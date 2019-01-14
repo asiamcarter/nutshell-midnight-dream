@@ -43,7 +43,7 @@ const eventListeners = {
         {
             message: messageContent,
             time: timestamp,
-            userId: sessionUser
+            userId: Number(sessionUser)
         }
         console.log(messageObject)
         data.postChatData(messageObject)
