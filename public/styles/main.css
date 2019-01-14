@@ -105,6 +105,10 @@ color:black
     padding: 10px;
 }
 
+.friend_article {
+    background-color: cornsilk;
+}
+
 #form_container fieldset {
     border: none;
     margin-bottom: 15px;

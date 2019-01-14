@@ -102,20 +102,24 @@ const newsForm = {
         let inputURL = document.querySelector("#article_url").value;
 
         // Get current time
-        let months = ["1", "2", "3", "4", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
         let d = new Date();
         let month = d.getMonth();
         let date = d.getDate();
         let year = d.getFullYear();
         let hours = d.getHours();
         let minutes = ("0" + d.getMinutes()).slice(-2);
-        // let secs = ("0" + d.getSeconds()).slice(-2);
-        let dateDisplay = months[month] + "/" + date + "/" + year + " at " + hours + ":" + minutes;
+        let suffix = "AM";
+	        if (hours >= 12) {
+		    suffix = "PM";
+		    hours = hours - 12;
+	    };
+        let dateDisplay = months[month] + "/" + date + "/" + year + " at " + hours + ":" + minutes + suffix;
         let timestamp = d.getTime();
 
         // Get current userId
         let sessionUser = sessionStorage.getItem("User")
-        let userID = sessionUser;
+        let userID = Number(sessionUser);
 
         // Create new object with correct DB structure to represent a single news article:
         let articleToSave = {
@@ -130,7 +134,7 @@ const newsForm = {
         // Save article to database
         // Then rebuild the article list on DOM
         data.postNewsData(articleToSave)
-        .then(response => {
+        .then(() => {
             newsArticles.buildArticles()
         })
 
