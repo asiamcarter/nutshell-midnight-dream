@@ -6,6 +6,7 @@ import eventsForm from "./eventsForm";
 import eventsList from "./eventsList"
 import newsForm from "./newsForm"
 import chatFormAndAppend from "./chatFormAndAppend";
+import friends from "./friends"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -105,6 +106,42 @@ const eventListeners = {
     },
     saveNewsArticle() {
         newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
+    },
+
+    addAFriend(){
+        let usernameSearched = document.querySelector(".friendInputField").value
+        data.friendChecker(usernameSearched)
+        .then(response => {
+           response.forEach(user => {
+               let container = document.querySelector(".friendContainer")
+               let username = user.name
+               let usernameOnDom = document.createElement("h3");
+               usernameOnDom.innerHTML=username;
+               container.appendChild(usernameOnDom);
+               let saveFriendButton = document.createElement("button");
+               saveFriendButton.classList.add("saveFriendButton");
+               saveFriendButton.textContent = "Add Friend";
+               usernameOnDom.appendChild(saveFriendButton);
+
+            console.log(user.username);
+
+               let sessionId = sessionStorage.getItem("User")
+               const friendToSave = {
+                userId: Number(sessionId),
+                otherId: user.id,
+                username: user.name
+            };
+            saveFriendButton.addEventListener("click", () => {
+                let saveFriendButton = document.querySelector(".saveFriendButton")
+                saveFriendButton.textContent = "Nice!"
+                data.newFriendPoster(friendToSave)
+                .then(() => {
+                    console.log("Friend To Save:",friendToSave)
+                    friends.friendPageBuilder()
+                })
+            })
+        })
+    })
     }
 }
 

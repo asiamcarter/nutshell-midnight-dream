@@ -216,7 +216,7 @@ const welcome = {
                 // console.log(entry.id);
                 sessionStorage.setItem("User", entry.id)
                let sessionUser = sessionStorage.getItem("User")
-                console.log(sessionUser);
+                console.log("session User:", sessionUser);
                 // if(userLogin === entry.name && userEmail === entry.email){
                 //     loggedIn = true;
                 // }

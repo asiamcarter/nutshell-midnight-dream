@@ -7,6 +7,7 @@ import taskList from "./tasks"
 import chat from "./chat"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"
+import friends from "./friends"
 
 const nav = {
     buildNav() {
@@ -14,6 +15,7 @@ const nav = {
 
         let logo = document.createElement("div");
         logo.setAttribute("id", "logo");
+        logo.setAttribute("class", "navbar-brand")
         logo.textContent = "The Turtle Tub";
 
         let navLinks = document.createElement("div");
@@ -22,6 +24,7 @@ const nav = {
 
         let item1 = document.createElement("li");
         let link1 = document.createElement("a");
+        link1.setAttribute("class", "nav-item active");
         link1.setAttribute("href", "#");
         link1.textContent = "News";
         item1.appendChild(link1);
@@ -50,7 +53,12 @@ const nav = {
 
 
         let item5 = document.createElement("li");
-        item5.textContent = "Friends";
+        let link5 = document.createElement("a");
+        link5.setAttribute("href", "#");
+        link5.textContent = "Friends";
+        item5.appendChild(link5);
+        item5.addEventListener("click", friends.friendPageBuilder)
+
 
         let item6 = document.createElement("li");
         let link6 = document.createElement("a");
