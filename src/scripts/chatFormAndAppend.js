@@ -20,26 +20,29 @@ const chatFormAndAppend = {
         userMessageContent.classList.add("userMessageContent");
         userMessageContent.classList.add(`chatroomDiv--${id}`);
         userMessageContent.textContent =`${message.message} ${message.time} `
-
-        let messageEditButton = document.createElement("button");
-        messageEditButton.textContent="edit";
-        messageEditButton.setAttribute("id", `messageEditButton--${message.id}`)
-
         userMessageDiv.appendChild(userNameSection);
         userMessageDiv.appendChild(userPhotoSection);
         userMessageDiv.appendChild(userMessageContent);
+
+
+        let sessionUser = sessionStorage.getItem("User");
+        if (Number(sessionUser) === message.user.id) {
+        let messageEditButton = document.createElement("button");
+        messageEditButton.textContent="edit";
+        messageEditButton.setAttribute("id", `messageEditButton--${message.id}`)
         userMessageContent.appendChild(messageEditButton);
-
-
-
 
         data.getChatData()
         .then(() => {
 
             messageEditButton.addEventListener("click", () => {
+                let messageDivId = event.target.id;
+                let messageId = messageDivId.split("--")[1]
                 chatEditForm.chatFoodEditForm(message)
             })
         })
+
+    }
 
         return userMessageDiv;
     },
