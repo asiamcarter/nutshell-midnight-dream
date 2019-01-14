@@ -126,6 +126,22 @@ const data = {
         return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
         .then(response => response.json())
     },
+
+    friendChecker(username){
+        return fetch(`http://localhost:8088/users?name=${username}`)
+        .then(response => response.json())
+    },
+
+    newFriendPoster(friendToSave){
+        return fetch("http://localhost:8088/connections", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            // Where the argument is called and the object is passed that has been declared in eventListener.js
+            body: JSON.stringify(friendToSave)
+                })
+      }
 };
 
 export default data

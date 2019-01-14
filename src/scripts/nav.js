@@ -53,7 +53,7 @@ const nav = {
         let item5 = document.createElement("li");
         let link5 = document.createElement("a");
         link5.setAttribute("href", "#");
-        item5.textContent = "Friends";
+        link5.textContent = "Friends";
         item5.appendChild(link5);
         item5.addEventListener("click", friends.friendPageBuilder)
 

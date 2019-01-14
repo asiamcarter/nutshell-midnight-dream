@@ -93,6 +93,36 @@ const eventListeners = {
     },
     saveNewsArticle() {
         newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
+    },
+
+    addAFriend(){
+        let usernameSearched = document.querySelector(".friendInputField").value
+        console.log(usernameSearched)
+        data.friendChecker(usernameSearched)
+        .then(response => {
+           response.forEach(user => {
+               let container = document.querySelector(".friendContainer")
+               let username = user.name
+               let usernameOnDom = document.createElement("h3");
+               usernameOnDom.innerHTML=username;
+               container.appendChild(usernameOnDom);
+               let saveFriendButton = document.createElement("button");
+               saveFriendButton.classList.add("saveFriendButton");
+               saveFriendButton.textContent = "Add Friend";
+               usernameOnDom.appendChild(saveFriendButton);
+
+               let sessionId = sessionStorage.getItem("User")
+               const friendToSave = {
+                userId: Number(sessionId),
+                otherId:user.id
+            };
+            console.log(friendToSave)
+            saveFriendButton.addEventListener("click", () => {
+                let saveFriendButton = document.querySelector(".saveFriendButton")
+                saveFriendButton.textContent = "Nice!"
+            })
+           });
+        })
     }
 }
 
