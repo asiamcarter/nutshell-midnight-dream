@@ -10,8 +10,10 @@ const chatFormAndAppend = {
 
         let userNameSection = document.createElement("section");
         userNameSection.classList.add("usernameSection");
-        userNameSection.textContent = `${message.user.id}`
-
+        userNameSection.textContent = `${message.user.name}`
+        userNameSection.addEventListener("click", () => {
+            console.log("click")
+        })
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
         // userPhotoSection.textContent=`${message.photo}`
