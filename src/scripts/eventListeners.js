@@ -65,18 +65,21 @@ const eventListeners = {
      // this function will cause the "add new event button" to appear
     newEventButtonClick(){
         document.querySelector(".event--add").addEventListener("click", function(){
-            eventsForm.createEventForm()
-            eventListeners.saveEventButtonClick()
+            eventsForm.createEventForm();
+            eventListeners.saveEventButtonClick();
         })
     },
     saveEventButtonClick(){
         document.querySelector(".event--save--button").addEventListener("click", function(){
+
+            let sessionUser = sessionStorage.getItem("User");
+
             // retrieve new and old values from the input fields
             let eventName = document.querySelector(".new--event--name").value;
             let eventDate = document.querySelector(".new--event--date").value;
             let eventLocation = document.querySelector(".new--event--location").value;
             // need to get user from session storage
-            let user = 2;
+            let user = Number(sessionUser);
 
             // object that will be pushed into database
             let newEventInfo = {

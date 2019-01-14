@@ -214,7 +214,13 @@ html, body {
 }
 
 .first--event {
-    background-color: cornsilk;
-    font-style: italic;
     font-weight: bolder;
+    font-size: 1.5em;
 }
+
+.friend--event {
+    font-style: italic;
+    background-color: cornsilk;
+}
+
+
