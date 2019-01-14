@@ -2,17 +2,22 @@ import data from "./data"
 import chatFormAndAppend from "./chatFormAndAppend";
 //This module creates the form shown when edit button is pressed.
 const chatEditForm = {
-    chatFoodEditForm () {
-        let editMessageField = document.createElement("input");
-        editMessageField.setAttribute("type", "text");
-        let saveButton = document.createElement("button");
-        saveButton.textContent = "Save";
+    chatFoodEditForm (message) {
         let messageDivId = event.target.id;
         let messageId = messageDivId.split("--")[1]
+        let editMessageField = document.createElement("input");
+        editMessageField.setAttribute("type", "text");
+        editMessageField.value = message.message;
+        console.log(editMessageField)
+        let saveButton = document.createElement("button");
+        saveButton.textContent = "Save";
+        // let messageDivId = event.target.id;
+        // let messageId = messageDivId.split("--")[1]
         //HTTP GET request gets message array, pass in the message id
         data.getChatData2(messageId)
         .then(response => {
             console.log(response)
+
             //add event listener to save button. Event listener creates object to PUT in database.json
             saveButton.addEventListener("click", () => {
                 let date = new Date();
@@ -33,7 +38,7 @@ const chatEditForm = {
         })
     //Empties the chatroomdiv and replaces it with the edit message form and save button
 
-    let messageDiv = document.querySelector(".userMessageContent");
+    let messageDiv = document.querySelector(`.chatroomDiv--${messageId}`);
 
     while (messageDiv.firstChild) {
         messageDiv.removeChild(messageDiv.firstChild);
