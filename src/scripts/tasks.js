@@ -1,5 +1,6 @@
 import data from "./data";
 import tasksForm from "./tasksForm";
+import taskEdit from "./tasksEditForm"
 
 //This JS file will contain a function which builds a task list current to the specific user logged in to the platform
 //create an article which can be appended to to the output container in the index.HTML
@@ -46,24 +47,36 @@ const taskList = {
         data.taskListData()
         .then(allTasks => {
             console.log(allTasks);
-            allTasks.forEach(toDo => {
+            allTasks.forEach(task => {
             //create html elements for each task list object and append to the task container on the DOM
-            let taskListEntry = document.createElement("div");
-            taskListEntry.setAttribute ("id", `taskList_entry--${toDo.id}`);
-            taskListDiv.appendChild(taskListEntry);
+                let taskListEntry = document.createElement("div");
+                taskListEntry.setAttribute ("id", "taskListEntry");
+                taskListDiv.appendChild(taskListEntry);
 
-            let taskItem = document.createElement("h2");
-            taskItem.textContent = toDo.task;
+                let taskItem = document.createElement("h2");
+                taskItem.setAttribute ("id", `taskList_name--${task.id}`)
+                taskItem.textContent = task.task;
+                //event listener for edit functionality
+                taskItem.addEventListener("click", () => {
+                    taskEdit.taskEditBuilder()
+                    });
 
-            let taskDate = document.createElement("p");
-            taskDate.textContent = `Due Date: ${toDo.dueDate}`;
+                let taskDate = document.createElement("p");
+                taskDate.textContent = `Due Date: ${task.dueDate}`;
 
-            //create checkbox for each tasklist item
-            var taskCheckbox = document.createElement("input");
-            taskCheckbox.setAttribute ("type","checkbox");
-            taskCheckbox.setAttribute ("id", "tasklist_checkbox");
+                //create checkbox for each tasklist item
+                var taskCheckbox = document.createElement("input");
+                taskCheckbox.setAttribute ("type","checkbox");
+                taskCheckbox.setAttribute ("id", "tasklist_checkbox");
 
             //checkbox event listener to remove the task from the page when completed (GET/PATCH)
+                console.log(taskCheckbox.checked)
+                var x = document.getElementById("tasklist_checkbox").value;
+                console.log(x);
+                //1) checkbox clicked for "complete" initiates a PATCH
+                //2) complete a forEach loop over the tasks array and for any values of "true" hide from list
+                //3) how do you actually hide??
+
 
             // edit button event listener to edit the existing entry (GET/EDIT)
             // modifyTaskButton.addEventListener("click", () => {
