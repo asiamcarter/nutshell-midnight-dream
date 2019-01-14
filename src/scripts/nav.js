@@ -46,6 +46,7 @@ const nav = {
         item4.appendChild(link4);
         item4.addEventListener("click", chat.chatPageLoad);
 
+
         let item5 = document.createElement("li");
         item5.textContent = "Friends";
 

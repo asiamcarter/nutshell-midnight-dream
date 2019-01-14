@@ -5,6 +5,7 @@ import chat from "./chat"
 import eventsForm from "./eventsForm";
 import eventsList from "./eventsList"
 import newsForm from "./newsForm"
+import chatFormAndAppend from "./chatFormAndAppend";
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -33,17 +34,21 @@ const eventListeners = {
     chatMessage() {
         let messageContent = document.querySelector(".messageInput").value;
         let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let timestamp = `${hours}:${minutes}`;
         // let userId = userId
+        let sessionUser = sessionStorage.getItem("User")
         let messageObject =
         {
             message: messageContent,
-            time: date,
-            userId: "2"
+            time: timestamp,
+            userId: sessionUser
         }
         console.log(messageObject)
         data.postChatData(messageObject)
             .then(response=> {
-                chat.userMessageToDOM();
+                chatFormAndAppend.userMessageToDOM();
                 let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";
         })
@@ -90,6 +95,7 @@ const eventListeners = {
         newsForm.checkFields()      // Checks to see if fields are filled in, then POSTs
     }
 }
+
 
 
 
