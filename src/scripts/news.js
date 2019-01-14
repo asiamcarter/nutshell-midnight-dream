@@ -41,11 +41,19 @@ const newsArticles = {
         // Create doc frag to hold each article item
         let newsDocFrag = document.createDocumentFragment();
 
-        // Create empty array
+        // Create empty array to hold articles
         let articleArray = [];
 
+        // ALTERNATE (more concise) OPTION:
+        // 1. Create array to hold IDs
+        // 2. Add sessionUser ID to array
+        // 3. Add each friend ID to array
+        // 4. For each ID, fetch articles
+
         // GET all friends of current user
-        data.getFriends()                           // gets all connections filtered by sessionUser
+        // Fetches all friends' articles
+        // Pushes each article into array
+        data.getFriends()                           // Gets all connections filtered by sessionUser
         .then(allFriends => {
             allFriends.forEach(friend => {
                 let friendID = friend.otherId;
@@ -57,6 +65,8 @@ const newsArticles = {
                 })
             })
         })
+        // Fetches current user's articles
+        // Pushes each article into array
         .then(function(){
             data.newsData()
             .then(allUserArticles => {
@@ -66,8 +76,9 @@ const newsArticles = {
             })
             .then(function() {
 
+                // Sort articles by timestamp, newest to oldest
                 articleArray.sort(function(x, y){
-                    return x.timestamp - y.timestamp;
+                    return y.timestamp - x.timestamp;
                 })
 
                 articleArray.forEach(article => {
@@ -109,7 +120,7 @@ const newsArticles = {
                             newsAuthor.innerHTML = `${article.user.name} posted on ${article.date}`;
                         }
 
-                        // Add author & delete button to etc
+                        // Add author to etc
                         newsEtc.appendChild(newsAuthor);
 
                         // Add conditional for "Delete" button
@@ -126,7 +137,7 @@ const newsArticles = {
                                     newsArticles.buildArticles()
                                 })
                             })
-
+                            // Add delete to etc
                             newsEtc.appendChild(deleteArticleBtn);
                         }
 
