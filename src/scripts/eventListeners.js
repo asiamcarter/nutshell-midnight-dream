@@ -123,10 +123,13 @@ const eventListeners = {
                saveFriendButton.textContent = "Add Friend";
                usernameOnDom.appendChild(saveFriendButton);
 
+            console.log(user.username);
+
                let sessionId = sessionStorage.getItem("User")
                const friendToSave = {
                 userId: Number(sessionId),
-                otherId: user.name
+                otherId: user.id,
+                username: user.name
             };
             saveFriendButton.addEventListener("click", () => {
                 let saveFriendButton = document.querySelector(".saveFriendButton")
