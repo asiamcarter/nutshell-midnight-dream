@@ -6,6 +6,7 @@ import eventsForm from "./eventsForm";
 import eventsList from "./eventsList"
 import newsForm from "./newsForm"
 import chatFormAndAppend from "./chatFormAndAppend";
+import friends from "./friends"
 
 const eventListeners = {
     // Function that runs function from WELCOME.JS (Builds registration form whem "here" is clicked)
@@ -97,7 +98,6 @@ const eventListeners = {
 
     addAFriend(){
         let usernameSearched = document.querySelector(".friendInputField").value
-        console.log(usernameSearched)
         data.friendChecker(usernameSearched)
         .then(response => {
            response.forEach(user => {
@@ -114,15 +114,19 @@ const eventListeners = {
                let sessionId = sessionStorage.getItem("User")
                const friendToSave = {
                 userId: Number(sessionId),
-                otherId:user.id
+                otherId: user.name
             };
-            console.log(friendToSave)
             saveFriendButton.addEventListener("click", () => {
                 let saveFriendButton = document.querySelector(".saveFriendButton")
                 saveFriendButton.textContent = "Nice!"
+                data.newFriendPoster(friendToSave)
+                .then(() => {
+                    console.log("Friend To Save:",friendToSave)
+                    friends.friendPageBuilder()
+                })
             })
-           });
         })
+    })
     }
 }
 

@@ -141,7 +141,16 @@ const data = {
             // Where the argument is called and the object is passed that has been declared in eventListener.js
             body: JSON.stringify(friendToSave)
                 })
-      }
+      },
+
+      getFriendsList() {
+        let sessionUser = sessionStorage.getItem("User")
+        return fetch(`http://localhost:8088/connections?userId=${sessionUser}&_expand=user`)
+        .then(response => response.json())
+
+    }
+
+
 };
 
 export default data
