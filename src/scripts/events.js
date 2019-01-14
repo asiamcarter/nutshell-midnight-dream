@@ -23,16 +23,18 @@ const events = {
         eventDiv.classList.add("posted--container")
         eventAddNew.classList.add("event--add")
 
-        // add title and div to section
-        eventSection.appendChild(eventH1);
+        // add div to section
         eventSection.appendChild(eventDiv);
         eventSection.appendChild(eventAddNew);
 
+        // add title and container for all events to the existing article
+        container.appendChild(eventH1);
         container.appendChild(eventSection);
-
     },
     // add events to the section container within each section's unique DIV component
     eventBuilder(id, eventObject) {
+        let sessionUser = sessionStorage.getItem("User");
+
         // grab events container
         let eventSection = document.createDocumentFragment();
 
@@ -65,6 +67,14 @@ const events = {
         eventDetailsDiv.classList.add("event--inner--container");
         eventPosterName.classList.add("event--inner--container");
         eventEdit.classList.add("event--edit--button");
+
+        console.log(`event object user id is ${eventObject.user.id}`)
+        console.log(`session user id is ${sessionUser}`)
+
+        // add class for friends
+        if (eventObject.user.id != Number(sessionUser)) {
+            eventDivContainer.classList.add("friend--event")
+        }
 
         // add text to elements that will be displaying the event information
         eventH2.textContent = eventObject.name;
