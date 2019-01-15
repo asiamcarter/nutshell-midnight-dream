@@ -48,7 +48,7 @@ const eventListeners = {
         }
         console.log(messageObject)
         data.postChatData(messageObject)
-            .then(response=> {
+            .then(()=> {
                 chatFormAndAppend.userMessageToDOM();
                 let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";

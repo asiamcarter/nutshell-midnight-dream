@@ -116,7 +116,7 @@ const welcome = {
         emailInput.setAttribute("type", "text");
         registrationContainer.appendChild(emailInput);
         //
-
+        // Creating "Grab a photo:"
         let photoLabel = document.createElement("label");
         registrationContainer.appendChild(photoLabel);
         photoLabel.innerHTML = "Grab A Photo:";
@@ -125,7 +125,7 @@ const welcome = {
         photoInput.setAttribute("name", "userPhoto");
         photoInput.setAttribute("type", "text");
         registrationContainer.appendChild(photoInput);
-        // })
+        //
 
 
 
