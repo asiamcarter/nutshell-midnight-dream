@@ -3,7 +3,6 @@ import tasksForm from "./tasksForm";
 import taskEdit from "./tasksEditForm"
 
 //This JS file will contain a function which builds a task list current to the specific user logged in to the platform
-//create an article which can be appended to to the output container in the index.HTML
 
 const taskList = {
 
@@ -12,7 +11,7 @@ const taskList = {
         let clearOutputContainer = document.querySelector(".output");
         clearOutputContainer.innerHTML = " ";
 
-        //Task List container
+        //task list container
         let taskListContainer = document.createElement("div");
         taskListContainer.setAttribute = ("id", ".taskList_container");
         clearOutputContainer.appendChild(taskListContainer);
@@ -37,7 +36,6 @@ const taskList = {
 
         //button event listener to open new task form
         newTaskButton.addEventListener("click", () => {
-            // console.log("click")
             tasksForm.createTasksEditForm()
         });
 
@@ -56,10 +54,11 @@ const taskList = {
                 let taskItem = document.createElement("h2");
                 taskItem.setAttribute ("id", `taskList_name--${task.id}`)
                 taskItem.textContent = task.task;
-                //event listener for edit functionality
+
+                //event listener for edit functionality, when task name is clicked, it is replaced with a text box to edit the event name and saved on keyup for the enter key
                 taskItem.addEventListener("click", () => {
                     taskEdit.taskEditBuilder()
-                    });
+                });
 
                 let taskDate = document.createElement("p");
                 taskDate.textContent = `Due Date: ${task.dueDate}`;
@@ -69,7 +68,7 @@ const taskList = {
                 taskCheckbox.setAttribute ("type","checkbox");
                 taskCheckbox.setAttribute ("id", "tasklist_checkbox");
 
-            //checkbox event listener to remove the task from the page when completed (GET/PATCH)
+                //checkbox event listener to remove the task from the page when completed (GET/PATCH)
                 console.log(taskCheckbox.checked)
                 var x = document.getElementById("tasklist_checkbox").value;
                 console.log(x);
@@ -77,29 +76,15 @@ const taskList = {
                 //2) complete a forEach loop over the tasks array and for any values of "true" hide from list
                 //3) how do you actually hide??
 
+                //append forEach elements
+                taskListEntry.appendChild(taskItem);
+                taskListEntry.appendChild(taskDate);
+                taskListEntry.appendChild(taskCheckbox);
+                // taskListEntry.appendChild(modifyTaskButton);
 
-            // edit button event listener to edit the existing entry (GET/EDIT)
-            // modifyTaskButton.addEventListener("click", () => {
-            //     // console.log("fix yo stuff here soon")
-            //         let editedTask = {
-            //         name: taskItem.value,
-            //         }
-            //         //is this right? how does this work?
-            //         data.putExistingTask(taskToEdit.id, editedTask)
-            //         .then(() => {
-            //             taskList.createTaskList()
-            //         });
-            // });
+                taskFragment.appendChild(taskListEntry);
 
-            //append forEach elements
-            taskListEntry.appendChild(taskItem);
-            taskListEntry.appendChild(taskDate);
-            taskListEntry.appendChild(taskCheckbox);
-            // taskListEntry.appendChild(modifyTaskButton);
-
-            taskFragment.appendChild(taskListEntry);
-
-            taskListDiv.appendChild(taskFragment);
+                taskListDiv.appendChild(taskFragment);
             });
         });
     }

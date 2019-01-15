@@ -1,8 +1,7 @@
 import data from "./data"
 import taskList from "./tasks";
-// when "new task" button is clicked, a form pops up which will allow a person to create a new task to track on their page.
+// when "new task" button is clicked, a form pops up which will allow a person to create a new task to track on their homepage.
 
-//form is not displaying
 const tasksForm = {
 
     createTasksEditForm () {
@@ -15,7 +14,7 @@ const tasksForm = {
         taskEditFormContainer.setAttribute = ("id", "taskEditForm");
         clearOutputContainer.appendChild(taskEditFormContainer);
 
-        //New Task Header
+        //new task header
         let newTaskHeader = document.createElement("h1");
         newTaskHeader.innerHTML = "Turtle Things To Tackle";
         newTaskHeader.setAttribute ("id", "taskList_header");
@@ -29,7 +28,6 @@ const tasksForm = {
         let taskFormInputName = document.createElement("input");
         taskEditFormContainer.appendChild(taskFormInputName);
 
-
         let taskFormDateLabel = document.createElement("lebel");
         taskFormDateLabel.textContent = "I will be done by:";
         taskEditFormContainer.appendChild(taskFormDateLabel);
@@ -37,6 +35,7 @@ const tasksForm = {
         let taskFormInputDate = document.createElement("input");
         taskFormInputDate.setAttribute("type", "date");
         taskEditFormContainer.appendChild(taskFormInputDate);
+
         //create save button
         let taskSaveButton = document.createElement("button");
         taskSaveButton.textContent = "Do It (later)!";
@@ -50,18 +49,16 @@ const tasksForm = {
             let taskObject = {
                 "task": taskFormInputName.value,
                 "dueDate": taskFormInputDate.value,
-                //how do I add the session data in the userID?
+                //need to add session storage data here for the user
                 "completed": false,
                 "userId":""
             };
             data.postNewTask(taskObject)
             .then( () => {
-                //TO DO: do I need to go a GET here to use the object to populate the Tasks List? Or would it go in tasks.js?
                 taskList.createTaskList()
             });
         });
     },
-    }
-
+}
 
 export default tasksForm
