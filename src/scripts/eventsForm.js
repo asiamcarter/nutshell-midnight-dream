@@ -1,3 +1,6 @@
+// creates the forms that are used to add and edit events
+// Author: Brittany Ramos-Janeway
+
 import data from "./data";
 import eventsList from "./eventsList";
 

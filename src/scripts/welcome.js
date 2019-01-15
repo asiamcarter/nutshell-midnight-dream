@@ -1,3 +1,7 @@
+// Builds welcome page and features the login form and register link
+// Builds registration form
+// Author: Hunter Metts
+
 import eventListeners from "./eventListeners"
 import data from "./data"
 import newsArticles from "./news"

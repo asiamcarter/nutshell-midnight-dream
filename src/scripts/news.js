@@ -1,4 +1,4 @@
-// Creates and displays News Articles feature
+// Creates and displays News Articles list
 // Author: Megan Cruzen
 
 import data from "./data"

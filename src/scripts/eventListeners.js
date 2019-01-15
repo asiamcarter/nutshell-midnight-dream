@@ -1,3 +1,6 @@
+// Contains all event listeners
+// Authors: Midnight Dream Team
+
 import welcome from "./welcome"
 import data from "./data"
 import newsArticles from "./news"

@@ -1,6 +1,9 @@
+// Creates the form shown when edit button is pressed.
+// Author: Asia Carter
+
 import data from "./data"
 import chatFormAndAppend from "./chatFormAndAppend";
-//This module creates the form shown when edit button is pressed.
+
 const chatEditForm = {
     chatFoodEditForm (message) {
         let messageDivId = event.target.id;

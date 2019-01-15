@@ -1,4 +1,7 @@
-import tasksList from "./tasks";
+// Edit functionality for the edit event in the task list application
+//Author: Nick Hansen
+
+// import tasksList from "./tasks";
 
 const taskEdit = {
 

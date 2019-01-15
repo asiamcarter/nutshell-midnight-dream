@@ -1,3 +1,6 @@
+// Fetches the events and checks that they belong to a user or the user's friend, and then appends the event to the DOM. It also checks that the event is a present or future event and does not display past events
+// Author: Brittany Ramos-Janeway
+
 import eventListeners from "./eventListeners"
 import events from "./events"
 import data from "./data"

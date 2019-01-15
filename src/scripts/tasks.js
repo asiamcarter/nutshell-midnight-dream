@@ -1,8 +1,9 @@
+// Builds and appends a task list current to the specific user logged in to the platform
+// Author: Nick Hansen
+
 import data from "./data";
 import tasksForm from "./tasksForm";
 import taskEdit from "./tasksEditForm"
-
-//This JS file will contain a function which builds a task list current to the specific user logged in to the platform
 
 const taskList = {
 

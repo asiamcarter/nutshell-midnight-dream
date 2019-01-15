@@ -1,3 +1,7 @@
+// Builds friends page
+// Contains functionality to add and delete friends
+// Author: Asia Carter & Hunter Metts
+
 import eventListeners from "./eventListeners"
 import data from "./data"
 const friends = {

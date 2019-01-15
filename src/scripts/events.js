@@ -1,3 +1,6 @@
+// creates HTML elements for events that will be added to the DOM
+// Author: Brittany Ramos-Janeway
+
 import data from "./data";
 import eventsForm from "./eventsForm";
 

@@ -1,9 +1,11 @@
+// Creates chatroom div, message input field and message submit button
+// Author: Asia Carter
+
 import eventListeners from "./eventListeners"
 import chatFormAndAppend from "./chatFormAndAppend"
 
-
 const chat = {
-    //method creates chatroom div, message input field and message submit button
+
     chatPageLoad() {
 
         // Current nav item
