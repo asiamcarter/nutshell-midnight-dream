@@ -1,9 +1,13 @@
 
 import data from "./data"
 import chatEditForm from "./chatEditForm"
+import eventListeners from "./eventListeners"
 //Module creates message HTML and appends to To DOM
 const chatFormAndAppend = {
     //method takes an object as an argument and creates an HTML template
+    test() {
+        alert("BummerTown!")
+    },
     userMessageHTML(message, id) {
         let userMessageDiv = document.createElement("div");
         userMessageDiv.classList.add("userMessage");
@@ -13,7 +17,25 @@ const chatFormAndAppend = {
         userNameSection.textContent = `${message.user.name}`
         console.log("message:", message)
         userNameSection.addEventListener("click", () => {
-            console.log("click")
+            let userFriend = userNameSection.textContent
+            if (confirm(`Add ${userFriend}?`)) {
+                let sessionId = sessionStorage.getItem("User")
+                const friendToAdd = {
+                 userId: Number(sessionId),
+                 otherId: message.id,
+                 username: userFriend
+                }
+                data.newFriendPoster(friendToAdd)
+                .then(()=> {
+                    setTimeout(function()
+                    { alert(`${userFriend} Added!`);
+                 }, 450);
+                })
+
+            } else {
+                setTimeout(chatFormAndAppend.test, 450);
+            }
+
         })
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
