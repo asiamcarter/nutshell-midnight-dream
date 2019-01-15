@@ -17,11 +17,10 @@ const data = {
                 })
                 .then(response => response.json())
       },
-    newsData() {
-        let sessionUser = sessionStorage.getItem("User")
-        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`)
-        .then(response => response.json())
-    },
+    // newsData() {
+    //     return fetch("http://localhost:8088/articles?_expand=user")
+    //     .then(response => response.json())
+    // },
     postNewsData(articleToSave) {
         return fetch("http://localhost:8088/articles",{
             method: "POST",
@@ -122,10 +121,10 @@ const data = {
         return fetch(`http://localhost:8088/connections?userId=${sessionUser}`)
         .then(response => response.json())
     },
-    newsDataFriends(friendID) {
-        return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
-        .then(response => response.json())
-    },
+    // newsDataFriends(friendID) {
+    //     return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
+    //     .then(response => response.json())
+    // },
 
     friendChecker(username){
         return fetch(`http://localhost:8088/users?name=${username}`)
