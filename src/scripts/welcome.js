@@ -130,8 +130,6 @@ const welcome = {
         registrationContainer.appendChild(photoInput);
         //
 
-
-
         // Creatiing submit button for new user:
         let submitNewUsernameAndEmail = document.createElement("button")
         submitNewUsernameAndEmail.setAttribute("id", "submitNewUserButton");
