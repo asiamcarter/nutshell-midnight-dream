@@ -7,7 +7,8 @@ import newsForm from "./newsForm"
 const newsArticles = {
 
     buildArticles() {
-
+        let nav = document.getElementById("navigation")
+        nav.style.visibility = "visible"
         // Select nav item
         let navItem = document.querySelector("#nav_links");
         let navUL = navItem.firstChild;

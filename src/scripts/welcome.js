@@ -4,6 +4,8 @@ import newsArticles from "./news"
 const welcome = {
     // Builds welcome page
     welcomeBuilderAndAppender(){
+        let nav = document.getElementById("navigation")
+        nav.style.visibility = "hidden"
         // creating "the turtle tub" and appending it
         let container = document.querySelector(".output");
         container.innerHTML = " ";
