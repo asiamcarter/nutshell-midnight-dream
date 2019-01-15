@@ -57,8 +57,8 @@ const newsArticles = {
         })
         .then(function() {
 
+            // Fetch ALL articles
             let eventString = "articles?_expand=user";
-
             data.getData(eventString)
             .then(allArticles => {
 
@@ -67,10 +67,10 @@ const newsArticles = {
                     return y.timestamp - x.timestamp;
                 })
 
+                // Only create and append the articles that have a userId equal to IDs in idArray
                 allArticles.forEach(article => {
                     for (let i = 0; i < idArray.length; ++i) {
                         if (idArray[i] === article.userId) {
-                            console.log("User", idArray[i], "=", article.userId, article);
                             let sessionUser = sessionStorage.getItem("User");
 
                             let articleSection = document.createElement("div");
