@@ -145,8 +145,25 @@ const welcome = {
         // console.log(entryToSave)
 
         data.postUsernameAndEmailToJSON(entryToSave)
-        .then(word => {
-        console.log(word)});
+        .then(() => {
+
+            // fetch call that retrieves user id in order to set session storage
+            data.getUserDataForLogin(registrationUsername, registrationEmail)
+                .then(allEntries => {
+                    allEntries.forEach(entry => {
+                        let loggedIn = false;
+                        sessionStorage.setItem("User", entry.id);
+                        let sessionUser = sessionStorage.getItem("User");
+                        console.log(sessionUser);
+                        if(registrationUsername === entry.name && registrationEmail === entry.email){
+                            loggedIn = true;
+                        }
+                        if(loggedIn === true){
+                            newsArticles.buildArticles();
+                        }
+                    })
+                })
+        });
     },
 
     incorrectUsernameOrEmailBuilderAndAppend(){
