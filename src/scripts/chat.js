@@ -20,7 +20,8 @@ const chat = {
         chatFormAndAppend.userMessageToDOM();
         let outPutArticle = document.querySelector(".output");
         outPutArticle.textContent= " ";
-        outPutArticle.innerHTML+="<h1>CHAT</h1>";
+        outPutArticle.innerHTML+="<h1 class='chatTitle'>CHAT</h1>";
+
         let chatroomDiv = document.createElement("div");
         chatroomDiv.classList.add("chatroomDiv");
         outPutArticle.appendChild(chatroomDiv);

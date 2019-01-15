@@ -20,10 +20,19 @@ friendPageBuilder(){
         allFriends.forEach(friend => {
         let container = document.querySelector(".yourFriends")
         let friendHeader = document.createElement("h3");
-        friendHeader.textContent=friend.username;
+        friendHeader.innerHTML=`<h2>${friend.username}</h2>`;
         container.appendChild(friendHeader)
-        // console.log(friendHeader)
-            console.log("friend", friend)
+          let deleteFriendButton = document.createElement("button")
+          deleteFriendButton.textContent = "Delete"
+          deleteFriendButton.setAttribute("id", `friend--${friend.id}`)
+        container.appendChild(deleteFriendButton)
+                deleteFriendButton.addEventListener("click", () => {
+                let friendDeleteId = event.target.id.split("--")[1]
+                data.deleteFriend(friendDeleteId)
+                .then(response => {
+                    friends.friendPageBuilder()
+                })
+                })
     })
 })
 
@@ -47,6 +56,7 @@ friendPageBuilder(){
     friendContainer.appendChild(friendInputButton);
 
     friendInputButton.addEventListener("click", eventListeners.addAFriend)
+
     // data.getFriendsList()
     // .then(response => {
     //     response.forEach(friend => {

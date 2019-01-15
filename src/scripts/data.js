@@ -159,7 +159,16 @@ const data = {
         return fetch(`http://localhost:8088/connections?userId=${sessionUser}&_expand=user`)
         .then(response => response.json())
 
-    }
+    },
+
+    deleteFriend(id) {
+        return fetch(`http://localhost:8088/connections/${id}`, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json"
+          }
+        })
+      }
 
 
 };

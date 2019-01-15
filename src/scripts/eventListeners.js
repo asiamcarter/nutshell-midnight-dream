@@ -44,11 +44,11 @@ const eventListeners = {
         {
             message: messageContent,
             time: timestamp,
-            userId: sessionUser
+            userId: Number(sessionUser)
         }
         console.log(messageObject)
         data.postChatData(messageObject)
-            .then(() => {
+            .then(()=> {
                 chatFormAndAppend.userMessageToDOM();
                 let messageInput = document.querySelector(".messageInput");
                 messageInput.value="";
@@ -122,6 +122,8 @@ const eventListeners = {
                saveFriendButton.classList.add("saveFriendButton");
                saveFriendButton.textContent = "Add Friend";
                usernameOnDom.appendChild(saveFriendButton);
+
+
 
             console.log(user.username);
 
