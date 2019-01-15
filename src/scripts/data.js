@@ -48,7 +48,8 @@ const data = {
 
     taskListData() {
     //GET full task list
-        return fetch("http://localhost:8088/tasks")
+        let sessionUser = sessionStorage.getItem("User")
+        return fetch(`http://localhost:8088/tasks?userId=${sessionUser}`)
         .then(response => response.json())
     },
     postNewTask(taskObject){

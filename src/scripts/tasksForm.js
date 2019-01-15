@@ -46,12 +46,12 @@ const tasksForm = {
         //save button event listener
         taskSaveButton.addEventListener("click", () => {
             //object which be saved in JSON
+            let sessionId = sessionStorage.getItem("User")
             let taskObject = {
                 "task": taskFormInputName.value,
                 "dueDate": taskFormInputDate.value,
-                //need to add session storage data here for the user
                 "completed": false,
-                "userId":""
+                "userId":Number(sessionId)
             };
             data.postNewTask(taskObject)
             .then( () => {
