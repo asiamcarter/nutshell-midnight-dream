@@ -31,7 +31,7 @@ const chatEditForm = {
                 }
                 //HTTP PUT request takes the new object and puts it in the place of the former object. Then the new object is rendered to the DOM.
                     data.putChatEdit(response.id, editedMessage)
-                    .then(response => {
+                    .then(() => {
                         chatFormAndAppend.userMessageToDOM()
                     })
             })

@@ -43,7 +43,7 @@ h1 {
 }
 
 #logo a:hover {
-    color:green;
+    color:#fff;
 }
 
 #nav_links ul {
@@ -309,7 +309,7 @@ html, body {
 .first--event {
     font-weight: bolder;
     font-size: 1.5em;
-    background-color: greenyellow;
+    background-color: greenyellow !important;
 }
 
 .friend--event {

@@ -88,7 +88,7 @@ const eventsForm = {
             // access the database and post the updated event
             data.addEventEdit(eventId, editedEvent)
             // upload the updated list of events
-            .then(response => {
+            .then(() => {
                 eventsList.listEvents()
             })
         });

@@ -43,7 +43,8 @@ const eventsList = {
         })
 
         // get events from database
-        data.getData(eventString)
+        .then(function() {
+            data.getData(eventString)
             .then(allEvents => {
                 allEvents.sort(function(a, b){
                     return new Date(a.date) - new Date(b.date);
@@ -85,6 +86,7 @@ const eventsList = {
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
                 eventDiv.firstChild.classList.add("first--event");
+        })
         })
     }
 }

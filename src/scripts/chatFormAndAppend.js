@@ -34,7 +34,7 @@ const chatFormAndAppend = {
 
 
         data.getChatData()
-        .then(response => {
+        .then(() => {
 
             messageEditButton.addEventListener("click", () => {
                 let messageDivId = event.target.id;
