@@ -145,8 +145,9 @@ const welcome = {
         // console.log(entryToSave)
 
         data.postUsernameAndEmailToJSON(entryToSave)
-        .then(word => {
-            console.log(word)
+        .then(() => {
+
+            // fetch call that retrieves user id in order to set session storage
             data.getUserDataForLogin(registrationUsername, registrationEmail)
                 .then(allEntries => {
                     allEntries.forEach(entry => {
