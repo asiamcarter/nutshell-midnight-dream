@@ -47,6 +47,7 @@ const data = {
     },
 
     taskListData() {
+    //GET full task list
         return fetch("http://localhost:8088/tasks")
         .then(response => response.json())
     },
@@ -60,6 +61,16 @@ const data = {
             body: JSON.stringify(taskObject)
                 });
             },
+    putExistingTask(task, taskToEdit) {
+        //TO DO: make put work for task edit. have not tested yet (friday 3:30pm)
+        return fetch(`http://localhost:8088/tasks/${task}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(taskToEdit)
+        })
+        },
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
