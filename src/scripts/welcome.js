@@ -126,6 +126,7 @@ const welcome = {
         photoInput.setAttribute("id", "userPhoto");
         photoInput.setAttribute("name", "userPhoto");
         photoInput.setAttribute("type", "text");
+        photoInput.setAttribute("placeholder", "Enter a URL")
         registrationContainer.appendChild(photoInput);
         //
 
