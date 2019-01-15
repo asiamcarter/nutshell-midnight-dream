@@ -15,8 +15,10 @@ const nav = {
 
         let logo = document.createElement("div");
         logo.setAttribute("id", "logo");
-        logo.setAttribute("class", "navbar-brand")
-        logo.textContent = "The Turtle Tub";
+        let logoLink = document.createElement("a");
+        logoLink.setAttribute("href", "#");
+        logoLink.textContent = "The Turtle Tub";
+        logo.appendChild(logoLink);
 
         let navLinks = document.createElement("div");
         navLinks.setAttribute("id", "nav_links");
