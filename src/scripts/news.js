@@ -41,114 +41,115 @@ const newsArticles = {
         // Create doc frag to hold each article item
         let newsDocFrag = document.createDocumentFragment();
 
-        // Create empty array
-        let articleArray = [];
+        // Create array to hold IDs
+        let idArray = [];
 
-        // GET all friends of current user
-        data.getFriends()                           // gets all connections filtered by sessionUser
+        // Add sessionUser ID to array
+        let sessionUser = sessionStorage.getItem("User");
+        idArray.push(Number(sessionUser));
+
+        // Add each friend ID to array
+        data.getFriends()
         .then(allFriends => {
             allFriends.forEach(friend => {
-                let friendID = friend.otherId;
-                data.newsDataFriends(friendID)
-                .then(allFriendArticles => {
-                    allFriendArticles.forEach(article => {
-                        articleArray.push(article);
-                    })
-                })
+                idArray.push(friend.otherId);
             })
         })
-        .then(function(){
-            data.newsData()
-            .then(allUserArticles => {
-                allUserArticles.forEach(article => {
-                    articleArray.push(article);
+        .then(function() {
+
+            // Fetch ALL articles
+            let eventString = "articles?_expand=user";
+            data.getData(eventString)
+            .then(allArticles => {
+
+                // Sort articles by timestamp, newest to oldest
+                allArticles.sort(function(x, y){
+                    return y.timestamp - x.timestamp;
                 })
-            })
-            .then(function() {
 
-                articleArray.sort(function(x, y){
-                    return x.timestamp - y.timestamp;
-                })
+                // Only create and append the articles that have a userId equal to IDs in idArray
+                allArticles.forEach(article => {
+                    for (let i = 0; i < idArray.length; ++i) {
+                        if (idArray[i] === article.userId) {
+                            let sessionUser = sessionStorage.getItem("User");
 
-                articleArray.forEach(article => {
+                            let articleSection = document.createElement("div");
+                            articleSection.setAttribute("class", "article_section");
 
-                        let sessionUser = sessionStorage.getItem("User");
+                            // Conditional for article styling
+                            if (article.userId !== Number(sessionUser)) {
+                                articleSection.classList.add("friend_article");
+                            }
 
-                        let articleSection = document.createElement("div");
-                        articleSection.setAttribute("class", "article_section");
+                            let articleInfo = document.createElement("div");
+                            articleInfo.setAttribute("class", "news_info");
 
-                        // Conditional for article styling
-                        if (article.userId !== Number(sessionUser)) {
-                            articleSection.classList.add("friend_article");
-                        }
+                            let newsTitle = document.createElement("h3");
+                            newsTitle.textContent = article.title;
 
-                        let articleInfo = document.createElement("div");
-                        articleInfo.setAttribute("class", "news_info");
+                            let newsSynopsis = document.createElement("div");
+                            newsSynopsis.setAttribute("class", "news_synopsis");
+                            newsSynopsis.textContent = article.synopsis;
 
-                        let newsTitle = document.createElement("h3");
-                        newsTitle.textContent = article.title;
+                            let newsURL = document.createElement("div");
+                            newsURL.setAttribute("class", "news_link");
+                            newsURL.innerHTML = `<a href="${article.url}">Read article</a>`;
 
-                        let newsSynopsis = document.createElement("div");
-                        newsSynopsis.setAttribute("class", "news_synopsis");
-                        newsSynopsis.textContent = article.synopsis;
+                            let newsEtc = document.createElement("div");
+                            newsEtc.setAttribute("class", "news_etc");
 
-                        let newsURL = document.createElement("div");
-                        newsURL.setAttribute("class", "news_link");
-                        newsURL.innerHTML = `<a href="${article.url}">Read article</a>`;
+                            let newsAuthor = document.createElement("div");
+                            newsAuthor.setAttribute("class", "news_author");
 
-                        let newsEtc = document.createElement("div");
-                        newsEtc.setAttribute("class", "news_etc");
+                            if (Number(sessionUser) === article.userId) {
+                                newsAuthor.innerHTML = `You posted on ${article.date}`;
+                            }
+                            else {
+                                newsAuthor.innerHTML = `${article.user.name} posted on ${article.date}`;
+                            }
 
-                        let newsAuthor = document.createElement("div");
-                        newsAuthor.setAttribute("class", "news_author");
+                            // Add author to etc
+                            newsEtc.appendChild(newsAuthor);
 
-                        if (Number(sessionUser) === article.userId) {
-                            newsAuthor.innerHTML = `You posted on ${article.date}`;
-                        }
-                        else {
-                            newsAuthor.innerHTML = `${article.user.name} posted on ${article.date}`;
-                        }
+                            // Add conditional for "Delete" button
+                            // If userId = current user, show "Delete" button
+                            if (Number(sessionUser) === article.userId) {
+                                let deleteArticleBtn = document.createElement("button");
+                                deleteArticleBtn.setAttribute("class", "article_delete_btn");
+                                deleteArticleBtn.textContent = "Delete";
 
-                        // Add author & delete button to etc
-                        newsEtc.appendChild(newsAuthor);
-
-                        // Add conditional for "Delete" button
-                        // If userId = current user, show "Delete" button
-                        if (Number(sessionUser) === article.userId) {
-                            let deleteArticleBtn = document.createElement("button");
-                            deleteArticleBtn.setAttribute("class", "article_delete_btn");
-                            deleteArticleBtn.textContent = "Delete";
-
-                            deleteArticleBtn.addEventListener("click", () => {
-                                let articleId = article.id;
-                                data.deleteNewsData(articleId)
-                                .then(() => {
-                                    newsArticles.buildArticles()
+                                deleteArticleBtn.addEventListener("click", () => {
+                                    let articleId = article.id;
+                                    data.deleteNewsData(articleId)
+                                    .then(() => {
+                                        newsArticles.buildArticles()
+                                    })
                                 })
-                            })
+                                // Add delete to etc
+                                newsEtc.appendChild(deleteArticleBtn);
+                            }
 
-                            newsEtc.appendChild(deleteArticleBtn);
+                            // Add title, synopsis, and URL to article info
+                            articleInfo.appendChild(newsTitle);
+                            articleInfo.appendChild(newsSynopsis);
+                            articleInfo.appendChild(newsURL);
+
+                            // Add article info & etc to article section
+                            articleSection.appendChild(articleInfo);
+                            articleSection.appendChild(newsEtc);
+
+                            // Append each item to doc frag
+                            newsDocFrag.appendChild(articleSection);
                         }
-
-                        // Add title, synopsis, and URL to article info
-                        articleInfo.appendChild(newsTitle);
-                        articleInfo.appendChild(newsSynopsis);
-                        articleInfo.appendChild(newsURL);
-
-                        // Add article info & etc to article section
-                        articleSection.appendChild(articleInfo);
-                        articleSection.appendChild(newsEtc);
-
-                        // Append each item to doc frag
-                        newsDocFrag.appendChild(articleSection);
+                    }
                 })
 
-            // Append doc frag to ARTICLE container
-            articleContainer.appendChild(newsDocFrag);
+                // Append doc frag to ARTICLE container
+                articleContainer.appendChild(newsDocFrag);
 
-            })
-        })
+            }) // end .then(allArticles)
 
+        }) // .then(function())
     }
 
 }

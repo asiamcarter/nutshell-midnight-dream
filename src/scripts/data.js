@@ -17,11 +17,10 @@ const data = {
                 })
                 .then(response => response.json())
       },
-    newsData() {
-        let sessionUser = sessionStorage.getItem("User")
-        return fetch(`http://localhost:8088/articles?userId=${sessionUser}&_expand=user`)
-        .then(response => response.json())
-    },
+    // newsData() {
+    //     return fetch("http://localhost:8088/articles?_expand=user")
+    //     .then(response => response.json())
+    // },
     postNewsData(articleToSave) {
         return fetch("http://localhost:8088/articles",{
             method: "POST",
@@ -48,6 +47,7 @@ const data = {
     },
 
     taskListData() {
+    //GET full task list
         return fetch("http://localhost:8088/tasks")
         .then(response => response.json())
     },
@@ -61,6 +61,16 @@ const data = {
             body: JSON.stringify(taskObject)
                 });
             },
+    putExistingTask(task, taskToEdit) {
+        //TO DO: make put work for task edit. have not tested yet (friday 3:30pm)
+        return fetch(`http://localhost:8088/tasks/${task}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(taskToEdit)
+        })
+        },
     // When called, this function goes and "gets" the user name and email (see main.js eventListeners.userLogin)
     getUserDataForLogin(username, email){
         return fetch(`http://localhost:8088/users?name=${username}&email=${email}`)
@@ -122,10 +132,10 @@ const data = {
         return fetch(`http://localhost:8088/connections?userId=${sessionUser}`)
         .then(response => response.json())
     },
-    newsDataFriends(friendID) {
-        return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
-        .then(response => response.json())
-    },
+    // newsDataFriends(friendID) {
+    //     return fetch(`http://localhost:8088/articles?userId=${friendID}&_expand=user`)
+    //     .then(response => response.json())
+    // },
 
     friendChecker(username){
         return fetch(`http://localhost:8088/users?name=${username}`)

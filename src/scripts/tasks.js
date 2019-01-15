@@ -1,8 +1,8 @@
 import data from "./data";
 import tasksForm from "./tasksForm";
+import taskEdit from "./tasksEditForm"
 
-//This JS file will contain a function which
-//create an article which can be appended to to the output container in the index.HTML
+//This JS file will contain a function which builds a task list current to the specific user logged in to the platform
 
 const taskList = {
 
@@ -11,7 +11,7 @@ const taskList = {
         let clearOutputContainer = document.querySelector(".output");
         clearOutputContainer.innerHTML = " ";
 
-        //Task List container
+        //task list container
         let taskListContainer = document.createElement("div");
         taskListContainer.setAttribute = ("id", ".taskList_container");
         clearOutputContainer.appendChild(taskListContainer);
@@ -36,7 +36,6 @@ const taskList = {
 
         //button event listener to open new task form
         newTaskButton.addEventListener("click", () => {
-            // console.log("click")
             tasksForm.createTasksEditForm()
         });
 
@@ -46,45 +45,46 @@ const taskList = {
         data.taskListData()
         .then(allTasks => {
             console.log(allTasks);
-            allTasks.forEach(toDo => {
+            allTasks.forEach(task => {
             //create html elements for each task list object and append to the task container on the DOM
-            let taskListEntry = document.createElement("div");
-            taskListEntry.setAttribute ("id", "taskList_entry");
-            taskListDiv.appendChild(taskListEntry);
+                let taskListEntry = document.createElement("div");
+                taskListEntry.setAttribute ("id", "taskListEntry");
+                taskListDiv.appendChild(taskListEntry);
 
-            let taskItem = document.createElement("h2");
-            taskItem.textContent = toDo.task;
+                let taskItem = document.createElement("h2");
+                taskItem.setAttribute ("id", `taskList_name--${task.id}`)
+                taskItem.textContent = task.task;
 
-            let taskDate = document.createElement("p");
-            taskDate.textContent = `Due Date: ${toDo.dueDate}`;
+                //event listener for edit functionality, when task name is clicked, it is replaced with a text box to edit the event name and saved on keyup for the enter key
+                taskItem.addEventListener("click", () => {
+                    taskEdit.taskEditBuilder()
+                });
 
-            //create checkbox for each tasklist item
-            var taskCheckbox = document.createElement("input");
-            taskCheckbox.setAttribute ("type","checkbox");
-            taskCheckbox.setAttribute ("id", "tasklist_checkbox");
+                let taskDate = document.createElement("p");
+                taskDate.textContent = `Due Date: ${task.dueDate}`;
 
-            //checkbox event listener to remove the task from the page when completed (GET/PATCH)
+                //create checkbox for each tasklist item
+                var taskCheckbox = document.createElement("input");
+                taskCheckbox.setAttribute ("type","checkbox");
+                taskCheckbox.setAttribute ("id", "tasklist_checkbox");
 
-            //create edit button for each entry
-            let editTaskButton = document.createElement("button");
-            editTaskButton.textContent = "Edit Task";
-            editTaskButton.setAttribute ("class", "task_button");
-            editTaskButton.setAttribute ("id", "edit_task_button");
+                //checkbox event listener to remove the task from the page when completed (GET/PATCH)
+                console.log(taskCheckbox.checked)
+                // var x = document.getElementById("tasklist_checkbox").value;
+                // console.log(x);
+                // //1) checkbox clicked for "complete" initiates a PATCH
+                // //2) complete a forEach loop over the tasks array and for any values of "true" hide from list
+                // //3) how do you actually hide??
 
-            //edit button event listener to edit the existing entry (GET/EDIT)
-            editTaskButton.addEventListener("click", () => {
-                console.log("fix yo stuff here soon")
-            });
+                //append forEach elements
+                taskListEntry.appendChild(taskItem);
+                taskListEntry.appendChild(taskDate);
+                taskListEntry.appendChild(taskCheckbox);
+                // taskListEntry.appendChild(modifyTaskButton);
 
-            //append forEach elements
-            taskListEntry.appendChild(taskItem);
-            taskListEntry.appendChild(taskDate);
-            taskListEntry.appendChild(taskCheckbox);
-            taskListEntry.appendChild(editTaskButton);
+                taskFragment.appendChild(taskListEntry);
 
-            taskFragment.appendChild(taskListEntry);
-
-            taskListDiv.appendChild(taskFragment);
+                taskListDiv.appendChild(taskFragment);
             });
         });
     }
