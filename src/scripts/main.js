@@ -1,3 +1,6 @@
+// Calls functions that create navigation and welcome page
+// Authors: Midnight Dream Team
+
 import nav from "./nav"
 import welcome from "./welcome"
 import eventListeners from "./eventListeners"

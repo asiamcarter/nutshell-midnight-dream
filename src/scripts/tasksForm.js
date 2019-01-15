@@ -1,6 +1,8 @@
+// Creates a new task for the task list which creates an object for the JSON
+// Author: Nick Hansen
+
 import data from "./data"
 import taskList from "./tasks";
-// when "new task" button is clicked, a form pops up which will allow a person to create a new task to track on their homepage.
 
 const tasksForm = {
 

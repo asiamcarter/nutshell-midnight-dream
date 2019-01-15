@@ -43,7 +43,7 @@ h1 {
 }
 
 #logo a:hover {
-    color:green;
+    color:#fff;
 }
 
 #nav_links ul {
@@ -78,10 +78,16 @@ h1 {
 
 .welcome_container{
     font-family: 'Coiny', cursive;
+    text-align: center;
 }
 
 .welcome_container h1{
+    color: yellowgreen;
     font-size: 3rem;
+}
+
+.welcome_container input {
+    margin: 0px 5px;
 }
 
 .registration_container{
@@ -331,6 +337,7 @@ input:focus, textarea:focus {
 .first--event {
     font-weight: bolder;
     font-size: 1.5em;
+    background-color: greenyellow !important;
 }
 
 .friend--event {

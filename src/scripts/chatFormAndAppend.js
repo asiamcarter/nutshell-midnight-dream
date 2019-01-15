@@ -1,8 +1,9 @@
+// Creates message HTML and appends to To DOM
+// Author: Asia Carter
 
 import data from "./data"
 import chatEditForm from "./chatEditForm"
 
-//Module creates message HTML and appends to To DOM
 const chatFormAndAppend = {
 
     //method takes an object as an argument and creates an HTML template

@@ -1,13 +1,26 @@
+// Builds and appends a task list current to the specific user logged in to the platform
+// Author: Nick Hansen
+
 import data from "./data";
 import tasksForm from "./tasksForm";
 import taskEdit from "./tasksEditForm"
 
-//This JS file will contain a function which builds a task list current to the specific user logged in to the platform
-
 const taskList = {
 
     createTaskList () {
-        // //clear output container DOM
+
+        // Current nav item
+        let navItem = document.querySelector("#nav_links");
+        let navUL = navItem.firstChild;
+        let allLinks = navUL.childNodes;
+        console.log(navUL.childNodes)
+        for (let i = 0; i < allLinks.length; i++) {
+            allLinks[i].removeAttribute("class");
+        }
+        let currentLink = navUL.childNodes[2];
+        currentLink.setAttribute("class", "current_page");
+
+        //clear output container DOM
         let clearOutputContainer = document.querySelector(".output");
         clearOutputContainer.innerHTML = " ";
 

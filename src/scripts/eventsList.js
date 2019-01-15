@@ -1,3 +1,6 @@
+// Fetches the events and checks that they belong to a user or the user's friend, and then appends the event to the DOM. It also checks that the event is a present or future event and does not display past events
+// Author: Brittany Ramos-Janeway
+
 import eventListeners from "./eventListeners"
 import events from "./events"
 import data from "./data"
@@ -43,7 +46,8 @@ const eventsList = {
         })
 
         // get events from database
-        data.getData(eventString)
+        .then(function() {
+            data.getData(eventString)
             .then(allEvents => {
                 allEvents.sort(function(a, b){
                     return new Date(a.date) - new Date(b.date);
@@ -85,6 +89,7 @@ const eventsList = {
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
                 eventDiv.firstChild.classList.add("first--event");
+        })
         })
     }
 }
