@@ -146,7 +146,23 @@ const welcome = {
 
         data.postUsernameAndEmailToJSON(entryToSave)
         .then(word => {
-        console.log(word)});
+            console.log(word)
+            data.getUserDataForLogin(registrationUsername, registrationEmail)
+                .then(allEntries => {
+                    allEntries.forEach(entry => {
+                        let loggedIn = false;
+                        sessionStorage.setItem("User", entry.id);
+                        let sessionUser = sessionStorage.getItem("User");
+                        console.log(sessionUser);
+                        if(registrationUsername === entry.name && registrationEmail === entry.email){
+                            loggedIn = true;
+                        }
+                        if(loggedIn === true){
+                            newsArticles.buildArticles();
+                        }
+                    })
+                })
+        });
     },
 
     incorrectUsernameOrEmailBuilderAndAppend(){
