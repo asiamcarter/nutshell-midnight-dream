@@ -3,6 +3,17 @@ import data from "./data"
 const friends = {
 friendPageBuilder(){
 
+    // Current nav item
+    let navItem = document.querySelector("#nav_links");
+    let navUL = navItem.firstChild;
+    let allLinks = navUL.childNodes;
+    console.log(navUL.childNodes)
+    for (let i = 0; i < allLinks.length; i++) {
+        allLinks[i].removeAttribute("class");
+    }
+    let currentLink = navUL.childNodes[4];
+    currentLink.setAttribute("class", "current_page");
+
     data.getFriendsList()
     .then(allFriends => {
         console.log("All Friends:", allFriends)

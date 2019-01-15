@@ -7,13 +7,19 @@ import newsForm from "./newsForm"
 const newsArticles = {
 
     buildArticles() {
-        let nav = document.getElementById("navigation")
-        nav.style.visibility = "visible"
-        // Select nav item
+        let nav = document.getElementById("navigation");
+        nav.style.visibility = "visible";
+
+        // Current nav item
         let navItem = document.querySelector("#nav_links");
         let navUL = navItem.firstChild;
-        let firstLink = navUL.firstChild;
-        firstLink.setAttribute("class", "current_page");
+        let allLinks = navUL.childNodes;
+        console.log(navUL.childNodes)
+        for (let i = 0; i < allLinks.length; i++) {
+            allLinks[i].removeAttribute("class");
+        }
+        let currentLink = navUL.childNodes[0];
+        currentLink.setAttribute("class", "current_page");
 
         // Clear output container on DOM
         let outputContainer = document.querySelector(".output");

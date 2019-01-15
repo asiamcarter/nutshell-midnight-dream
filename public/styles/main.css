@@ -78,10 +78,16 @@ h1 {
 
 .welcome_container{
     font-family: 'Coiny', cursive;
+    text-align: center;
 }
 
 .welcome_container h1{
+    color: yellowgreen;
     font-size: 3rem;
+}
+
+.welcome_container input {
+    margin: 0px 5px;
 }
 
 .registration_container{
@@ -303,6 +309,7 @@ html, body {
 .first--event {
     font-weight: bolder;
     font-size: 1.5em;
+    background-color: greenyellow;
 }
 
 .friend--event {

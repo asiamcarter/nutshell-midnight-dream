@@ -5,6 +5,18 @@ import chatFormAndAppend from "./chatFormAndAppend"
 const chat = {
     //method creates chatroom div, message input field and message submit button
     chatPageLoad() {
+
+        // Current nav item
+        let navItem = document.querySelector("#nav_links");
+        let navUL = navItem.firstChild;
+        let allLinks = navUL.childNodes;
+        console.log(navUL.childNodes)
+        for (let i = 0; i < allLinks.length; i++) {
+            allLinks[i].removeAttribute("class");
+        }
+        let currentLink = navUL.childNodes[3];
+        currentLink.setAttribute("class", "current_page");
+
         chatFormAndAppend.userMessageToDOM();
         let outPutArticle = document.querySelector(".output");
         outPutArticle.textContent= " ";

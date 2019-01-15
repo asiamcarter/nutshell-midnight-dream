@@ -3,9 +3,20 @@ import eventsForm from "./eventsForm";
 
 const events = {
     eventPageBuilder(){
-        let container = document.querySelector(".output");
+
+        // Current nav item
+        let navItem = document.querySelector("#nav_links");
+        let navUL = navItem.firstChild;
+        let allLinks = navUL.childNodes;
+        console.log(navUL.childNodes)
+        for (let i = 0; i < allLinks.length; i++) {
+            allLinks[i].removeAttribute("class");
+        }
+        let currentLink = navUL.childNodes[1];
+        currentLink.setAttribute("class", "current_page");
 
         // to clear the DOM
+        let container = document.querySelector(".output");
         container.textContent = "";
 
         // create HTML elements to be added to the DOM
