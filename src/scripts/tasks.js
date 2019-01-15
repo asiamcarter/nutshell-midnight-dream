@@ -70,11 +70,11 @@ const taskList = {
 
                 //checkbox event listener to remove the task from the page when completed (GET/PATCH)
                 console.log(taskCheckbox.checked)
-                var x = document.getElementById("tasklist_checkbox").value;
-                console.log(x);
-                //1) checkbox clicked for "complete" initiates a PATCH
-                //2) complete a forEach loop over the tasks array and for any values of "true" hide from list
-                //3) how do you actually hide??
+                // var x = document.getElementById("tasklist_checkbox").value;
+                // console.log(x);
+                // //1) checkbox clicked for "complete" initiates a PATCH
+                // //2) complete a forEach loop over the tasks array and for any values of "true" hide from list
+                // //3) how do you actually hide??
 
                 //append forEach elements
                 taskListEntry.appendChild(taskItem);
