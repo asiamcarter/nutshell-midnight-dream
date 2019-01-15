@@ -116,6 +116,19 @@ const welcome = {
         emailInput.setAttribute("type", "text");
         registrationContainer.appendChild(emailInput);
         //
+
+        let photoLabel = document.createElement("label");
+        registrationContainer.appendChild(photoLabel);
+        photoLabel.innerHTML = "Grab A Photo:";
+        let photoInput = document.createElement("input");
+        photoInput.setAttribute("id", "userPhoto");
+        photoInput.setAttribute("name", "userPhoto");
+        photoInput.setAttribute("type", "text");
+        registrationContainer.appendChild(photoInput);
+        // })
+
+
+
         // Creatiing submit button for new user:
         let submitNewUsernameAndEmail = document.createElement("button")
         submitNewUsernameAndEmail.setAttribute("id", "submitNewUserButton");
@@ -132,6 +145,7 @@ const welcome = {
         // Gets values that USER inputs in registration page
         const registrationUsername = document.querySelector("#registrationUsername").value;
         const registrationEmail = document.querySelector("#registrationEmail").value;
+        const userPhoto = document.querySelector("#userPhoto").value;
         // Loging those values in console
         // console.log(registrationUsername);
         // console.log(registrationEmail);
@@ -139,7 +153,8 @@ const welcome = {
         // Creating an object to store the values (above) in
         const entryToSave ={
             name: registrationUsername,
-            email: registrationEmail
+            email: registrationEmail,
+            photo: userPhoto
         };
         // Loging those values in console in OBJECT FORM
         // console.log(entryToSave)

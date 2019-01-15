@@ -9,11 +9,13 @@ const chatFormAndAppend = {
         alert("BummerTown!")
     },
     userMessageHTML(message, id) {
+        console.log("message:", message)
+        console.log("message user:", message.user)
         let userMessageDiv = document.createElement("div");
         userMessageDiv.classList.add("userMessage");
 
         let userNameSection = document.createElement("section");
-        userNameSection.classList.add("usernameSection");
+        userNameSection.classList.add("usernameSection")
         userNameSection.textContent = `${message.user.name}`
         console.log("message:", message)
         userNameSection.addEventListener("click", () => {
@@ -39,7 +41,8 @@ const chatFormAndAppend = {
         })
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
-        // userPhotoSection.textContent=`${message.photo}`
+        userPhotoSection.innerHTML= `<img src=${message.user.photo}>`
+        console.log(userPhotoSection)
 
         let userMessageContent = document.createElement("section");
         userMessageContent.classList.add("userMessageContent");
