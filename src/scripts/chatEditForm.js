@@ -7,6 +7,7 @@ const chatEditForm = {
         let messageId = messageDivId.split("--")[1]
         let editMessageField = document.createElement("input");
         editMessageField.setAttribute("type", "text");
+        editMessageField.classList.add("messageEditInput");
         editMessageField.value = message.message;
         let saveButton = document.createElement("button");
         saveButton.textContent = "Save";

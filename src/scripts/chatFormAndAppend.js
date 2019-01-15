@@ -37,6 +37,7 @@ const chatFormAndAppend = {
                 { alert("bummertown!");}, 450);
             }
         })
+
         //creates photo section of message, with user photo from database
         let userPhotoSection = document.createElement("section");
         userPhotoSection.classList.add("userPhotoSection");
@@ -47,13 +48,15 @@ const chatFormAndAppend = {
         userMessageContent.classList.add("userMessageContent");
 
         //adds an id to be used with edit funtionality
+
         userMessageContent.classList.add(`chatroomDiv--${id}`);
-        userMessageContent.textContent =`${message.message} ${message.time} `
+        userMessageContent.innerHTML =`${message.message}${message.time} `
 
         //appends username, photo and message to the DOM
-        userMessageDiv.appendChild(userNameSection);
+
         userMessageDiv.appendChild(userPhotoSection);
         userMessageDiv.appendChild(userMessageContent);
+        userMessageContent.appendChild(userNameSection);
 
         //gets session user. if the session user and the user id match, an edit button will populate the DOM
         let sessionUser = sessionStorage.getItem("User");
@@ -61,6 +64,7 @@ const chatFormAndAppend = {
         let messageEditButton = document.createElement("button");
         messageEditButton.textContent="edit";
         messageEditButton.setAttribute("id", `messageEditButton--${message.id}`)
+        messageEditButton.classList.add("messageEditButton")
         userMessageContent.appendChild(messageEditButton);
         //get all messages
         data.getChatData()
