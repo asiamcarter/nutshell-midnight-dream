@@ -8,6 +8,12 @@ const newsArticles = {
 
     buildArticles() {
 
+        // Select nav item
+        let navItem = document.querySelector("#nav_links");
+        let navUL = navItem.firstChild;
+        let firstLink = navUL.firstChild;
+        firstLink.setAttribute("class", "current_page");
+
         // Clear output container on DOM
         let outputContainer = document.querySelector(".output");
         outputContainer.innerHTML = "";
@@ -15,6 +21,10 @@ const newsArticles = {
         // Create main news container
         let newsWrapper = document.createElement("div");
         newsWrapper.setAttribute("id", "news_wrapper");
+
+        // Create container to hold title and "Add New" button
+        let newsTop = document.createElement("div");
+        newsTop.setAttribute("id", "news_top");
 
         // Add main title
         let newsContainerTitle = document.createElement("h1");
@@ -25,6 +35,9 @@ const newsArticles = {
         newsAddButton.textContent = "Add New Article";
         newsAddButton.setAttribute("class", "add_new_article");
 
+        newsTop.appendChild(newsContainerTitle);
+        newsTop.appendChild(newsAddButton);
+
         // Attach event listener to button, to display form
         newsAddButton.addEventListener("click", newsForm.displayForm);
 
@@ -32,8 +45,7 @@ const newsArticles = {
         let articleContainer = document.createElement("div");
         articleContainer.setAttribute("id", "article_container");
 
-        newsWrapper.appendChild(newsContainerTitle);
-        newsWrapper.appendChild(newsAddButton);
+        newsWrapper.appendChild(newsTop);
         newsWrapper.appendChild(articleContainer);
 
         outputContainer.appendChild(newsWrapper);
@@ -116,7 +128,7 @@ const newsArticles = {
                             if (Number(sessionUser) === article.userId) {
                                 let deleteArticleBtn = document.createElement("button");
                                 deleteArticleBtn.setAttribute("class", "article_delete_btn");
-                                deleteArticleBtn.textContent = "Delete";
+                                deleteArticleBtn.textContent = "x";
 
                                 deleteArticleBtn.addEventListener("click", () => {
                                     let articleId = article.id;
