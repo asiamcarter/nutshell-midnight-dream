@@ -2,8 +2,9 @@
 
 The Turtle Tub is a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
 
-<!-- [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY) -->
-(VanillaJS-Nutshell.png)
+
+![alt text](VanillaJS-Nutshell.png)
+
 
 
 ## Motivation
