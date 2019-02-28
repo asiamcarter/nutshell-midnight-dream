@@ -112,7 +112,7 @@ const newsArticles = {
 
                             let newsURL = document.createElement("div");
                             newsURL.setAttribute("class", "news_link");
-                            newsURL.innerHTML = `<a href="${article.url}">Read article</a>`;
+                            newsURL.innerHTML = `<a href="${article.url}" >Read article</a>`;
 
                             let newsEtc = document.createElement("div");
                             newsEtc.setAttribute("class", "news_etc");

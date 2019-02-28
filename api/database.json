@@ -150,10 +150,17 @@
     },
     {
       "name": "sdjknfkjdhfsf",
-      "date": "2019-10-12T12:12",
+      "date": "2018-10-12T12:12",
       "location": "sjdnfkdf",
       "userId": 1,
       "id": 13
+    },
+    {
+      "name": "TEDX Nashville Volunteer Party",
+      "date": "2019-03-15T12:00",
+      "location": "2 Party Way",
+      "userId": 1,
+      "id": 14
     }
   ],
   "articles": [
@@ -165,15 +172,6 @@
       "date": "1/14/2019 at 11:47AM",
       "userId": 2,
       "id": 11
-    },
-    {
-      "title": "user1 @ 11:47",
-      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-      "url": "meg.com",
-      "timestamp": 1547488061390,
-      "date": "1/14/2019 at 11:47AM",
-      "userId": 1,
-      "id": 12
     },
     {
       "title": "user 2 @ 3:27",
@@ -192,15 +190,6 @@
       "date": "1/14/2019 at 5:38 PM",
       "userId": 2,
       "id": 14
-    },
-    {
-      "title": "user1 test @ 5:38",
-      "synopsis": "test",
-      "url": "test.com",
-      "timestamp": 1547509140375,
-      "date": "1/14/2019 at 5:39 PM",
-      "userId": 1,
-      "id": 15
     },
     {
       "title": "user2 @ 7:35",
@@ -237,6 +226,15 @@
       "date": "1/15/2019 at 12:47 PM",
       "userId": 8,
       "id": 19
+    },
+    {
+      "title": "Don't Fight the Robots.Tax Them",
+      "synopsis": "\n\"Many companies invest in automation because the tax code encourages it, not because robots are more productive.”\n-Eduardo Porter ",
+      "url": "https://www.nytimes.com/2019/02/23/sunday-review/tax-artificial-intelligence.html",
+      "timestamp": 1551386991655,
+      "date": "2/28/2019 at 2:49 PM",
+      "userId": 1,
+      "id": 20
     }
   ],
   "tasks": [
@@ -253,6 +251,13 @@
       "completed": false,
       "userId": 1,
       "id": 2
+    },
+    {
+      "task": "Read up on Kubernetes",
+      "dueDate": "2019-06-21",
+      "completed": false,
+      "userId": 1,
+      "id": 3
     }
   ],
   "messages": [
@@ -327,6 +332,12 @@
       "time": "14:25",
       "userId": 1,
       "id": 13
+    },
+    {
+      "message": "Hey guys! Just demoing the app!!!",
+      "time": "14:51",
+      "userId": 1,
+      "id": 14
     }
   ],
   "connections": [
@@ -359,6 +370,12 @@
       "otherId": 1,
       "username": "userName",
       "id": 12
+    },
+    {
+      "userId": 1,
+      "otherId": 2,
+      "username": "userName2",
+      "id": 13
     }
   ]
 }
