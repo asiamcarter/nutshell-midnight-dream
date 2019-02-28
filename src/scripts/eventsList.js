@@ -88,7 +88,8 @@ const eventsList = {
                 // add document fragment to the container
                 let eventDiv = document.querySelector(".posted--container");
                 eventDiv.appendChild(docFrag);
-                eventDiv.firstChild.classList.add("first--event");
+                eventDiv.firstChild !== null ?
+                eventDiv.firstChild.classList.add("first--event") : ""
         })
         })
     }

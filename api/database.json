@@ -1,337 +1,364 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "userName",
-        "email": "userEmail@gmail.com",
-        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw7m6oeJSAP2IItlR0CmqHKFmiJuy_waarshJprd0oQ_orvgI0Hw"
-      },
-      {
-        "id": 2,
-        "name": "userName2",
-        "email": "userEmail2@gmail.com",
-        "photo": "https://www.keyscience.org/wp-content/uploads/2016/09/loggerhead-turtle-123402_12802-256x256.jpg"
-      },
-      {
-        "name": "userName3",
-        "email": "userEmail3@gmail.com",
-        "id": 3
-      },
-      {
-        "name": "Betty Turtle",
-        "email": "bettyTurtle@duckNcover.com",
-        "id": 4
-      },
-      {
-        "name": "Bart Turtle",
-        "email": "bartTurtle@duckNcover.com",
-        "id": 5
-      },
-      {
-        "name": "Teddy Turtle",
-        "email": "teddyTurtle@duckNcover.com",
-        "id": 6
-      },
-      {
-        "name": "James Nitz",
-        "email": "jamesnitz@gmail.com",
-        "photo": "https://vignette.wikia.nocookie.net/pixar/images/c/cb/Crush-FindingNemo3D.jpg/revision/latest?cb=20120609014025",
-        "id": 8
-      },
-      {
-        "name": "UserName5",
-        "email": "userName5@gmail.com",
-        "photo": "https://i.pinimg.com/originals/57/95/6b/57956bb6599434a0ceb03fcf81ab701e.jpg",
-        "id": 9
-      },
-      {
-        "name": "UserName6",
-        "email": "user6@gmail.com",
-        "id": 10
-      },
-      {
-        "name": "Hunter Daddy",
-        "email": "test",
-        "photo": "https://static.thisisinsider.com/image/5b9fb0063cccd11c008b458c.jpg",
-        "id": 11
-      }
-    ],
-    "events": [
-      {
-        "name": "Meet Betty Turtle",
-        "date": "2019-01-22T12:30",
-        "location": "Single Turtles Society HQ",
-        "userId": 5,
-        "id": 1
-      },
-      {
-        "name": "Learn the Foxtrot",
-        "date": "2019-01-16T17:00",
-        "location": "Turtles Only Open Dance Floor",
-        "userId": 5,
-        "id": 2
-      },
-      {
-        "name": "Help orphan turtles find homes",
-        "date": "2019-01-15T11:00",
-        "location": "Tiny Turtle Orphanage",
-        "userId": 4,
-        "id": 3
-      },
-      {
-        "name": "Destroy orphan turtle homes",
-        "date": "2019-01-15T11:00",
-        "location": "Tiny Turtle Orphanage",
-        "userId": 1,
-        "id": 3
-      },
-      {
-        "name": "Name",
-        "date": "2019-12-16T18:00",
-        "location": "Location",
-        "userId": 5,
-        "id": 4
-      },
-      {
-        "name": "user1 event",
-        "date": "2019-01-10T13:02",
-        "location": "pond",
-        "userId": 1,
-        "id": 5
-      },
-      {
-        "name": "user1 ",
-        "date": "2019-01-11T22:20",
-        "location": "pond",
-        "userId": 1,
-        "id": 6
-      },
-      {
-        "name": "user2 test",
-        "date": "2019-01-25T01:01",
-        "location": "pond",
-        "userId": 2,
-        "id": 7
-      },
-      {
-        "name": "TEST",
-        "date": "0010-10-10T10:10",
-        "location": "TEST",
-        "userId": 8,
-        "id": 8
-      },
-      {
-        "name": "TEST",
-        "date": "0010-10-10T10:10",
-        "location": "TEST",
-        "userId": 9,
-        "id": 9
-      },
-      {
-        "name": "TEST",
-        "date": "0101-10-10T21:00",
-        "location": "TEST",
-        "userId": 8,
-        "id": 10
-      },
-      {
-        "name": "TEST",
-        "date": "2019-01-17T10:10",
-        "location": "TEST",
-        "userId": 10,
-        "id": 11
-      }
-    ],
-    "articles": [
-      {
-        "title": "user2 @ 11:46",
-        "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-        "url": "meg.com",
-        "timestamp": 1047488036316,
-        "date": "1/14/2019 at 11:47AM",
-        "userId": 2,
-        "id": 11
-      },
-      {
-        "title": "user1 @ 11:47",
-        "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
-        "url": "meg.com",
-        "timestamp": 1547488061390,
-        "date": "1/14/2019 at 11:47AM",
-        "userId": 1,
-        "id": 12
-      },
-      {
-        "title": "user 2 @ 3:27",
-        "synopsis": "pm test!",
-        "url": "meg.com",
-        "timestamp": 1547501289098,
-        "date": "1/14/2019 at 3:28 PM",
-        "userId": 2,
-        "id": 13
-      },
-      {
-        "title": "a test!",
-        "synopsis": "test",
-        "url": "meg.com",
-        "timestamp": 1347509114154,
-        "date": "1/14/2019 at 5:38 PM",
-        "userId": 2,
-        "id": 14
-      },
-      {
-        "title": "user1 test @ 5:38",
-        "synopsis": "test",
-        "url": "test.com",
-        "timestamp": 1547509140375,
-        "date": "1/14/2019 at 5:39 PM",
-        "userId": 1,
-        "id": 15
-      },
-      {
-        "title": "user2 @ 7:35",
-        "synopsis": "test",
-        "url": "test",
-        "timestamp": 1547516137562,
-        "date": "1/14/2019 at 7:35 PM",
-        "userId": 2,
-        "id": 16
-      },
-      {
-        "title": "new article",
-        "synopsis": "test",
-        "url": "test",
-        "timestamp": 1547517047161,
-        "date": "1/14/2019 at 7:50 PM",
-        "userId": 2,
-        "id": 17
-      },
-      {
-        "title": "TEST",
-        "synopsis": "TEST",
-        "url": "TEST",
-        "timestamp": 1547520397848,
-        "date": "1/14/2019 at 8:46 PM",
-        "userId": 2,
-        "id": 18
-      },
-      {
-        "title": "TEST",
-        "synopsis": "TEST",
-        "url": "TEST",
-        "timestamp": 1547563675899,
-        "date": "1/15/2019 at 12:47 PM",
-        "userId": 8,
-        "id": 19
-      }
-    ],
-    "tasks": [
-      {
-        "task": "Clean My Room",
-        "dueDate": "2019-01-16",
-        "completed": false,
-        "userId": 2,
-        "id": 1
-      }
-    ],
-    "messages": [
-      {
-        "message": "Hey there\n",
-        "time": "20:47",
-        "userId": "2",
-        "id": 2
-      },
-      {
-        "message": "hi again\n",
-        "time": "9:3",
-        "userId": 2,
-        "id": 3
-      },
-      {
-        "message": "hi again!\n",
-        "time": "9:18",
-        "userId": 2,
-        "id": 4
-      },
-      {
-        "message": "hi there\n",
-        "time": "9:20",
-        "userId": 2,
-        "id": 5
-      },
-      {
-        "message": "hi!",
-        "time": "9:34",
-        "userId": 2,
-        "id": 6
-      },
-      {
-        "message": "hi again\n",
-        "time": "9:34",
-        "userId": 2,
-        "id": 7
-      },
-      {
-        "message": "hi again\n",
-        "time": "9:35",
-        "userId": 2,
-        "id": 8
-      },
-      {
-        "message": "hi\n",
-        "time": "9:57",
-        "userId": 2,
-        "id": 9
-      },
-      {
-        "message": "cool!\n",
-        "time": "10:11",
-        "userId": 2,
-        "id": 10
-      },
-      {
-        "message": "",
-        "time": "10:20",
-        "userId": 2,
-        "id": 11
-      },
-      {
-        "message": "hi!\n",
-        "time": "11:20",
-        "userId": 11,
-        "id": 12
-      }
-    ],
-    "connections": [
-      {
-        "userId": 2,
-        "otherId": 1,
-        "username": "userName",
-        "id": 2
-      },
-      {
-        "userId": 2,
-        "otherId": 2,
-        "username": "userName2",
-        "id": 9
-      },
-      {
-        "userId": 8,
-        "otherId": 1,
-        "username": "userName",
-        "id": 10
-      },
-      {
-        "userId": 10,
-        "otherId": 1,
-        "username": "userName",
-        "id": 11
-      },
-      {
-        "userId": 2,
-        "otherId": 1,
-        "username": "userName",
-        "id": 12
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "userName",
+      "email": "userEmail@gmail.com",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw7m6oeJSAP2IItlR0CmqHKFmiJuy_waarshJprd0oQ_orvgI0Hw"
+    },
+    {
+      "id": 2,
+      "name": "userName2",
+      "email": "userEmail2@gmail.com",
+      "photo": "https://www.keyscience.org/wp-content/uploads/2016/09/loggerhead-turtle-123402_12802-256x256.jpg"
+    },
+    {
+      "name": "userName3",
+      "email": "userEmail3@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Betty Turtle",
+      "email": "bettyTurtle@duckNcover.com",
+      "id": 4
+    },
+    {
+      "name": "Bart Turtle",
+      "email": "bartTurtle@duckNcover.com",
+      "id": 5
+    },
+    {
+      "name": "Teddy Turtle",
+      "email": "teddyTurtle@duckNcover.com",
+      "id": 6
+    },
+    {
+      "name": "James Nitz",
+      "email": "jamesnitz@gmail.com",
+      "photo": "https://vignette.wikia.nocookie.net/pixar/images/c/cb/Crush-FindingNemo3D.jpg/revision/latest?cb=20120609014025",
+      "id": 8
+    },
+    {
+      "name": "UserName5",
+      "email": "userName5@gmail.com",
+      "photo": "https://i.pinimg.com/originals/57/95/6b/57956bb6599434a0ceb03fcf81ab701e.jpg",
+      "id": 9
+    },
+    {
+      "name": "UserName6",
+      "email": "user6@gmail.com",
+      "id": 10
+    },
+    {
+      "name": "Hunter Daddy",
+      "email": "test",
+      "photo": "https://static.thisisinsider.com/image/5b9fb0063cccd11c008b458c.jpg",
+      "id": 11
+    }
+  ],
+  "events": [
+    {
+      "name": "Meet Betty Turtle",
+      "date": "2019-01-22T12:30",
+      "location": "Single Turtles Society HQ",
+      "userId": 5,
+      "id": 1
+    },
+    {
+      "name": "Learn the Foxtrot",
+      "date": "2019-01-16T17:00",
+      "location": "Turtles Only Open Dance Floor",
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "name": "Help orphan turtles find homes",
+      "date": "2019-01-15T11:00",
+      "location": "Tiny Turtle Orphanage",
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "name": "Destroy orphan turtle homes",
+      "date": "2019-01-15T11:00",
+      "location": "Tiny Turtle Orphanage",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "name": "Name",
+      "date": "2019-12-16T18:00",
+      "location": "Location",
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "name": "user1 event",
+      "date": "2019-01-10T13:02",
+      "location": "pond",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "user1 ",
+      "date": "2019-01-11T22:20",
+      "location": "pond",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "user2 test",
+      "date": "2019-01-25T01:01",
+      "location": "pond",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "name": "TEST",
+      "date": "0010-10-10T10:10",
+      "location": "TEST",
+      "userId": 8,
+      "id": 8
+    },
+    {
+      "name": "TEST",
+      "date": "0010-10-10T10:10",
+      "location": "TEST",
+      "userId": 9,
+      "id": 9
+    },
+    {
+      "name": "TEST",
+      "date": "0101-10-10T21:00",
+      "location": "TEST",
+      "userId": 8,
+      "id": 10
+    },
+    {
+      "name": "TEST",
+      "date": "2019-01-17T10:10",
+      "location": "TEST",
+      "userId": 10,
+      "id": 11
+    },
+    {
+      "name": "Brittany's Birthday Bash!",
+      "date": "1992-11-03T21:00",
+      "location": "Chuck E Cheese ",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "name": "sdjknfkjdhfsf",
+      "date": "2019-10-12T12:12",
+      "location": "sjdnfkdf",
+      "userId": 1,
+      "id": 13
+    }
+  ],
+  "articles": [
+    {
+      "title": "user2 @ 11:46",
+      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
+      "url": "meg.com",
+      "timestamp": 1047488036316,
+      "date": "1/14/2019 at 11:47AM",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "title": "user1 @ 11:47",
+      "synopsis": "Fusce turpis mi, sollicitudin quis maximus ac, facilisis vel lectus. Duis laoreet sollicitudin odio at viverra. Phasellus scelerisque, ante id lacinia cursus, elit nunc ullamcorper ipsum, vel faucibus sapien lectus nec nisl. In dui lorem, dignissim sit amet turpis pulvinar, congue malesuada ligula. Morbi dignissim, est vel lacinia mollis, magna ligula posuere arcu, rhoncus ultricies est dui vel risus.",
+      "url": "meg.com",
+      "timestamp": 1547488061390,
+      "date": "1/14/2019 at 11:47AM",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "title": "user 2 @ 3:27",
+      "synopsis": "pm test!",
+      "url": "meg.com",
+      "timestamp": 1547501289098,
+      "date": "1/14/2019 at 3:28 PM",
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "title": "a test!",
+      "synopsis": "test",
+      "url": "meg.com",
+      "timestamp": 1347509114154,
+      "date": "1/14/2019 at 5:38 PM",
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "title": "user1 test @ 5:38",
+      "synopsis": "test",
+      "url": "test.com",
+      "timestamp": 1547509140375,
+      "date": "1/14/2019 at 5:39 PM",
+      "userId": 1,
+      "id": 15
+    },
+    {
+      "title": "user2 @ 7:35",
+      "synopsis": "test",
+      "url": "test",
+      "timestamp": 1547516137562,
+      "date": "1/14/2019 at 7:35 PM",
+      "userId": 2,
+      "id": 16
+    },
+    {
+      "title": "new article",
+      "synopsis": "test",
+      "url": "test",
+      "timestamp": 1547517047161,
+      "date": "1/14/2019 at 7:50 PM",
+      "userId": 2,
+      "id": 17
+    },
+    {
+      "title": "TEST",
+      "synopsis": "TEST",
+      "url": "TEST",
+      "timestamp": 1547520397848,
+      "date": "1/14/2019 at 8:46 PM",
+      "userId": 2,
+      "id": 18
+    },
+    {
+      "title": "TEST",
+      "synopsis": "TEST",
+      "url": "TEST",
+      "timestamp": 1547563675899,
+      "date": "1/15/2019 at 12:47 PM",
+      "userId": 8,
+      "id": 19
+    }
+  ],
+  "tasks": [
+    {
+      "task": "Clean My Room",
+      "dueDate": "2019-01-16",
+      "completed": false,
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "task": "Clean my room ",
+      "dueDate": "2019-02-21",
+      "completed": false,
+      "userId": 1,
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "message": "Hey there\n",
+      "time": "20:47",
+      "userId": "2",
+      "id": 2
+    },
+    {
+      "message": "hi again\n",
+      "time": "9:3",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "message": "hi again!\n",
+      "time": "9:18",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "message": "hi there\n",
+      "time": "9:20",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "message": "hi!",
+      "time": "9:34",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "message": "hi again\n",
+      "time": "9:34",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "message": "hi again\n",
+      "time": "9:35",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "message": "hi\n",
+      "time": "9:57",
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "message": "cool!\n",
+      "time": "10:11",
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "message": "",
+      "time": "10:20",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "message": "hi!\n",
+      "time": "11:20",
+      "userId": 11,
+      "id": 12
+    },
+    {
+      "message": "How are you?",
+      "time": "14:25",
+      "userId": 1,
+      "id": 13
+    }
+  ],
+  "connections": [
+    {
+      "userId": 2,
+      "otherId": 1,
+      "username": "userName",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "otherId": 2,
+      "username": "userName2",
+      "id": 9
+    },
+    {
+      "userId": 8,
+      "otherId": 1,
+      "username": "userName",
+      "id": 10
+    },
+    {
+      "userId": 10,
+      "otherId": 1,
+      "username": "userName",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "otherId": 1,
+      "username": "userName",
+      "id": 12
+    }
+  ]
+}
